@@ -1,0 +1,1807 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Tanvir Anjum Joarder · Machine Learning Scientist & Computational Genomics Researcher</title>
+<meta name="description" content="Tanvir Anjum Joarder — incoming PhD researcher in the DeGiorgio Lab, Florida Atlantic University. Machine learning scientist building interpretable methods for population genomics, smart-grid analytics, AI for healthcare, and explainable AI." />
+<meta name="author" content="Tanvir Anjum Joarder" />
+<meta name="keywords" content="Tanvir Anjum Joarder, PhD researcher, machine learning scientist, computational genomics, statistical genetics, population genomics, deep learning, selective sweep detection, transfer learning, explainable AI, smart grid analytics, electricity theft detection, EV charging, Florida Atlantic University, DeGiorgio Lab, BREB" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<link rel="canonical" href="https://tanviranjumjoarder.github.io/" />
+<meta property="og:type" content="profile" />
+<meta property="og:site_name" content="Tanvir Anjum Joarder · Research" />
+<meta property="og:title" content="Tanvir Anjum Joarder · ML Scientist & Computational Genomics Researcher" />
+<meta property="og:description" content="Incoming PhD researcher, DeGiorgio Lab, Florida Atlantic University. Interpretable machine learning for genomics, energy systems, and healthcare." />
+<meta property="og:url" content="https://tanviranjumjoarder.github.io/" />
+<meta property="og:image" content="https://tanviranjumjoarder.github.io/og.png" />
+<meta property="profile:first_name" content="Tanvir Anjum" />
+<meta property="profile:last_name" content="Joarder" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Tanvir Anjum Joarder · ML Scientist & Computational Genomics Researcher" />
+<meta name="twitter:description" content="Interpretable machine learning for population genomics, energy systems, and healthcare." />
+<meta name="twitter:image" content="https://tanviranjumjoarder.github.io/og.png" />
+<meta name="citation_author" content="Tanvir Anjum Joarder" />
+<meta name="citation_author_institution" content="Florida Atlantic University" />
+<meta name="theme-color" content="#020617" />
+<meta name="color-scheme" content="dark light" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%2338BDF8'/%3E%3Cstop offset='1' stop-color='%23a78bfa'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='15' fill='%23020617'/%3E%3Crect x='1.5' y='1.5' width='61' height='61' rx='13.5' fill='none' stroke='url(%23g)' stroke-width='2'/%3E%3Ctext x='50%25' y='53%25' text-anchor='middle' dominant-baseline='middle' font-family='Space Grotesk,Arial,sans-serif' font-size='30' font-weight='700' fill='url(%23g)'%3ETJ%3C/text%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.24.0/dist/tabler-icons.min.css" />
+<script>
+  (function () {
+    try {
+      var t = localStorage.getItem("theme") || "dark";
+      document.documentElement.setAttribute("data-theme", t);
+    } catch (e) { document.documentElement.setAttribute("data-theme", "dark"); }
+  })();
+</script>
+<style>
+/* ============ DESIGN TOKENS ============ */
+:root,[data-theme="dark"]{
+  --bg:#020617; --bg-2:#040a1a; --surface:#0b1428; --surface-2:#0f172a; --surface-3:#16203b;
+  --primary:#0F172A; --secondary:#1E3A8A; --accent:#38BDF8; --accent-2:#818cf8; --accent-3:#a78bfa; --success:#10B981;
+  --ink:#E2E8F0; --ink-soft:#cbd5e1; --muted:#94A3B8; --faint:#64748b;
+  --line:rgba(148,163,184,.14); --line-soft:rgba(148,163,184,.08);
+  --glass:rgba(11,20,40,.55); --glass-2:rgba(11,20,40,.78); --glass-brd:rgba(148,163,184,.16);
+  --grad:linear-gradient(100deg,#38BDF8,#818cf8 52%,#a78bfa);
+  --grad-2:linear-gradient(135deg,#38BDF8,#10B981);
+  --grad-3:linear-gradient(135deg,#818cf8,#a78bfa);
+  --shadow:0 1px 2px rgba(0,0,0,.5),0 22px 60px -20px rgba(2,6,23,.9);
+  --glow:0 0 0 1px rgba(56,189,248,.16),0 10px 50px -10px rgba(56,189,248,.4);
+  --maxw:1200px; --r:18px; --r-sm:12px;
+}
+[data-theme="light"]{
+  --bg:#f6f8fc; --bg-2:#eef2f9; --surface:#ffffff; --surface-2:#f4f7fc; --surface-3:#e8eef7;
+  --ink:#0b1428; --ink-soft:#1e293b; --muted:#5b6779; --faint:#94a3b8;
+  --line:rgba(15,23,42,.12); --line-soft:rgba(15,23,42,.06);
+  --glass:rgba(255,255,255,.7); --glass-2:rgba(255,255,255,.88); --glass-brd:rgba(15,23,42,.1);
+  --shadow:0 1px 2px rgba(15,23,42,.05),0 22px 55px -22px rgba(15,23,42,.22);
+  --glow:0 0 0 1px rgba(56,189,248,.25),0 12px 44px -12px rgba(56,189,248,.35);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--ink);font-family:"Inter",system-ui,sans-serif;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden;position:relative}
+h1,h2,h3,h4,h5{font-family:"Space Grotesk","Inter",sans-serif;line-height:1.1;font-weight:600;letter-spacing:-.02em}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+::selection{background:rgba(56,189,248,.3);color:#fff}
+::-webkit-scrollbar{width:11px;height:11px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:linear-gradient(var(--accent),var(--accent-3));border-radius:9px;border:3px solid var(--bg)}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 26px}
+.eyebrow{font-family:"JetBrains Mono",monospace;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);display:inline-flex;align-items:center;gap:8px}
+.eyebrow .n{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;font-weight:600}
+.grad{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.grad2{background:var(--grad-2);-webkit-background-clip:text;background-clip:text;color:transparent}
+.section{padding:104px 0;position:relative}
+.section h2{font-size:clamp(30px,4.4vw,48px);margin-top:12px;letter-spacing:-.03em}
+.lead{color:var(--muted);max-width:64ch;margin-top:16px;font-size:17.5px}
+.sec-head{max-width:760px}
+.hairline{height:1px;background:var(--line);border:0;margin:18px 0}
+.center{text-align:center;margin-left:auto;margin-right:auto}
+
+/* ============ ANIMATED BACKGROUND ============ */
+.bgwrap{position:fixed;inset:0;z-index:-2;overflow:hidden;background:radial-gradient(120% 80% at 80% -10%,rgba(30,58,138,.28),transparent 60%),radial-gradient(90% 70% at 0% 0%,rgba(56,189,248,.12),transparent 55%),var(--bg)}
+#neural{position:fixed;inset:0;z-index:-1;width:100%;height:100%;pointer-events:none;opacity:.9}
+.gridfx{position:fixed;inset:0;z-index:-2;background-image:linear-gradient(var(--line-soft) 1px,transparent 1px),linear-gradient(90deg,var(--line-soft) 1px,transparent 1px);background-size:54px 54px;-webkit-mask:radial-gradient(120% 90% at 50% 0%,#000,transparent 75%);mask:radial-gradient(120% 90% at 50% 0%,#000,transparent 75%);opacity:.5}
+.aurora{position:fixed;inset:-15%;z-index:-2;filter:blur(70px);opacity:.5;pointer-events:none}
+.aurora .blob{position:absolute;border-radius:50%;animation:float 20s ease-in-out infinite}
+.b1{width:46vw;height:46vw;background:radial-gradient(circle,rgba(56,189,248,.5),transparent 65%);top:-12%;left:-8%}
+.b2{width:40vw;height:40vw;background:radial-gradient(circle,rgba(167,139,250,.45),transparent 65%);top:-6%;right:-6%;animation-delay:-7s}
+.b3{width:38vw;height:38vw;background:radial-gradient(circle,rgba(16,185,129,.32),transparent 65%);bottom:-14%;left:36%;animation-delay:-12s}
+[data-theme="light"] .aurora{opacity:.35}
+[data-theme="light"] .bgwrap{background:radial-gradient(120% 80% at 80% -10%,rgba(129,140,248,.16),transparent 60%),radial-gradient(90% 70% at 0% 0%,rgba(56,189,248,.12),transparent 55%),var(--bg)}
+
+/* ============ PROGRESS + NAV ============ */
+.progress{position:fixed;top:0;left:0;height:3px;width:0;background:var(--grad);z-index:200;box-shadow:0 0 12px rgba(56,189,248,.6)}
+header.nav{position:fixed;inset:0 0 auto 0;z-index:120;transition:transform .4s cubic-bezier(.16,1,.3,1)}
+header.nav .bar{display:flex;align-items:center;justify-content:space-between;gap:16px;height:72px;transition:height .35s,background .35s}
+header.nav.scrolled{backdrop-filter:blur(16px) saturate(160%);-webkit-backdrop-filter:blur(16px) saturate(160%);background:var(--glass);border-bottom:1px solid var(--glass-brd)}
+header.nav.scrolled .bar{height:60px}
+.brand{display:flex;align-items:center;gap:11px;font-family:"Space Grotesk",sans-serif;font-weight:600;font-size:16px}
+.logo{width:36px;height:36px;border-radius:10px;background:var(--grad);color:#04111f;display:grid;place-items:center;font-family:"Space Grotesk";font-weight:700;font-size:15px;box-shadow:0 6px 20px rgba(56,189,248,.45)}
+.navlinks{display:flex;align-items:center;gap:2px}
+.navlinks a{padding:8px 12px;border-radius:9px;font-size:13.5px;color:var(--muted);transition:.2s;position:relative}
+.navlinks a:hover{color:var(--ink);background:rgba(148,163,184,.1)}
+.navtools{display:flex;align-items:center;gap:8px}
+.kbd-hint{display:inline-flex;align-items:center;gap:7px;padding:8px 12px;border-radius:10px;border:1px solid var(--line);background:var(--surface);color:var(--muted);font-size:13px;cursor:pointer;transition:.2s}
+.kbd-hint:hover{border-color:var(--accent);color:var(--ink)}
+.kbd-hint kbd{font-family:"JetBrains Mono";font-size:11px;background:rgba(148,163,184,.16);border-radius:5px;padding:2px 6px;color:var(--ink-soft)}
+.iconbtn{width:40px;height:40px;border-radius:10px;border:1px solid var(--line);background:var(--surface);color:var(--muted);display:grid;place-items:center;cursor:pointer;font-size:19px;transition:.2s}
+.iconbtn:hover{color:var(--accent);border-color:var(--accent);transform:translateY(-1px)}
+.btn{display:inline-flex;align-items:center;gap:8px;border-radius:12px;padding:11px 18px;font-size:14px;font-weight:500;cursor:pointer;border:1px solid transparent;transition:.28s cubic-bezier(.16,1,.3,1);white-space:nowrap;font-family:inherit}
+.btn i{font-size:18px}
+.btn-accent{background:var(--grad);color:#04111f;font-weight:600;background-size:170% 170%;box-shadow:0 8px 26px rgba(56,189,248,.36)}
+.btn-accent:hover{background-position:100% 50%;transform:translateY(-2px);box-shadow:0 12px 34px rgba(56,189,248,.5)}
+.btn-outline{border-color:var(--glass-brd);color:var(--ink);background:var(--glass);backdrop-filter:blur(8px)}
+.btn-outline:hover{border-color:var(--accent);transform:translateY(-2px);box-shadow:var(--glow)}
+.btn-ghost{color:var(--muted)}
+.btn-ghost:hover{color:var(--accent)}
+.menubtn{display:none}
+.mobile{display:none}
+.mobile.open{display:block}
+.mobile{position:fixed;inset:72px 0 auto 0;z-index:110;background:var(--glass-2);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--glass-brd);padding:16px 26px;max-height:80vh;overflow:auto}
+.mobile a{display:block;padding:12px 8px;color:var(--ink-soft);border-radius:8px;font-size:16px}
+.mobile a:hover{background:rgba(148,163,184,.1)}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+
+/* ============ COMMAND PALETTE ============ */
+.palette{position:fixed;inset:0;z-index:300;display:none;align-items:flex-start;justify-content:center;padding:14vh 20px 20px;background:rgba(2,6,23,.6);backdrop-filter:blur(6px)}
+.palette.open{display:flex;animation:fade .2s ease}
+.palette-box{width:100%;max-width:620px;background:var(--glass-2);backdrop-filter:blur(22px) saturate(160%);-webkit-backdrop-filter:blur(22px) saturate(160%);border:1px solid var(--glass-brd);border-radius:18px;box-shadow:0 30px 80px -20px rgba(0,0,0,.7);overflow:hidden;animation:pop .25s cubic-bezier(.16,1,.3,1)}
+.palette-top{display:flex;align-items:center;gap:12px;padding:16px 18px;border-bottom:1px solid var(--line)}
+.palette-top i{font-size:20px;color:var(--accent)}
+.palette-input{flex:1;background:transparent;border:0;outline:0;color:var(--ink);font-size:16px;font-family:inherit}
+.palette-input::placeholder{color:var(--faint)}
+.palette-esc{font-family:"JetBrains Mono";font-size:11px;color:var(--muted);border:1px solid var(--line);border-radius:6px;padding:3px 7px}
+.palette-results{max-height:54vh;overflow:auto;padding:8px}
+.palette-group{font-family:"JetBrains Mono";font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);padding:12px 12px 6px}
+.palette-item{display:flex;align-items:center;gap:13px;padding:11px 13px;border-radius:11px;cursor:pointer;color:var(--ink-soft)}
+.palette-item .pi{width:34px;height:34px;border-radius:9px;display:grid;place-items:center;background:rgba(56,189,248,.12);color:var(--accent);font-size:18px;flex:none}
+.palette-item .pt{font-size:14.5px;font-weight:500}
+.palette-item .ps{font-size:12px;color:var(--muted)}
+.palette-item.active,.palette-item:hover{background:rgba(56,189,248,.12)}
+.palette-item .go{margin-left:auto;color:var(--faint);font-size:16px}
+.palette-empty{padding:34px;text-align:center;color:var(--muted);font-size:14px}
+
+/* ============ HERO ============ */
+.hero{position:relative;padding:158px 0 64px;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.55fr .95fr;gap:54px;align-items:center}
+.statuspill{display:inline-flex;align-items:center;gap:9px;padding:7px 14px;border-radius:999px;background:var(--glass);border:1px solid var(--glass-brd);backdrop-filter:blur(8px);font-size:12.5px;color:var(--ink-soft);font-family:"JetBrains Mono"}
+.statuspill .dot{width:8px;height:8px;border-radius:50%;background:var(--success);box-shadow:0 0 0 0 rgba(16,185,129,.6);animation:ping 2.4s infinite}
+.hero h1{font-size:clamp(42px,6.6vw,82px);margin:18px 0 0;font-weight:700;letter-spacing:-.04em}
+.hero .tag{font-family:"Space Grotesk";font-size:clamp(19px,2.5vw,28px);margin-top:16px;color:var(--ink-soft);font-weight:500}
+.rotator{display:inline-block;min-width:1ch}
+.hero .lead{font-size:18px;margin-top:20px;max-width:60ch}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:40px;background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.hstat{background:var(--surface);padding:20px 16px;position:relative;overflow:hidden}
+.hstat b{font-family:"Space Grotesk";font-size:clamp(26px,3.4vw,38px);font-weight:700;display:block;font-variant-numeric:tabular-nums;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hstat span{font-size:11.5px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-top:3px;display:block}
+.hstat .suf{font:inherit}
+.portrait{position:relative}
+.portrait .ring{position:absolute;inset:-16px;border-radius:28px;background:var(--grad);opacity:.45;filter:blur(26px);animation:pulse 7s ease-in-out infinite}
+.portrait .frame{position:relative;aspect-ratio:4/5;border-radius:22px;overflow:hidden;border:1px solid var(--glass-brd);background:var(--surface-2);box-shadow:var(--shadow)}
+.portrait .frame img{width:100%;height:100%;object-fit:cover}
+.portrait .fallback{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;background:linear-gradient(160deg,var(--surface-3),var(--surface))}
+.portrait .fallback b{font-family:"Space Grotesk";font-size:90px;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.portrait .chip-float{position:absolute;background:var(--glass-2);backdrop-filter:blur(12px);border:1px solid var(--glass-brd);border-radius:13px;padding:10px 14px;box-shadow:var(--shadow);font-size:12.5px;display:flex;align-items:center;gap:9px;animation:floaty 6s ease-in-out infinite}
+.portrait .chip-float i{font-size:18px;color:var(--accent)}
+.cf1{top:8%;left:-12%}.cf2{bottom:12%;right:-14%;animation-delay:-3s}
+.scrollcue{display:flex;justify-content:center;margin-top:50px;color:var(--muted);font-size:24px;animation:bob 2s ease-in-out infinite}
+
+/* ============ MARQUEE ============ */
+.scroller{padding:30px 0;border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft);position:relative;overflow:hidden;background:var(--glass);backdrop-filter:blur(6px)}
+.mqmask{-webkit-mask:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent);mask:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent)}
+.mq{display:flex;gap:16px;width:max-content;animation:scrollx 44s linear infinite}
+.mq.rev{animation-direction:reverse;margin-top:14px;animation-duration:50s}
+.scroller:hover .mq{animation-play-state:paused}
+.chip{display:inline-flex;align-items:center;gap:9px;padding:11px 18px;border-radius:999px;background:var(--surface);border:1px solid var(--line);font-size:14px;font-weight:500;white-space:nowrap;transition:.3s;color:var(--ink-soft)}
+.chip i{font-size:18px;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.chip:hover{transform:translateY(-3px);border-color:var(--accent);box-shadow:var(--glow)}
+
+/* ============ CARDS / GRID ============ */
+.grid{display:grid;gap:20px}
+.cols-2{grid-template-columns:repeat(2,1fr)}
+.cols-3{grid-template-columns:repeat(3,1fr)}
+.cols-4{grid-template-columns:repeat(4,1fr)}
+.card{background:var(--glass);backdrop-filter:blur(10px);border:1px solid var(--glass-brd);border-radius:var(--r);padding:26px;transition:.4s cubic-bezier(.16,1,.3,1);position:relative;overflow:hidden}
+.card:hover{transform:translateY(-6px);border-color:rgba(56,189,248,.4);box-shadow:var(--shadow)}
+.spot{position:absolute;inset:0;opacity:0;transition:opacity .3s;background:radial-gradient(260px circle at var(--mx,50%) var(--my,50%),rgba(56,189,248,.16),transparent 70%);pointer-events:none}
+.card:hover .spot{opacity:1}
+.icard .ic{width:50px;height:50px;border-radius:14px;display:grid;place-items:center;font-size:25px;color:var(--accent);background:rgba(56,189,248,.12);margin-bottom:17px;transition:.35s;position:relative;z-index:1}
+.icard:hover .ic{transform:scale(1.08) rotate(-5deg);background:var(--grad);color:#04111f}
+.icard .num{position:absolute;top:20px;right:24px;font-family:"JetBrains Mono";font-size:13px;color:var(--faint)}
+.icard h3{font-size:21px}
+.icard p{color:var(--muted);font-size:14.5px;margin-top:9px}
+.badge{display:inline-flex;align-items:center;gap:6px;padding:4px 11px;border-radius:999px;font-size:12px;font-weight:500;background:rgba(56,189,248,.14);color:var(--accent);border:1px solid rgba(56,189,248,.26)}
+.badge.soft{background:transparent;color:var(--muted);border-color:var(--line)}
+.badge.ok{background:rgba(16,185,129,.14);color:var(--success);border-color:rgba(16,185,129,.3)}
+.badge.warn{background:rgba(240,180,90,.14);color:#f0b45a;border-color:rgba(240,180,90,.3)}
+.tags{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:15px}
+.plink{font-size:13px;color:var(--muted);display:inline-flex;align-items:center;gap:4px;transition:.2s;cursor:pointer}
+.plink:hover{color:var(--accent)}
+
+/* ============ FEATURED RESEARCH ============ */
+.feat{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:38px}
+.feat-card{grid-column:span 1;background:var(--glass);backdrop-filter:blur(12px);border:1px solid var(--glass-brd);border-radius:22px;overflow:hidden;transition:.4s cubic-bezier(.16,1,.3,1);position:relative;display:flex;flex-direction:column}
+.feat-card.wide{grid-column:span 2}
+.feat-card:hover{transform:translateY(-6px);border-color:rgba(56,189,248,.45);box-shadow:var(--shadow)}
+.feat-viz{height:188px;position:relative;overflow:hidden;border-bottom:1px solid var(--line);background:radial-gradient(120% 120% at 70% 0%,rgba(30,58,138,.4),var(--surface-2))}
+.feat-viz canvas{width:100%;height:100%;display:block}
+.feat-domain{position:absolute;top:14px;left:16px;z-index:2}
+.feat-num{position:absolute;top:14px;right:16px;z-index:2;font-family:"Space Grotesk";font-weight:700;font-size:30px;color:rgba(226,232,240,.16)}
+.feat-body{padding:24px;display:flex;flex-direction:column;flex:1}
+.feat-body h3{font-size:21px;line-height:1.22}
+.feat-body .sig{color:var(--muted);font-size:14px;margin-top:11px;flex:1}
+.feat-prog{margin-top:16px}
+.feat-prog .lbl{display:flex;justify-content:space-between;font-size:11.5px;color:var(--muted);font-family:"JetBrains Mono";margin-bottom:6px}
+.feat-prog .track{height:6px;border-radius:99px;background:rgba(148,163,184,.18);overflow:hidden}
+.feat-prog .fill{height:100%;border-radius:99px;background:var(--grad);width:0;transition:width 1.2s cubic-bezier(.16,1,.3,1)}
+.feat-foot{display:flex;align-items:center;justify-content:space-between;margin-top:18px;gap:10px}
+
+/* ============ MODAL ============ */
+.modal{position:fixed;inset:0;z-index:280;display:none;align-items:center;justify-content:center;padding:20px;background:rgba(2,6,23,.66);backdrop-filter:blur(8px)}
+.modal.open{display:flex;animation:fade .22s ease}
+.modal-box{width:100%;max-width:760px;max-height:86vh;overflow:auto;background:var(--glass-2);backdrop-filter:blur(24px) saturate(150%);-webkit-backdrop-filter:blur(24px) saturate(150%);border:1px solid var(--glass-brd);border-radius:22px;box-shadow:0 36px 90px -24px rgba(0,0,0,.75);animation:pop .28s cubic-bezier(.16,1,.3,1)}
+.modal-hd{position:sticky;top:0;background:var(--glass-2);backdrop-filter:blur(20px);padding:24px 28px;border-bottom:1px solid var(--line);display:flex;align-items:flex-start;justify-content:space-between;gap:16px;z-index:2}
+.modal-hd h3{font-size:23px;line-height:1.2}
+.modal-close{flex:none;width:38px;height:38px;border-radius:10px;border:1px solid var(--line);background:var(--surface);color:var(--muted);cursor:pointer;display:grid;place-items:center;font-size:20px;transition:.2s}
+.modal-close:hover{color:var(--accent);border-color:var(--accent)}
+.modal-bd{padding:24px 28px 30px}
+.modal-bd h4{font-size:13px;text-transform:uppercase;letter-spacing:.1em;color:var(--accent);font-family:"JetBrains Mono";margin:20px 0 9px}
+.modal-bd h4:first-child{margin-top:0}
+.modal-bd p{color:var(--ink-soft);font-size:14.5px}
+.modal-bd ul{list-style:none;display:flex;flex-direction:column;gap:8px;margin-top:6px}
+.modal-bd li{font-size:14px;color:var(--muted);display:flex;gap:10px}
+.modal-bd li::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--accent);margin-top:8px;flex:none}
+
+/* ============ VISION ============ */
+.vision-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:38px}
+.vcard{background:var(--glass);backdrop-filter:blur(10px);border:1px solid var(--glass-brd);border-radius:var(--r);padding:28px;position:relative;overflow:hidden;transition:.4s}
+.vcard:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:rgba(56,189,248,.4)}
+.vcard .vh{font-family:"JetBrains Mono";font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+.vcard .vy{font-family:"Space Grotesk";font-size:15px;color:var(--muted);margin-top:4px}
+.vcard h3{font-size:22px;margin-top:14px}
+.vcard p{color:var(--muted);font-size:14.5px;margin-top:10px}
+.vcard .vbar{height:5px;border-radius:99px;background:rgba(148,163,184,.16);margin-top:18px;overflow:hidden}
+.vcard .vbar i{display:block;height:100%;background:var(--grad);border-radius:99px}
+
+/* ============ RESEARCH AREAS ============ */
+.areas{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:36px}
+.area{background:var(--glass);backdrop-filter:blur(10px);border:1px solid var(--glass-brd);border-radius:var(--r);overflow:hidden;cursor:pointer;transition:.4s cubic-bezier(.16,1,.3,1);position:relative}
+.area:hover{transform:translateY(-6px);border-color:rgba(56,189,248,.45);box-shadow:var(--shadow)}
+.area-viz{height:130px;position:relative;overflow:hidden;background:radial-gradient(120% 120% at 50% 0%,rgba(30,58,138,.3),var(--surface-2));border-bottom:1px solid var(--line)}
+.area-viz canvas{width:100%;height:100%;display:block}
+.area-bd{padding:20px 22px 22px}
+.area-bd .ic{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;font-size:21px;color:var(--accent);background:rgba(56,189,248,.13);margin-top:-44px;position:relative;z-index:2;border:1px solid var(--glass-brd);backdrop-filter:blur(8px)}
+.area-bd h3{font-size:18px;margin-top:14px}
+.area-bd p{color:var(--muted);font-size:13.5px;margin-top:8px}
+.area-bd .more{margin-top:14px;font-size:12.5px;color:var(--accent);display:inline-flex;align-items:center;gap:5px;font-family:"JetBrains Mono"}
+
+/* ============ KNOWLEDGE GRAPH ============ */
+.graph-wrap{position:relative;margin-top:36px;border:1px solid var(--glass-brd);border-radius:22px;overflow:hidden;background:var(--glass);backdrop-filter:blur(10px);height:520px}
+#graph-canvas{width:100%;height:100%;display:block;cursor:grab}
+.graph-tip{position:absolute;pointer-events:none;z-index:5;background:var(--glass-2);backdrop-filter:blur(16px);border:1px solid var(--glass-brd);border-radius:14px;padding:14px 16px;max-width:280px;box-shadow:var(--shadow);opacity:0;transition:opacity .2s;transform:translate(-50%,-115%)}
+.graph-tip h4{font-size:15px}
+.graph-tip p{font-size:12.5px;color:var(--muted);margin-top:6px}
+.graph-tip .gt-tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:9px}
+.graph-tip .gt-tags span{font-size:10.5px;font-family:"JetBrains Mono";color:var(--accent);background:rgba(56,189,248,.12);border-radius:5px;padding:2px 6px}
+.graph-legend{position:absolute;bottom:14px;left:16px;z-index:4;display:flex;flex-wrap:wrap;gap:12px;font-size:11.5px;color:var(--muted)}
+.graph-legend span{display:inline-flex;align-items:center;gap:6px}
+.graph-legend i{width:9px;height:9px;border-radius:50%}
+.graph-hint{position:absolute;top:14px;right:16px;z-index:4;font-size:11.5px;color:var(--faint);font-family:"JetBrains Mono"}
+
+/* ============ GENOMICS LAB ============ */
+.lab{margin-top:36px;border:1px solid var(--glass-brd);border-radius:22px;overflow:hidden;background:var(--glass);backdrop-filter:blur(10px)}
+.lab-tabs{display:flex;flex-wrap:wrap;gap:4px;padding:14px;border-bottom:1px solid var(--line);background:var(--surface)}
+.lab-tab{padding:9px 16px;border-radius:10px;border:1px solid transparent;background:transparent;color:var(--muted);font-size:13.5px;cursor:pointer;font-family:inherit;transition:.2s;display:inline-flex;align-items:center;gap:7px}
+.lab-tab i{font-size:17px}
+.lab-tab[aria-pressed="true"]{background:var(--grad);color:#04111f;font-weight:600}
+.lab-stage{display:grid;grid-template-columns:1.4fr 1fr;gap:0;min-height:380px}
+.lab-canvas-wrap{position:relative;border-right:1px solid var(--line);background:radial-gradient(120% 120% at 60% 0%,rgba(30,58,138,.28),var(--surface-2))}
+.lab-canvas-wrap canvas{width:100%;height:100%;display:block;min-height:380px}
+.lab-info{padding:30px}
+.lab-info h3{font-size:23px}
+.lab-info .sub{color:var(--accent);font-family:"JetBrains Mono";font-size:12px;text-transform:uppercase;letter-spacing:.12em;margin-top:6px}
+.lab-info p{color:var(--muted);font-size:14.5px;margin-top:14px}
+.lab-ctrl{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.lab-info .facts{margin-top:20px;display:flex;flex-direction:column;gap:10px}
+.lab-info .facts div{display:flex;justify-content:space-between;font-size:13px;border-bottom:1px dashed var(--line);padding-bottom:8px}
+.lab-info .facts b{font-family:"JetBrains Mono";color:var(--ink)}
+
+/* ============ PUBLICATIONS ============ */
+.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;margin:32px 0}
+.metric{background:var(--surface);padding:28px 16px;text-align:center;position:relative}
+.metric b{font-family:"Space Grotesk";font-size:clamp(32px,4.4vw,46px);font-weight:700;display:block;font-variant-numeric:tabular-nums;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.metric span{font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-top:4px;display:block}
+.pubtools{display:flex;flex-wrap:wrap;justify-content:space-between;gap:14px;margin-bottom:20px;align-items:center}
+.search{display:flex;align-items:center;gap:10px;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:9px 14px;flex:1;min-width:220px;max-width:340px}
+.search i{color:var(--muted);font-size:18px}
+.search input{flex:1;background:transparent;border:0;outline:0;color:var(--ink);font-size:14px;font-family:inherit}
+.filters{display:flex;flex-wrap:wrap;gap:8px}
+.filters button{padding:8px 15px;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--muted);font-size:13.5px;cursor:pointer;transition:.2s;font-family:inherit}
+.filters button[aria-pressed="true"]{background:var(--grad);color:#04111f;border-color:transparent;font-weight:600}
+.sortsel{background:var(--surface);border:1px solid var(--line);border-radius:10px;color:var(--ink);padding:8px 12px;font-size:13.5px;font-family:inherit;cursor:pointer}
+.pub{display:grid;grid-template-columns:auto 1fr;gap:20px;padding:26px;border:1px solid var(--glass-brd);border-radius:var(--r);background:var(--glass);backdrop-filter:blur(10px);margin-bottom:16px;transition:.3s}
+.pub:hover{border-color:rgba(56,189,248,.42);transform:translateX(5px);box-shadow:var(--shadow)}
+.pub .ref{font-family:"Space Grotesk";font-weight:700;color:var(--accent);font-size:18px}
+.pub h3{font-size:19px;line-height:1.32}
+.pub h3 a:hover{color:var(--accent)}
+.pub .auth{color:var(--muted);font-size:14.5px;margin-top:9px}
+.pub .auth b{color:var(--ink)}
+.pub .ven{color:var(--muted);font-size:14px;font-style:italic;margin-top:3px}
+.pub .doi{font-family:"JetBrains Mono";font-size:12px;color:var(--faint);margin-top:5px}
+.pub .cites{display:inline-flex;align-items:center;gap:6px;font-family:"JetBrains Mono";font-size:12.5px;color:var(--success)}
+
+/* ============ REPOS / DATASETS ============ */
+.repo{background:var(--glass);backdrop-filter:blur(10px);border:1px solid var(--glass-brd);border-radius:var(--r);padding:24px;transition:.35s;position:relative;overflow:hidden}
+.repo:hover{transform:translateY(-5px);border-color:rgba(56,189,248,.4);box-shadow:var(--shadow)}
+.repo .rt{display:flex;align-items:center;gap:10px;font-family:"JetBrains Mono";font-size:15px;font-weight:600}
+.repo .rt i{color:var(--accent);font-size:20px}
+.repo p{color:var(--muted);font-size:13.5px;margin-top:10px}
+.repo-stats{display:flex;flex-wrap:wrap;gap:16px;margin-top:16px;font-size:12.5px;color:var(--muted)}
+.repo-stats span{display:inline-flex;align-items:center;gap:5px}
+.repo-stats .lang{display:inline-flex;align-items:center;gap:6px}
+.repo-stats .lang i{width:10px;height:10px;border-radius:50%}
+.dtable{width:100%;border-collapse:separate;border-spacing:0;margin-top:34px;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;font-size:14px}
+.dtable th{text-align:left;font-family:"JetBrains Mono";font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);padding:16px;background:var(--surface);border-bottom:1px solid var(--line)}
+.dtable td{padding:16px;border-bottom:1px solid var(--line-soft);color:var(--ink-soft);vertical-align:top}
+.dtable tr:last-child td{border-bottom:0}
+.dtable tbody tr{transition:.2s}
+.dtable tbody tr:hover{background:rgba(56,189,248,.05)}
+.dtable .dname{font-weight:600;color:var(--ink)}
+.dtable .dname small{display:block;color:var(--muted);font-weight:400;font-size:12px;margin-top:3px}
+
+/* ============ PROJECTS ============ */
+.proj{background:var(--glass);backdrop-filter:blur(10px);border:1px solid var(--glass-brd);border-radius:var(--r);overflow:hidden;transition:.4s cubic-bezier(.16,1,.3,1);position:relative;display:flex;flex-direction:column}
+.proj:hover{transform:translateY(-6px);border-color:rgba(56,189,248,.42);box-shadow:var(--shadow)}
+.proj-viz{height:150px;position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
+.proj-viz canvas{width:100%;height:100%;display:block}
+.proj-bd{padding:22px;flex:1;display:flex;flex-direction:column}
+.proj-bd .top{display:flex;justify-content:space-between;align-items:center}
+.proj-bd .rcode{font-family:"JetBrains Mono";font-size:12px;color:var(--accent)}
+.proj-bd h3{font-size:19px;margin-top:11px}
+.proj-bd p{color:var(--muted);font-size:13.5px;margin-top:9px;flex:1}
+.proj-links{display:flex;flex-wrap:wrap;gap:14px;margin-top:16px}
+
+/* ============ TIMELINE ============ */
+.tl{position:relative;border-left:2px solid var(--line);padding-left:30px;margin-left:6px}
+.tl-item{position:relative;padding-bottom:34px}
+.tl-item:last-child{padding-bottom:0}
+.tl-item .dot{position:absolute;left:-39px;top:4px;width:16px;height:16px;border-radius:50%;background:var(--grad);border:3px solid var(--bg);box-shadow:0 0 0 1px var(--line),0 0 14px rgba(56,189,248,.5)}
+.tl-item .per{font-family:"JetBrains Mono";font-size:12.5px;color:var(--accent)}
+.tl-item h4{font-size:18px;margin-top:6px}
+.tl-item .org{font-size:14px;color:var(--ink-soft);font-weight:500;margin-top:3px}
+.tl-item p{color:var(--muted);font-size:14px;margin-top:9px}
+
+/* horizontal research timeline */
+.rtl{position:relative;margin-top:40px;overflow-x:auto;padding-bottom:14px}
+.rtl-track{display:flex;gap:0;min-width:max-content;position:relative;padding:50px 10px 10px}
+.rtl-track::before{content:"";position:absolute;left:0;right:0;top:64px;height:2px;background:linear-gradient(90deg,transparent,var(--accent),var(--accent-3),transparent)}
+.rtl-node{position:relative;width:210px;padding:0 16px}
+.rtl-node .yr{font-family:"Space Grotesk";font-weight:700;font-size:22px;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;text-align:center}
+.rtl-node .pin{width:15px;height:15px;border-radius:50%;background:var(--grad);margin:9px auto 0;box-shadow:0 0 0 4px var(--bg),0 0 0 5px var(--line),0 0 14px rgba(56,189,248,.6);position:relative;z-index:2}
+.rtl-node.future .pin{background:var(--surface-3);box-shadow:0 0 0 4px var(--bg),0 0 0 5px var(--accent)}
+.rtl-node .rc{background:var(--glass);border:1px solid var(--glass-brd);border-radius:14px;padding:16px;margin-top:18px;backdrop-filter:blur(8px);transition:.3s}
+.rtl-node .rc:hover{transform:translateY(-4px);border-color:var(--accent);box-shadow:var(--glow)}
+.rtl-node .rc h4{font-size:15px}
+.rtl-node .rc p{font-size:12.5px;color:var(--muted);margin-top:6px}
+
+/* ============ JOURNEY MAP ============ */
+.journey-wrap{margin-top:36px;border:1px solid var(--glass-brd);border-radius:22px;overflow:hidden;background:var(--glass);backdrop-filter:blur(10px);position:relative}
+.journey-wrap svg{width:100%;height:auto;display:block}
+.journey-legend{display:flex;flex-wrap:wrap;gap:10px;padding:18px 22px;border-top:1px solid var(--line)}
+.journey-legend .jl{display:inline-flex;align-items:center;gap:9px;font-size:13px;color:var(--ink-soft);background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:7px 14px}
+.journey-legend .jl b{color:var(--accent);font-family:"JetBrains Mono";font-size:12px}
+
+/* ============ ROADMAP ============ */
+.road{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin-top:36px}
+.ph{background:var(--glass);backdrop-filter:blur(10px);border:1px solid var(--glass-brd);border-radius:var(--r);padding:22px;position:relative;transition:.4s}
+.ph:hover{transform:translateY(-7px);box-shadow:var(--shadow);border-color:rgba(56,189,248,.42)}
+.ph .no{width:32px;height:32px;border-radius:50%;background:rgba(56,189,248,.14);color:var(--accent);font-family:"Space Grotesk";font-weight:700;font-size:14px;display:grid;place-items:center}
+.ph .yr{font-family:"JetBrains Mono";font-size:12px;color:var(--muted);margin-top:15px}
+.ph h3{font-size:18px;margin-top:2px}
+.ph .th{color:var(--accent);font-size:13px;font-weight:500;margin-top:3px}
+.ph ul{list-style:none;margin-top:14px;display:flex;flex-direction:column;gap:9px}
+.ph li{font-size:12.5px;color:var(--muted);display:flex;gap:8px;line-height:1.45}
+.ph li::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--accent);margin-top:7px;flex:none}
+
+/* ============ BLOG / READING / NOW / COLLAB ============ */
+.post{background:var(--glass);backdrop-filter:blur(10px);border:1px solid var(--glass-brd);border-radius:var(--r);padding:24px;transition:.35s;cursor:pointer;position:relative;overflow:hidden;display:flex;flex-direction:column}
+.post:hover{transform:translateY(-5px);border-color:rgba(56,189,248,.4);box-shadow:var(--shadow)}
+.post .cat{font-family:"JetBrains Mono";font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
+.post h3{font-size:18px;margin-top:11px;line-height:1.28}
+.post p{color:var(--muted);font-size:13.5px;margin-top:9px;flex:1}
+.post .meta-row{display:flex;justify-content:space-between;align-items:center;margin-top:16px;font-size:12px;color:var(--faint);font-family:"JetBrains Mono"}
+.read-col h3{font-size:16px;color:var(--accent);display:flex;align-items:center;gap:8px}
+.read-list{list-style:none;margin-top:16px;display:flex;flex-direction:column;gap:14px}
+.read-item{padding-bottom:14px;border-bottom:1px dashed var(--line)}
+.read-item:last-child{border-bottom:0}
+.read-item b{font-size:14px;display:block}
+.read-item small{color:var(--muted);font-size:12.5px}
+.read-item .auth{color:var(--faint);font-size:12px;margin-top:2px;display:block}
+.now-col h3{font-size:16px;color:var(--accent);display:flex;align-items:center;gap:9px}
+.now-list{list-style:none;margin-top:14px;display:flex;flex-direction:column;gap:11px}
+.now-list li{font-size:13.5px;color:var(--ink-soft);display:flex;gap:10px;align-items:flex-start;line-height:1.45}
+.now-list li i{color:var(--accent);font-size:16px;margin-top:3px;flex:none}
+.now-list li .st{font-family:"JetBrains Mono";font-size:10px;color:var(--faint);border:1px solid var(--line);border-radius:5px;padding:1px 6px;margin-left:auto;white-space:nowrap;align-self:center}
+.collab{background:var(--glass);backdrop-filter:blur(10px);border:1px solid var(--glass-brd);border-radius:var(--r);padding:26px;transition:.35s}
+.collab:hover{transform:translateY(-5px);border-color:rgba(56,189,248,.4);box-shadow:var(--shadow)}
+.collab .ic{width:48px;height:48px;border-radius:13px;background:var(--grad);color:#04111f;display:grid;place-items:center;font-size:23px;margin-bottom:15px}
+.collab h3{font-size:18px}
+.collab p{color:var(--muted);font-size:13.5px;margin-top:9px}
+.collab ul{list-style:none;margin-top:12px;display:flex;flex-direction:column;gap:7px}
+.collab li{font-size:13px;color:var(--ink-soft);display:flex;gap:9px}
+.collab li::before{content:"→";color:var(--accent);flex:none}
+
+/* ============ SKILLS / AWARDS / CV / CONTACT ============ */
+.skill h3{font-size:16px;color:var(--accent)}
+.skill ul{list-style:none;margin-top:15px;display:flex;flex-direction:column;gap:11px}
+.skill li{font-size:14px;color:var(--muted);display:flex;gap:10px;align-items:flex-start}
+.skill li::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--accent);margin-top:8px;flex:none}
+.award{display:flex;gap:16px;padding:22px;border:1px solid var(--glass-brd);border-radius:var(--r);background:var(--glass);backdrop-filter:blur(8px);transition:.3s}
+.award:hover{border-color:rgba(56,189,248,.4);transform:translateY(-3px);box-shadow:var(--shadow)}
+.award .yr{font-family:"JetBrains Mono";font-weight:600;color:var(--accent);font-size:14px}
+.award h3{font-size:15.5px;line-height:1.35}
+.award p{color:var(--muted);font-size:13.5px;margin-top:6px}
+.cvband{background:var(--glass);backdrop-filter:blur(12px);border:1px solid var(--glass-brd);border-radius:24px;padding:46px;box-shadow:var(--shadow)}
+.profiles{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.prof{display:flex;align-items:center;gap:12px;padding:16px;border:1px solid var(--line);border-radius:13px;background:var(--surface);transition:.3s}
+.prof:hover{border-color:var(--accent);transform:translateY(-3px)}
+.prof .ic{width:42px;height:42px;border-radius:11px;background:rgba(56,189,248,.13);color:var(--accent);display:grid;place-items:center;font-size:21px}
+.prof small{color:var(--muted);display:block}
+.gh img{width:100%;border-radius:12px;border:1px solid var(--line);background:var(--surface);padding:14px}
+.contact-cards{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.ccard{display:flex;align-items:center;gap:16px;padding:24px;border:1px solid var(--glass-brd);border-radius:var(--r);background:var(--glass);backdrop-filter:blur(8px);transition:.3s}
+.ccard:hover{border-color:var(--accent);transform:translateY(-3px);box-shadow:var(--glow)}
+.ccard .ic{width:50px;height:50px;border-radius:14px;background:var(--grad);color:#04111f;display:grid;place-items:center;font-size:22px}
+.socials{display:flex;flex-wrap:wrap;gap:12px;margin-top:18px}
+.socials a{display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border:1px solid var(--line);border-radius:999px;color:var(--muted);font-size:14px;transition:.25s;background:var(--surface)}
+.socials a:hover{color:var(--ink);border-color:var(--accent);transform:translateY(-2px)}
+footer{border-top:1px solid var(--line-soft);padding:56px 0 42px;position:relative}
+.foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:24px}
+.foot a.fl{color:var(--muted);font-size:14px;transition:.2s;margin-right:16px}
+.foot a.fl:hover{color:var(--accent)}
+.foot .copy{margin-top:32px;padding-top:22px;border-top:1px solid var(--line-soft);display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;color:var(--muted);font-size:13.5px;width:100%}
+
+/* ============ REVEAL + KEYFRAMES ============ */
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1)}
+.reveal.in{opacity:1;transform:none}
+.reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}.reveal.d3{transition-delay:.24s}.reveal.d4{transition-delay:.32s}
+@keyframes float{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(4%,5%) scale(1.07)}66%{transform:translate(-3%,2%) scale(.95)}}
+@keyframes pulse{0%,100%{opacity:.4;transform:scale(1)}50%{opacity:.62;transform:scale(1.05)}}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(9px)}}
+@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+@keyframes scrollx{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes ping{0%{box-shadow:0 0 0 0 rgba(16,185,129,.5)}70%{box-shadow:0 0 0 9px rgba(16,185,129,0)}100%{box-shadow:0 0 0 0 rgba(16,185,129,0)}}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+@keyframes pop{from{opacity:0;transform:translateY(14px) scale(.98)}to{opacity:1;transform:none}}
+
+/* ============ RESPONSIVE ============ */
+@media(max-width:1040px){
+  .hero-grid{grid-template-columns:1fr;gap:38px}
+  .portrait{max-width:340px}
+  .cols-3,.cols-4{grid-template-columns:1fr 1fr}
+  .areas,.vision-grid{grid-template-columns:1fr 1fr}
+  .road{grid-template-columns:repeat(2,1fr)}
+  .lab-stage{grid-template-columns:1fr}
+  .lab-canvas-wrap{border-right:0;border-bottom:1px solid var(--line)}
+  .navlinks,.kbd-hint{display:none}
+  .menubtn{display:grid}
+}
+@media(max-width:680px){
+  .section{padding:74px 0}
+  .cols-2,.cols-3,.cols-4,.profiles,.contact-cards,.areas,.vision-grid{grid-template-columns:1fr}
+  .feat,.feat-card.wide{grid-template-columns:1fr}
+  .feat-card,.feat-card.wide{grid-column:span 1}
+  .metrics{grid-template-columns:repeat(2,1fr)}
+  .road{grid-template-columns:1fr}
+  .cvband{padding:28px}
+  .hero-stats{grid-template-columns:1fr 1fr}
+  .hide-sm{display:none}
+  .pub{grid-template-columns:1fr;gap:8px}
+}
+@media(prefers-reduced-motion:reduce){
+  *{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}
+  .reveal{opacity:1;transform:none}
+  #neural,.aurora{display:none}
+}
+</style>
+</head>
+<body>
+<div class="bgwrap"></div>
+<div class="gridfx"></div>
+<div class="aurora"><span class="blob b1"></span><span class="blob b2"></span><span class="blob b3"></span></div>
+<canvas id="neural" aria-hidden="true"></canvas>
+<div class="progress" id="progress"></div>
+<a href="#hero" class="sr-only">Skip to content</a>
+
+<header class="nav" id="nav">
+  <div class="wrap bar">
+    <a href="#hero" class="brand"><span class="logo">TJ</span><span class="hide-sm">Tanvir Anjum Joarder</span></a>
+    <nav class="navlinks" aria-label="Primary">
+      <a href="#featured">Research</a><a href="#vision">Vision</a><a href="#graph">Graph</a>
+      <a href="#lab">Genomics</a><a href="#publications">Publications</a><a href="#projects">Projects</a>
+      <a href="#roadmap">Roadmap</a><a href="#collaborate">Collaborate</a><a href="#contact">Contact</a>
+    </nav>
+    <div class="navtools">
+      <button class="kbd-hint" id="palette-open" aria-label="Open command palette"><i class="ti ti-search"></i>Search <kbd>Ctrl K</kbd></button>
+      <button class="iconbtn" id="theme" aria-label="Toggle theme"><i class="ti ti-sun"></i></button>
+      <button class="iconbtn menubtn" id="menubtn" aria-label="Open menu" aria-expanded="false"><i class="ti ti-menu-2"></i></button>
+    </div>
+  </div>
+</header>
+<nav class="mobile" id="mobile" aria-label="Mobile">
+  <a href="#featured">Featured Research</a><a href="#vision">Research Vision</a><a href="#areas">Research Areas</a>
+  <a href="#graph">Research Graph</a><a href="#lab">Genomics Lab</a><a href="#publications">Publications</a>
+  <a href="#opensource">Open Source</a><a href="#datasets">Datasets</a><a href="#projects">Projects</a>
+  <a href="#timeline">Timeline</a><a href="#journey">Journey</a><a href="#experience">Experience</a>
+  <a href="#roadmap">Roadmap</a><a href="#blog">Blog</a><a href="#reading">Reading</a>
+  <a href="#now">Working On</a><a href="#collaborate">Collaborate</a><a href="#awards">Awards</a><a href="#contact">Contact</a>
+  <a href="assets/Tanvir_Anjum_Joarder_CV.pdf" target="_blank" rel="noopener">Download CV ↗</a>
+</nav>
+
+<!-- COMMAND PALETTE -->
+<div class="palette" id="palette" role="dialog" aria-modal="true" aria-label="Command palette">
+  <div class="palette-box">
+    <div class="palette-top">
+      <i class="ti ti-search"></i>
+      <input class="palette-input" id="palette-input" type="text" placeholder="Search research, publications, sections, datasets…" autocomplete="off" />
+      <span class="palette-esc">ESC</span>
+    </div>
+    <div class="palette-results" id="palette-results"></div>
+  </div>
+</div>
+
+<!-- GENERIC MODAL -->
+<div class="modal" id="modal" role="dialog" aria-modal="true">
+  <div class="modal-box">
+    <div class="modal-hd"><h3 id="modal-title">Title</h3><button class="modal-close" id="modal-close" aria-label="Close"><i class="ti ti-x"></i></button></div>
+    <div class="modal-bd" id="modal-body"></div>
+  </div>
+</div>
+
+<main>
+<!-- ============ HERO ============ -->
+<section class="hero" id="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="statuspill reveal"><span class="dot"></span>Incoming PhD · Graduate Research Assistant · Fall 2026</span>
+      <h1 class="reveal d1">Tanvir Anjum<br>Joarder</h1>
+      <p class="tag reveal d2">Building interpretable machine learning to decode <span class="grad rotator" id="rot">evolutionary history</span>.</p>
+      <p class="lead reveal d2">Incoming doctoral researcher in the <strong style="color:var(--ink)">DeGiorgio Lab</strong> at the Department of Electrical Engineering &amp; Computer Science, Florida Atlantic University. I build models that are robust, generalisable, and interpretable — across population genomics, smart-grid analytics, and AI for healthcare.</p>
+      <div class="cta reveal d3">
+        <a href="#featured" class="btn btn-accent magnetic">Explore research <i class="ti ti-arrow-right"></i></a>
+        <a href="assets/Tanvir_Anjum_Joarder_CV.pdf" target="_blank" rel="noopener" class="btn btn-outline magnetic"><i class="ti ti-download"></i>Curriculum Vitae</a>
+        <a href="https://scholar.google.com/citations?hl=en&user=fFcWmdwAAAAJ" target="_blank" rel="noopener" class="btn btn-ghost"><i class="ti ti-school"></i>Scholar</a>
+      </div>
+      <div class="hero-stats reveal d3" id="hero-stats">
+        <div class="hstat"><span class="spot"></span><b data-count="5">0</b><span>Publications</span></div>
+        <div class="hstat"><span class="spot"></span><b data-count="84">0</b><span>Citations</span></div>
+        <div class="hstat"><span class="spot"></span><b data-count="9">0</b><span>Research Areas</span></div>
+        <div class="hstat"><span class="spot"></span><b data-count="8"><span class="suf"></span>0</b><span>Years in Research &amp; Industry</span></div>
+        <div class="hstat"><span class="spot"></span><b data-count="6">0</b><span>Projects</span></div>
+        <div class="hstat"><span class="spot"></span><b data-count="6"><span class="suf"></span>0</b><span>Open-Source Repos</span></div>
+      </div>
+    </div>
+    <div class="portrait reveal d2">
+      <div class="ring"></div>
+      <div class="frame">
+        <img src="assets/profile.jpg" alt="Portrait of Tanvir Anjum Joarder" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="fallback" style="display:none"><b>TJ</b><span class="eyebrow">Tanvir Anjum Joarder</span></div>
+      </div>
+      <div class="chip-float cf1"><i class="ti ti-dna-2"></i>Population Genomics</div>
+      <div class="chip-float cf2"><i class="ti ti-bolt"></i>Smart-Grid AI</div>
+    </div>
+  </div>
+  <div class="scrollcue"><i class="ti ti-chevron-down"></i></div>
+</section>
+
+<!-- ============ MARQUEE ============ -->
+<section class="scroller" aria-label="Research interests">
+  <div class="mqmask">
+    <div class="mq" data-dup>
+      <span class="chip"><i class="ti ti-cpu"></i>Machine Learning</span>
+      <span class="chip"><i class="ti ti-binary-tree"></i>Deep Learning</span>
+      <span class="chip"><i class="ti ti-chart-dots-3"></i>Data Science</span>
+      <span class="chip"><i class="ti ti-dna-2"></i>Population Genomics</span>
+      <span class="chip"><i class="ti ti-arrows-shuffle"></i>Natural Selection</span>
+      <span class="chip"><i class="ti ti-sigma"></i>Statistical Genetics</span>
+      <span class="chip"><i class="ti ti-transfer-in"></i>Transfer Learning</span>
+      <span class="chip"><i class="ti ti-world-longitude"></i>South Asian Genomes</span>
+    </div>
+  </div>
+  <div class="mqmask">
+    <div class="mq rev" data-dup>
+      <span class="chip"><i class="ti ti-heartbeat"></i>AI for Healthcare</span>
+      <span class="chip"><i class="ti ti-bulb"></i>Explainable AI</span>
+      <span class="chip"><i class="ti ti-shield-lock"></i>Cybersecurity</span>
+      <span class="chip"><i class="ti ti-bolt"></i>Electricity Theft Detection</span>
+      <span class="chip"><i class="ti ti-plug-connected"></i>Smart Grid Analytics</span>
+      <span class="chip"><i class="ti ti-chart-line"></i>Load Forecasting</span>
+      <span class="chip"><i class="ti ti-charging-pile"></i>EV Charging Infrastructure</span>
+      <span class="chip"><i class="ti ti-map-2"></i>Distribution Network GIS</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section class="section" id="about">
+  <div class="wrap">
+    <p class="eyebrow reveal"><span class="n">01</span> / Biography</p>
+    <h2 class="reveal">About the researcher</h2>
+    <div class="grid" style="grid-template-columns:1.7fr 1fr;gap:48px;margin-top:34px">
+      <div class="reveal">
+        <p style="color:var(--muted);font-size:16.5px">Tanvir Anjum Joarder is an incoming doctoral researcher in the <strong style="color:var(--ink)">DeGiorgio Lab</strong> at the Department of Electrical Engineering and Computer Science, Florida Atlantic University. He joins the program in Fall 2026 to pursue a PhD in Computer Science with a research focus on <em>statistical and machine learning methods for population genomic inference</em>.</p>
+        <p style="color:var(--muted);font-size:16.5px;margin-top:16px">He received his B.Sc. in Computer Science and Engineering from Rajshahi University of Engineering and Technology (RUET), Bangladesh, in 2019. His undergraduate thesis, supervised by Professor A. H. M. Sarowar Sattar, investigated supervised classification for early detection of hepatocellular carcinoma from longitudinal online search-query patterns, and was published at IEEE EICT 2019. He achieved the maximum GPA of 5.00 in both his Higher Secondary (2014) and Secondary School (2012) certificates.</p>
+        <p style="color:var(--muted);font-size:16.5px;margin-top:16px">Since January 2022 he has served as Assistant General Manager (IT) at the <strong style="color:var(--ink)">Bangladesh Rural Electrification Board</strong>, leading machine learning for unit-sales prediction and system-loss forecasting, BERC-tariff billing and anomaly detection, ArcGIS mapping of the 33 kV / 11 kV / 6.35 kV network for SCADA readiness, and transformer load, complaint and website systems for an organisation serving more than 80% of the population of Bangladesh.</p>
+        <p style="color:var(--muted);font-size:16.5px;margin-top:16px">His research interests include convolutional and tensor-based deep learning for selective-sweep detection, transfer learning across demographic histories, statistical inference of natural selection, and machine learning for genomic populations historically underrepresented in published studies — with particular focus on South Asian genomic diversity. In parallel he conducts applied research on ML for the power-distribution sector.</p>
+      </div>
+      <div class="reveal d1">
+        <div class="card" style="position:sticky;top:90px">
+          <span class="spot"></span>
+          <p class="eyebrow" style="margin-bottom:18px">At a glance</p>
+          <div style="display:flex;flex-direction:column;gap:16px">
+            <div style="display:flex;gap:12px"><i class="ti ti-school" style="color:var(--accent);font-size:20px"></i><div><small style="color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.06em">Position</small><div style="font-weight:500;font-size:14px">Incoming PhD · Graduate Research Assistant</div></div></div>
+            <div style="display:flex;gap:12px"><i class="ti ti-flask" style="color:var(--accent);font-size:20px"></i><div><small style="color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.06em">Lab</small><div style="font-weight:500;font-size:14px">DeGiorgio Lab</div></div></div>
+            <div style="display:flex;gap:12px"><i class="ti ti-building-arch" style="color:var(--accent);font-size:20px"></i><div><small style="color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.06em">University</small><div style="font-weight:500;font-size:14px">Florida Atlantic University</div></div></div>
+            <div style="display:flex;gap:12px"><i class="ti ti-map-pin" style="color:var(--accent);font-size:20px"></i><div><small style="color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.06em">Based in</small><div style="font-weight:500;font-size:14px">Boca Raton, FL · Dhaka, BD</div></div></div>
+          </div>
+          <hr class="hairline">
+          <div class="socials" style="margin-top:0">
+            <a href="https://scholar.google.com/citations?hl=en&user=fFcWmdwAAAAJ" target="_blank" rel="noopener"><i class="ti ti-school"></i>Scholar</a>
+            <a href="https://github.com/tanviranjumjoarder" target="_blank" rel="noopener"><i class="ti ti-brand-github"></i>GitHub</a>
+            <a href="https://www.linkedin.com/in/tanvir-anjum-joarder" target="_blank" rel="noopener"><i class="ti ti-brand-linkedin"></i>LinkedIn</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FEATURED RESEARCH ============ -->
+<section class="section" id="featured">
+  <div class="wrap">
+    <p class="eyebrow reveal"><span class="n">02</span> / Featured Research</p>
+    <h2 class="reveal">Flagship research programs</h2>
+    <p class="lead reveal">Six active research threads spanning rural energy systems and computational evolutionary genomics. Each card opens a mini research-lab page with methods, progress, and expected impact.</p>
+    <div class="feat" id="feat-grid">
+
+      <article class="feat-card wide reveal" data-modal="ev">
+        <div class="feat-viz"><canvas data-viz="grid"></canvas><span class="feat-domain"><span class="badge">Energy · Synthetic Data</span></span><span class="feat-num">01</span></div>
+        <div class="feat-body">
+          <h3>A Provenance-Anchored Synthetic Dataset &amp; Validation Framework for EV Charging Station Siting in Rural Distribution Grids</h3>
+          <p class="sig">A reproducible synthetic-data framework that anchors every generated record to documented grid provenance — pole GIS, transformer capacity, feeder topology — enabling defensible EV charger siting where no open dataset exists for rural networks.</p>
+          <div class="feat-prog"><div class="lbl"><span>Dataset &amp; framework design</span><span>35%</span></div><div class="track"><i class="fill" data-fill="35"></i></div></div>
+          <div class="tags"><span class="badge soft">Synthetic Data</span><span class="badge soft">GIS</span><span class="badge soft">Optimization</span><span class="badge soft">Reproducibility</span></div>
+          <div class="feat-foot"><span class="plink" data-modal="ev">Open lab page <i class="ti ti-arrow-up-right"></i></span><span class="badge ok"><i class="ti ti-progress"></i>In progress</span></div>
+        </div>
+      </article>
+
+      <article class="feat-card reveal" data-modal="spillover">
+        <div class="feat-viz"><canvas data-viz="spill"></canvas><span class="feat-domain"><span class="badge">Energy · Causal</span></span><span class="feat-num">02</span></div>
+        <div class="feat-body">
+          <h3>Spatial Deterrence Spillover from Anti-Theft Inspections</h3>
+          <p class="sig">Evidence from a calibrated digital twin of BREB: do inspections in one locality deter electricity theft in neighbouring feeders? A spatial causal-inference study on non-technical losses.</p>
+          <div class="feat-prog"><div class="lbl"><span>Calibration &amp; simulation</span><span>28%</span></div><div class="track"><i class="fill" data-fill="28"></i></div></div>
+          <div class="tags"><span class="badge soft">Digital Twin</span><span class="badge soft">Causal Inference</span><span class="badge soft">Spatial</span></div>
+          <div class="feat-foot"><span class="plink" data-modal="spillover">Open lab page <i class="ti ti-arrow-up-right"></i></span><span class="badge ok"><i class="ti ti-progress"></i>In progress</span></div>
+        </div>
+      </article>
+
+      <article class="feat-card reveal d1" data-modal="dp">
+        <div class="feat-viz"><canvas data-viz="gan"></canvas><span class="feat-domain"><span class="badge">Energy · Privacy</span></span><span class="feat-num">03</span></div>
+        <div class="feat-body">
+          <h3>Differentially Private Synthetic Data for Electricity Distribution</h3>
+          <p class="sig">Generative adversarial pipelines that release shareable consumer and load data with formal differential-privacy guarantees — unlocking open research on a 100-million-consumer grid without exposing individuals.</p>
+          <div class="feat-prog"><div class="lbl"><span>Pipeline prototyping</span><span>22%</span></div><div class="track"><i class="fill" data-fill="22"></i></div></div>
+          <div class="tags"><span class="badge soft">GANs</span><span class="badge soft">Differential Privacy</span><span class="badge soft">PyTorch</span></div>
+          <div class="feat-foot"><span class="plink" data-modal="dp">Open lab page <i class="ti ti-arrow-up-right"></i></span><span class="badge ok"><i class="ti ti-progress"></i>In progress</span></div>
+        </div>
+      </article>
+
+      <article class="feat-card wide reveal" data-modal="sweep">
+        <div class="feat-viz"><canvas data-viz="sweep"></canvas><span class="feat-domain"><span class="badge">Genomics · Deep Learning</span></span><span class="feat-num">04</span></div>
+        <div class="feat-body">
+          <h3>Deep Learning for Selective Sweep Detection</h3>
+          <p class="sig">Convolutional and tensor-based architectures that treat raw haplotype alignments as multi-channel images to classify and localise selective sweeps — trained on coalescent simulations and benchmarked against likelihood scans.</p>
+          <div class="feat-prog"><div class="lbl"><span>Method development</span><span>45%</span></div><div class="track"><i class="fill" data-fill="45"></i></div></div>
+          <div class="tags"><span class="badge soft">CNN</span><span class="badge soft">Coalescent Sim</span><span class="badge soft">discoal</span><span class="badge soft">Population Genetics</span></div>
+          <div class="feat-foot"><span class="plink" data-modal="sweep">Open lab page <i class="ti ti-arrow-up-right"></i></span><span class="badge warn"><i class="ti ti-flask"></i>Core thread</span></div>
+        </div>
+      </article>
+
+      <article class="feat-card reveal" data-modal="transfer">
+        <div class="feat-viz"><canvas data-viz="transfer"></canvas><span class="feat-domain"><span class="badge">Genomics · Transfer</span></span><span class="feat-num">05</span></div>
+        <div class="feat-body">
+          <h3>Transfer Learning Across Population Histories</h3>
+          <p class="sig">Domain adaptation that closes the simulation-to-reality gap, letting selection detectors generalise to populations with demographic histories unseen during training.</p>
+          <div class="feat-prog"><div class="lbl"><span>Early experiments</span><span>30%</span></div><div class="track"><i class="fill" data-fill="30"></i></div></div>
+          <div class="tags"><span class="badge soft">Transfer Learning</span><span class="badge soft">Domain Adaptation</span><span class="badge soft">Robustness</span></div>
+          <div class="feat-foot"><span class="plink" data-modal="transfer">Open lab page <i class="ti ti-arrow-up-right"></i></span><span class="badge ok"><i class="ti ti-progress"></i>In progress</span></div>
+        </div>
+      </article>
+
+      <article class="feat-card reveal d1" data-modal="southasia">
+        <div class="feat-viz"><canvas data-viz="popmap"></canvas><span class="feat-domain"><span class="badge">Genomics · Equity</span></span><span class="feat-num">06</span></div>
+        <div class="feat-body">
+          <h3>South Asian Population Genomics</h3>
+          <p class="sig">Extending selection inference and demographic modelling to South Asian populations — roughly a quarter of humanity, yet markedly underrepresented in published genomic studies.</p>
+          <div class="feat-prog"><div class="lbl"><span>Data assembly &amp; scoping</span><span>20%</span></div><div class="track"><i class="fill" data-fill="20"></i></div></div>
+          <div class="tags"><span class="badge soft">Demographic Inference</span><span class="badge soft">Diversity</span><span class="badge soft">msprime</span></div>
+          <div class="feat-foot"><span class="plink" data-modal="southasia">Open lab page <i class="ti ti-arrow-up-right"></i></span><span class="badge ok"><i class="ti ti-progress"></i>In progress</span></div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ RESEARCH VISION ============ -->
+<section class="section" id="vision">
+  <div class="wrap">
+    <p class="eyebrow reveal"><span class="n">03</span> / Research Vision</p>
+    <h2 class="reveal">Why this research matters</h2>
+    <p class="lead reveal">A through-line connects every thread: build machine-learning methods that are trustworthy enough to inform real scientific and infrastructure decisions — from reconstructing human evolutionary history to keeping a national grid fair and reliable.</p>
+    <div class="vision-grid">
+      <div class="vcard reveal"><span class="spot"></span>
+        <div class="vh">Current Vision</div><div class="vy">2026 – 2028</div>
+        <h3>Methods you can trust</h3>
+        <p>Develop interpretable deep-learning detectors for natural selection and non-technical loss, validated against principled statistical baselines. Establish reproducible, provenance-anchored datasets where none exist — so results are defensible and reusable.</p>
+        <div class="vbar"><i style="width:34%"></i></div>
+      </div>
+      <div class="vcard reveal d1"><span class="spot"></span>
+        <div class="vh">5-Year Vision</div><div class="vy">2028 – 2031</div>
+        <h3>Generalise across worlds</h3>
+        <p>Bridge the simulation-to-reality gap with transfer learning, extend inference to underrepresented populations, and carry the same robustness toolkit from genomes to grid telemetry. Release open-source methods adopted by other labs.</p>
+        <div class="vbar"><i style="width:20%"></i></div>
+      </div>
+      <div class="vcard reveal d2"><span class="spot"></span>
+        <div class="vh">Long-Term Vision</div><div class="vy">2031 +</div>
+        <h3>Equitable scientific AI</h3>
+        <p>Lead an independent research group at the interface of statistical genetics, machine learning, and energy systems — producing interpretable methods that serve populations and infrastructures historically left out of the data, and training the next generation to do the same.</p>
+        <div class="vbar"><i style="width:10%"></i></div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ============ RESEARCH AREAS ============ -->
+<section class="section" id="areas">
+  <div class="wrap">
+    <p class="eyebrow reveal"><span class="n">04</span> / Research Areas</p>
+    <h2 class="reveal">Areas of inquiry</h2>
+    <p class="lead reveal">Seven methodological areas, each with a live visualization. Hover to animate; click any card to open methods, tools, datasets, publications, and future directions.</p>
+    <div class="areas" id="areas-grid">
+      <article class="area reveal" data-modal="area-ml"><div class="area-viz"><canvas data-viz="ml"></canvas></div><div class="area-bd"><div class="ic"><i class="ti ti-cpu"></i></div><h3>Machine Learning</h3><p>Supervised, unsupervised and representation learning that transfers across domains — from genomes to national-scale grid telemetry.</p><span class="more">Explore area <i class="ti ti-arrow-right"></i></span></div></article>
+      <article class="area reveal d1" data-modal="area-dl"><div class="area-viz"><canvas data-viz="dl"></canvas></div><div class="area-bd"><div class="ic"><i class="ti ti-binary-tree"></i></div><h3>Deep Learning</h3><p>Convolutional and tensor-based architectures that treat structured scientific signals as multi-channel images for inference.</p><span class="more">Explore area <i class="ti ti-arrow-right"></i></span></div></article>
+      <article class="area reveal d2" data-modal="area-ds"><div class="area-viz"><canvas data-viz="data"></canvas></div><div class="area-bd"><div class="ic"><i class="ti ti-chart-dots-3"></i></div><h3>Data Science</h3><p>Turning large, messy, real-world datasets — billing, sensor and genomic — into reproducible, decision-grade insight.</p><span class="more">Explore area <i class="ti ti-arrow-right"></i></span></div></article>
+      <article class="area reveal" data-modal="area-genomics"><div class="area-viz"><canvas data-viz="genomics"></canvas></div><div class="area-bd"><div class="ic"><i class="ti ti-dna-2"></i></div><h3>Population Genomics</h3><p>Detecting natural selection and reconstructing demographic history, with emphasis on underrepresented populations.</p><span class="more">Explore area <i class="ti ti-arrow-right"></i></span></div></article>
+      <article class="area reveal d1" data-modal="area-health"><div class="area-viz"><canvas data-viz="health"></canvas></div><div class="area-bd"><div class="ic"><i class="ti ti-heartbeat"></i></div><h3>AI for Healthcare</h3><p>Machine learning over noisy, temporally structured biomedical signals, including early disease detection from behavioural data.</p><span class="more">Explore area <i class="ti ti-arrow-right"></i></span></div></article>
+      <article class="area reveal d2" data-modal="area-cyber"><div class="area-viz"><canvas data-viz="cyber"></canvas></div><div class="area-bd"><div class="ic"><i class="ti ti-shield-lock"></i></div><h3>Cybersecurity</h3><p>Anomaly and fraud detection on infrastructure data, robustness under adversarial behaviour, and security for utility systems.</p><span class="more">Explore area <i class="ti ti-arrow-right"></i></span></div></article>
+      <article class="area reveal" data-modal="area-xai"><div class="area-viz"><canvas data-viz="xai"></canvas></div><div class="area-bd"><div class="ic"><i class="ti ti-bulb"></i></div><h3>Explainable AI</h3><p>Interpretable, trustworthy models for high-stakes scientific and infrastructure decisions where the 'why' matters.</p><span class="more">Explore area <i class="ti ti-arrow-right"></i></span></div></article>
+      <article class="area reveal d1" style="display:grid;place-items:center;cursor:default" aria-hidden="true"><div class="area-bd" style="text-align:center;padding:30px"><div class="ic" style="margin:0 auto;background:var(--grad);color:#04111f"><i class="ti ti-atom-2"></i></div><h3 style="margin-top:16px">Method-first</h3><p>Every area shares one commitment: robust, generalisable, interpretable methods — wherever the data comes from.</p></div></article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ RESEARCH GRAPH ============ -->
+<section class="section" id="graph">
+  <div class="wrap">
+    <p class="eyebrow reveal"><span class="n">05</span> / Research Graph</p>
+    <h2 class="reveal">A connected research program</h2>
+    <p class="lead reveal">The threads are not separate. This interactive knowledge graph shows how methods flow between domains. Drag to explore, hover a node to reveal its projects, papers, methods, and tools.</p>
+    <div class="graph-wrap reveal" id="graph-wrap">
+      <canvas id="graph-canvas"></canvas>
+      <div class="graph-tip" id="graph-tip"></div>
+      <div class="graph-hint"><i class="ti ti-hand-finger"></i> hover · drag nodes</div>
+      <div class="graph-legend">
+        <span><i style="background:#38BDF8"></i>Methods</span>
+        <span><i style="background:#a78bfa"></i>Genomics</span>
+        <span><i style="background:#10B981"></i>Energy &amp; Infrastructure</span>
+        <span><i style="background:#f0b45a"></i>Applications</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GENOMICS VISUALIZATION LAB ============ -->
+<section class="section" id="lab">
+  <div class="wrap">
+    <p class="eyebrow reveal"><span class="n">06</span> / Genomics Visualization Lab</p>
+    <h2 class="reveal">Genomics visualization lab</h2>
+    <p class="lead reveal">Live, code-driven scientific visualizations of the structures this research operates on — from the double helix to selective sweeps, population trees, and coalescent genealogies.</p>
+    <div class="lab reveal">
+      <div class="lab-tabs" role="tablist">
+        <button class="lab-tab" data-lab="helix" aria-pressed="true"><i class="ti ti-dna-2"></i>DNA Helix</button>
+        <button class="lab-tab" data-lab="sweep" aria-pressed="false"><i class="ti ti-chart-histogram"></i>Selective Sweep</button>
+        <button class="lab-tab" data-lab="tree" aria-pressed="false"><i class="ti ti-binary-tree-2"></i>Population Tree</button>
+        <button class="lab-tab" data-lab="coalescent" aria-pressed="false"><i class="ti ti-git-merge"></i>Coalescent</button>
+        <button class="lab-tab" data-lab="haplotype" aria-pressed="false"><i class="ti ti-grid-dots"></i>Haplotypes</button>
+      </div>
+      <div class="lab-stage">
+        <div class="lab-canvas-wrap"><canvas id="lab-canvas"></canvas></div>
+        <div class="lab-info">
+          <div class="sub" id="lab-sub">Structure</div>
+          <h3 id="lab-title">DNA Double Helix</h3>
+          <p id="lab-desc">Genetic information is encoded along two antiparallel strands. Variation in this sequence between individuals is the raw signal every method here learns from.</p>
+          <div class="facts" id="lab-facts"></div>
+          <div class="lab-ctrl">
+            <button class="btn btn-outline" id="lab-play"><i class="ti ti-player-pause"></i>Pause</button>
+            <button class="btn btn-ghost" id="lab-reseed"><i class="ti ti-refresh"></i>Reseed</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ============ PUBLICATIONS ============ -->
+<section class="section" id="publications">
+  <div class="wrap">
+    <p class="eyebrow reveal"><span class="n">07</span> / Publications</p>
+    <h2 class="reveal">Selected publications</h2>
+    <p class="lead reveal">Author shown in bold. Search, filter and sort below — export a citation or BibTeX from any entry. For the complete, live list, visit Google Scholar.</p>
+    <div class="metrics reveal">
+      <div class="metric"><b data-count="5">0</b><span>Publications</span></div>
+      <div class="metric"><b data-count="84">0</b><span>Citations</span></div>
+      <div class="metric"><b data-count="4">0</b><span>h-index</span></div>
+      <div class="metric"><b data-count="1">0</b><span>i10-index</span></div>
+    </div>
+    <div class="pubtools reveal">
+      <div class="search"><i class="ti ti-search"></i><input id="pub-search" type="text" placeholder="Search title, author, venue…" aria-label="Search publications"></div>
+      <div class="filters" role="group" aria-label="Filter by type">
+        <button data-f="All" aria-pressed="true">All</button>
+        <button data-f="Journal" aria-pressed="false">Journal</button>
+        <button data-f="Conference" aria-pressed="false">Conference</button>
+      </div>
+      <select class="sortsel" id="pub-sort" aria-label="Sort publications">
+        <option value="cites">Sort: Most cited</option>
+        <option value="year">Sort: Newest</option>
+        <option value="yearold">Sort: Oldest</option>
+      </select>
+    </div>
+    <div id="publist">
+      <article class="pub reveal" data-type="Journal" data-year="2025" data-cites="55" data-pub="0"><div class="ref">[1]</div><div>
+        <h3><a href="https://link.springer.com/article/10.1007/s11356-025-36284-9" target="_blank" rel="noopener">A comprehensive review of carbon dioxide capture, transportation, utilization, and storage: a source of future energy</a></h3>
+        <p class="auth">M. S. A. Joarder, M. S. Islam, M. H. Hasan, A. Kutub, M. F. Kabir, F. Rashid, <b>T. A. Joarder</b></p>
+        <p class="ven">Environmental Science and Pollution Research, vol. 32, pp. 9299–9332, Springer, March 2025.</p>
+        <p class="doi">DOI: 10.1007/s11356-025-36284-9</p>
+        <div class="tags"><span class="badge">Q1 Journal</span><span class="cites"><i class="ti ti-quote"></i>55 citations</span>
+          <a class="plink" href="https://link.springer.com/article/10.1007/s11356-025-36284-9" target="_blank" rel="noopener"><i class="ti ti-external-link"></i>Springer</a>
+          <a class="plink" href="https://doi.org/10.1007/s11356-025-36284-9" target="_blank" rel="noopener"><i class="ti ti-link"></i>DOI</a>
+          <a class="plink" href="https://scholar.google.com/scholar?cluster=14651681253337623933" target="_blank" rel="noopener"><i class="ti ti-school"></i>Scholar</a>
+          <span class="plink" data-cite="0"><i class="ti ti-quote"></i>Cite</span><span class="plink" data-bibtex="0"><i class="ti ti-code"></i>BibTeX</span></div>
+      </div></article>
+      <article class="pub reveal" data-type="Conference" data-year="2019" data-cites="15" data-pub="1"><div class="ref">[2]</div><div>
+        <h3><a href="https://www.researchgate.net/publication/346687530" target="_blank" rel="noopener">Solution to air pollution for removing CO₂ and SO₂ from flue gases: a prospective approach</a></h3>
+        <p class="auth">M. S. Joarder, F. Rashid, <b>T. A. Joarder</b></p>
+        <p class="ven">Proc. International Conference on Mechanical Engineering and Renewable Energy (ICMERE), pp. 11–13, December 2019.</p>
+        <div class="tags"><span class="badge">Peer reviewed</span><span class="cites"><i class="ti ti-quote"></i>15 citations</span>
+          <a class="plink" href="https://www.researchgate.net/publication/346687530" target="_blank" rel="noopener"><i class="ti ti-external-link"></i>ResearchGate</a>
+          <a class="plink" href="https://scholar.google.com/scholar?cluster=15554724011542225617" target="_blank" rel="noopener"><i class="ti ti-school"></i>Scholar</a>
+          <span class="plink" data-cite="1"><i class="ti ti-quote"></i>Cite</span><span class="plink" data-bibtex="1"><i class="ti ti-code"></i>BibTeX</span></div>
+      </div></article>
+      <article class="pub reveal" data-type="Conference" data-year="2021" data-cites="7" data-pub="2"><div class="ref">[3]</div><div>
+        <h3><a href="https://www.researchgate.net/publication/359928987" target="_blank" rel="noopener">Electricity generation from the rotational speed of train wheel: an approach of future energy</a></h3>
+        <p class="auth">M. S. A. Joarder, F. Rashid, M. G. Zakir, <b>T. A. Joarder</b></p>
+        <p class="ven">Proc. International Conference on Mechanical Engineering and Renewable Energy 2021 (ICMERE), pp. 12–14, December 2021.</p>
+        <div class="tags"><span class="badge">Conference</span><span class="cites"><i class="ti ti-quote"></i>7 citations</span>
+          <a class="plink" href="https://www.researchgate.net/publication/359928987" target="_blank" rel="noopener"><i class="ti ti-external-link"></i>ResearchGate</a>
+          <a class="plink" href="https://scholar.google.com/scholar?cluster=11243375042023998161" target="_blank" rel="noopener"><i class="ti ti-school"></i>Scholar</a>
+          <span class="plink" data-cite="2"><i class="ti ti-quote"></i>Cite</span><span class="plink" data-bibtex="2"><i class="ti ti-code"></i>BibTeX</span></div>
+      </div></article>
+      <article class="pub reveal" data-type="Conference" data-year="2019" data-cites="5" data-pub="3"><div class="ref">[4]</div><div>
+        <h3><a href="https://www.researchgate.net/publication/342752013" target="_blank" rel="noopener">Safety at industrial working place by separating Carbon Dioxide Gas</a></h3>
+        <p class="auth">M. Joarder, <b>T. Joarder</b>, F. Rashid</p>
+        <p class="ven">Proc. International Conference on Mechanical, Industrial and Materials Engineering (ICMIME), RUET, December 17, 2019.</p>
+        <div class="tags"><span class="badge">Conference</span><span class="cites"><i class="ti ti-quote"></i>5 citations</span>
+          <a class="plink" href="https://www.researchgate.net/publication/342752013" target="_blank" rel="noopener"><i class="ti ti-external-link"></i>ResearchGate</a>
+          <a class="plink" href="https://scholar.google.com/scholar?cluster=12161515698194686158" target="_blank" rel="noopener"><i class="ti ti-school"></i>Scholar</a>
+          <span class="plink" data-cite="3"><i class="ti ti-quote"></i>Cite</span><span class="plink" data-bibtex="3"><i class="ti ti-code"></i>BibTeX</span></div>
+      </div></article>
+      <article class="pub reveal" data-type="Conference" data-year="2019" data-cites="2" data-pub="4"><div class="ref">[5]</div><div>
+        <h3><a href="https://ieeexplore.ieee.org/abstract/document/9068842/" target="_blank" rel="noopener">Detecting Liver Cancer from Online Search Logs</a></h3>
+        <p class="auth"><b>T. A. Joarder</b>, B. Ahmed, A. H. M. S. Sattar</p>
+        <p class="ven">2019 4th International Conference on Electrical Information and Communication Technology (EICT), IEEE, Khulna, Bangladesh, December 20, 2019.</p>
+        <p class="doi">DOI: 10.1109/EICT48899.2019.9068842</p>
+        <div class="tags"><span class="badge">IEEE · First author</span><span class="cites"><i class="ti ti-quote"></i>2 citations</span>
+          <a class="plink" href="https://ieeexplore.ieee.org/abstract/document/9068842/" target="_blank" rel="noopener"><i class="ti ti-external-link"></i>IEEE Xplore</a>
+          <a class="plink" href="https://doi.org/10.1109/EICT48899.2019.9068842" target="_blank" rel="noopener"><i class="ti ti-link"></i>DOI</a>
+          <a class="plink" href="https://scholar.google.com/scholar?cluster=12150679263949129567" target="_blank" rel="noopener"><i class="ti ti-school"></i>Scholar</a>
+          <span class="plink" data-cite="4"><i class="ti ti-quote"></i>Cite</span><span class="plink" data-bibtex="4"><i class="ti ti-code"></i>BibTeX</span></div>
+      </div></article>
+    </div>
+    <p class="palette-empty" id="pub-empty" style="display:none">No publications match your search.</p>
+  </div>
+</section>
+
+<!-- ============ OPEN SOURCE RESEARCH ============ -->
+<section class="section" id="opensource">
+  <div class="wrap">
+    <p class="eyebrow reveal"><span class="n">08</span> / Open Source Research</p>
+    <h2 class="reveal">Research software &amp; pipelines</h2>
+    <p class="lead reveal">Reproducible code is part of the contribution. Below are active and planned repositories — research pipelines, simulation tooling, and datasets. Stats are wired for live GitHub integration.</p>
+    <div class="grid cols-3 reveal" id="repos" style="margin-top:36px"></div>
+    <p class="eyebrow reveal" style="margin-top:24px;display:block">Live stats are placeholders today and update from the GitHub API once repositories are public.</p>
+  </div>
+</section>
+
+<!-- ============ DATASET SHOWCASE ============ -->
+<section class="section" id="datasets">
+  <div class="wrap">
+    <p class="eyebrow reveal"><span class="n">09</span> / Dataset Showcase</p>
+    <h2 class="reveal">Datasets</h2>
+    <p class="lead reveal">Real and synthetic datasets powering this research — from a 100-million-consumer distribution grid to coalescent simulations. Synthetic sets are released when they are more informative, shareable, and privacy-preserving than the raw source.</p>
+    <table class="dtable reveal">
+      <thead><tr><th>Dataset</th><th>Domain</th><th>Type</th><th>Size</th><th>Availability</th></tr></thead>
+      <tbody id="dataset-body"></tbody>
+    </table>
+  </div>
+</section>
+<!-- ============ PROJECTS ============ -->
+<section class="section" id="projects">
+  <div class="wrap">
+    <p class="eyebrow reveal"><span class="n">10</span> / Current &amp; Past Projects</p>
+    <h2 class="reveal">Engineering &amp; research projects</h2>
+    <p class="lead reveal">From peer-reviewed research pipelines to national-scale systems serving over a hundred million electricity consumers. Click any project for methodology and outcomes.</p>
+    <div class="grid cols-3" style="margin-top:34px">
+      <article class="proj reveal" data-modal="proj-liver"><div class="proj-viz"><canvas data-viz="health"></canvas></div><div class="proj-bd"><div class="top"><span class="eyebrow">Research</span><span class="rcode">2019</span></div><h3>Liver Cancer Detection from Search Logs</h3><p>Supervised pipeline benchmarking six classifiers — Random Forest reached 97.5% — for early hepatocellular-carcinoma detection from longitudinal online search-query patterns. Published at IEEE EICT 2019.</p><div class="tags"><span class="badge soft">python</span><span class="badge soft">scikit-learn</span><span class="badge soft">random-forest</span></div><div class="proj-links"><a class="plink" href="https://ieeexplore.ieee.org/abstract/document/9068842/" target="_blank" rel="noopener"><i class="ti ti-file-text"></i>Paper</a><span class="plink" data-modal="proj-liver"><i class="ti ti-layout-grid"></i>Details</span></div></div></article>
+
+      <article class="proj reveal d1" data-modal="proj-platform"><div class="proj-viz"><canvas data-viz="data"></canvas></div><div class="proj-bd"><div class="top"><span class="eyebrow">Engineering</span><span class="rcode">2022 – Present</span></div><h3>National Consumer Analytics Platform</h3><p>Operational analytics over the national rural grid: a BERC-tariff billing engine across industrial, commercial, residential and charity categories; transformer-overload detection; and integrated complaint registration and call routing.</p><div class="tags"><span class="badge soft">oracle</span><span class="badge soft">mysql</span><span class="badge soft">python</span></div><div class="proj-links"><span class="plink" data-modal="proj-platform"><i class="ti ti-layout-grid"></i>Details</span></div></div></article>
+
+      <article class="proj reveal d2" data-modal="proj-gis"><div class="proj-viz"><canvas data-viz="grid"></canvas></div><div class="proj-bd"><div class="top"><span class="eyebrow">Engineering</span><span class="rcode">2022</span></div><h3>GIS Mapping of the Distribution Network</h3><p>Integration of the national 33 kV and 11 kV network into a unified ArcGIS layer. Every pole, transformer and conductor georeferenced and linked to telemetry, enabling spatial load/outage analytics and automated single-line diagrams.</p><div class="tags"><span class="badge soft">arcgis</span><span class="badge soft">gis</span><span class="badge soft">sql</span></div><div class="proj-links"><span class="plink" data-modal="proj-gis"><i class="ti ti-layout-grid"></i>Details</span></div></div></article>
+
+      <article class="proj reveal" data-modal="proj-theft"><div class="proj-viz"><canvas data-viz="cyber"></canvas></div><div class="proj-bd"><div class="top"><span class="eyebrow">Applied Research</span><span class="rcode">2024</span></div><h3>Electricity Theft Detection</h3><p>Supervised and unsupervised anomaly detection over smart-meter profiles to flag non-technical losses. Benchmarked under realistic class imbalance and adversarial behaviour for the national rural grid.</p><div class="tags"><span class="badge soft">python</span><span class="badge soft">xgboost</span><span class="badge soft">anomaly-detection</span></div><div class="proj-links"><span class="plink" data-modal="proj-theft"><i class="ti ti-layout-grid"></i>Details</span></div></div></article>
+
+      <article class="proj reveal d1" data-modal="proj-ev"><div class="proj-viz"><canvas data-viz="spill"></canvas></div><div class="proj-bd"><div class="top"><span class="eyebrow">Applied Research</span><span class="rcode">2024</span></div><h3>EV Charging Demand Modelling</h3><p>Data-driven modelling of EV charging demand on rural feeders. Investigates impact of large-scale EV adoption on transformer loading and proposes siting criteria for public charging across the BREB territory.</p><div class="tags"><span class="badge soft">ev-grid</span><span class="badge soft">optimization</span><span class="badge soft">forecasting</span></div><div class="proj-links"><span class="plink" data-modal="proj-ev"><i class="ti ti-layout-grid"></i>Details</span></div></div></article>
+
+      <article class="proj reveal d2" data-modal="proj-game"><div class="proj-viz"><canvas data-viz="dl"></canvas></div><div class="proj-bd"><div class="top"><span class="eyebrow">Side</span><span class="rcode">2019</span></div><h3>Infinity Run: Android Game</h3><p>Endless-runner mobile game in Unity with C# and 2D/3D assets modelled in Blender. Built under the Government of Bangladesh's Capacity Building for Mobile Game Development Program.</p><div class="tags"><span class="badge soft">unity</span><span class="badge soft">c#</span><span class="badge soft">blender</span></div><div class="proj-links"><span class="plink" data-modal="proj-game"><i class="ti ti-layout-grid"></i>Details</span></div></div></article>
+    </div>
+  </div>
+</section>
+<!-- ============ RESEARCH TIMELINE ============ -->
+<section class="section" id="timeline">
+  <div class="wrap">
+    <p class="eyebrow reveal"><span class="n">11</span> / Research Timeline</p>
+    <h2 class="reveal">A scientific career, by year</h2>
+    <p class="lead reveal">Milestones from undergraduate research to the doctoral program — and the road ahead.</p>
+  </div>
+  <div class="wrap">
+    <div class="rtl reveal">
+      <div class="rtl-track">
+        <div class="rtl-node"><div class="yr">2015</div><div class="pin"></div><div class="rc"><h4>Started CSE at RUET</h4><p>Began B.Sc. in Computer Science &amp; Engineering, Rajshahi University of Engineering &amp; Technology.</p></div></div>
+        <div class="rtl-node"><div class="yr">2019</div><div class="pin"></div><div class="rc"><h4>IEEE EICT Publication</h4><p>First-author paper on liver-cancer detection from search logs; completed B.Sc.</p></div></div>
+        <div class="rtl-node"><div class="yr">2022</div><div class="pin"></div><div class="rc"><h4>Joined BREB</h4><p>Assistant General Manager (IT) — ML, billing, GIS and load systems at national scale.</p></div></div>
+        <div class="rtl-node"><div class="yr">2025</div><div class="pin"></div><div class="rc"><h4>Springer Journal Publication</h4><p>Co-authored Q1 review in Environmental Science and Pollution Research.</p></div></div>
+        <div class="rtl-node"><div class="yr">2026</div><div class="pin" style="background:var(--grad-2)"></div><div class="rc" style="border-color:var(--accent)"><h4>FAU PhD <span class="badge" style="vertical-align:middle">Now</span></h4><p>Incoming doctoral researcher, DeGiorgio Lab, Florida Atlantic University.</p></div></div>
+        <div class="rtl-node future"><div class="yr">2028</div><div class="pin"></div><div class="rc"><h4>First-author method paper</h4><p>Projected: novel deep architecture for selective-sweep detection.</p></div></div>
+        <div class="rtl-node future"><div class="yr">2031</div><div class="pin"></div><div class="rc"><h4>Dissertation &amp; defence</h4><p>Projected: open-source method release and research job market.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ JOURNEY MAP ============ -->
+<section class="section" id="journey">
+  <div class="wrap">
+    <p class="eyebrow reveal"><span class="n">12</span> / Research Journey Map</p>
+    <h2 class="reveal">From the Bengal delta to Florida</h2>
+    <p class="lead reveal">A research path that begins in rural Bangladesh and reaches an American research university — carrying the problems of a 100-million-consumer grid into computational genomics.</p>
+    <div class="journey-wrap reveal">
+      <svg id="journeysvg" viewBox="0 0 1000 440" role="img" aria-label="Map of research journey from Bangladesh to Florida">
+        <defs>
+          <radialGradient id="land" cx="50%" cy="40%" r="70%"><stop offset="0" stop-color="rgba(56,189,248,.16)"/><stop offset="1" stop-color="rgba(56,189,248,0)"/></radialGradient>
+          <linearGradient id="arc" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#38BDF8"/><stop offset="1" stop-color="#a78bfa"/></linearGradient>
+          <filter id="soft"><feGaussianBlur stdDeviation="6"/></filter>
+        </defs>
+        <g id="graticule" stroke="rgba(148,163,184,.12)" stroke-width="1" fill="none"></g>
+        <!-- North America hint -->
+        <path d="M120 150 q40 -40 110 -30 q60 8 70 60 q40 20 10 70 q-30 40 -120 30 q-70 -10 -90 -60 q-15 -50 10 -70 z" fill="url(#land)" stroke="rgba(56,189,248,.25)" stroke-width="1.2"/>
+        <!-- South Asia hint -->
+        <path d="M720 150 q50 -30 110 -10 q55 18 50 70 q-5 55 -70 75 q-60 16 -100 -20 q-35 -34 -25 -75 q8 -38 35 -40 z" fill="url(#land)" stroke="rgba(167,139,250,.25)" stroke-width="1.2"/>
+        <path id="route" d="M250 215 C 430 80, 620 80, 800 210" fill="none" stroke="url(#arc)" stroke-width="2.5" stroke-dasharray="7 9" opacity=".9"/>
+        <g id="plane"><circle r="4" fill="#fff"/><circle r="9" fill="rgba(56,189,248,.3)"/></g>
+        <!-- stops -->
+        <g class="jstop" data-x="795" data-y="232"><circle cx="795" cy="232" r="6" fill="#a78bfa"/><circle cx="795" cy="232" r="13" fill="none" stroke="#a78bfa" stroke-width="1.5" opacity=".5"/><text x="795" y="262" text-anchor="middle" fill="#cbd5e1" font-size="13" font-family="Inter">Chuadanga · RUET</text><text x="795" y="280" text-anchor="middle" fill="#94A3B8" font-size="11" font-family="JetBrains Mono">Bangladesh · 2010–2019</text></g>
+        <g class="jstop"><circle cx="820" cy="200" r="6" fill="#10B981"/><circle cx="820" cy="200" r="13" fill="none" stroke="#10B981" stroke-width="1.5" opacity=".5"/><text x="820" y="158" text-anchor="middle" fill="#cbd5e1" font-size="13" font-family="Inter">Dhaka · BREB</text><text x="820" y="176" text-anchor="middle" fill="#94A3B8" font-size="11" font-family="JetBrains Mono">2022–2026</text></g>
+        <g class="jstop"><circle cx="248" cy="220" r="6" fill="#38BDF8"/><circle cx="248" cy="220" r="13" fill="none" stroke="#38BDF8" stroke-width="1.5" opacity=".5"/><text x="248" y="250" text-anchor="middle" fill="#cbd5e1" font-size="13" font-family="Inter">Boca Raton · FAU</text><text x="248" y="268" text-anchor="middle" fill="#94A3B8" font-size="11" font-family="JetBrains Mono">2026 →</text></g>
+        <text x="150" y="120" fill="#64748b" font-size="11" font-family="JetBrains Mono">NORTH AMERICA</text>
+        <text x="760" y="120" fill="#64748b" font-size="11" font-family="JetBrains Mono">SOUTH ASIA</text>
+      </svg>
+      <div class="journey-legend">
+        <span class="jl"><b>01</b> Chuadanga &amp; Rajshahi — schooling and B.Sc. at RUET</span>
+        <span class="jl"><b>02</b> Dhaka — Bangladesh Rural Electrification Board</span>
+        <span class="jl"><b>03</b> Boca Raton — PhD, Florida Atlantic University</span>
+        <span class="jl"><b>04</b> Next — global research collaborations</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EXPERIENCE & EDUCATION ============ -->
+<section class="section" id="experience">
+  <div class="wrap">
+    <p class="eyebrow reveal"><span class="n">13</span> / Experience &amp; Education</p>
+    <h2 class="reveal">Academic &amp; professional trajectory</h2>
+    <div class="grid cols-2" style="margin-top:36px;gap:48px">
+      <div class="reveal">
+        <p class="eyebrow" style="margin-bottom:22px;display:block">Experience</p>
+        <div class="tl">
+          <div class="tl-item"><span class="dot"></span><div class="per">Aug 2026 – Present</div><h4>Doctoral Researcher, DeGiorgio Lab <span class="badge" style="vertical-align:middle">Incoming</span></h4><div class="org">Dept. of EECS, Florida Atlantic University · Boca Raton, FL</div><p>PhD in Computer Science. Machine learning and statistical methods for population genomic inference, including deep learning for detection of natural selection and demographic-history reconstruction.</p></div>
+          <div class="tl-item"><span class="dot"></span><div class="per">Jan 2022 – Aug 2026</div><h4>Assistant General Manager, Information Technology</h4><div class="org">Bangladesh Rural Electrification Board (BREB) · Dhaka</div><p>Led IT for electricity service to 80%+ of Bangladesh: ML for sales/loss forecasting; BERC-tariff billing &amp; anomaly detection; ArcGIS mapping of 33/11/6.35 kV lines for SCADA; transformer-load, complaint &amp; website systems. In-house trainer on ML, cybersecurity and GIS.</p></div>
+          <div class="tl-item"><span class="dot"></span><div class="per">Jan 2018 – Jun 2019</div><h4>Undergraduate Researcher</h4><div class="org">Dept. of CSE, RUET · Supervisor: Prof. A. H. M. Sarowar Sattar</div><p>Bachelor's thesis on ML detection of liver cancer from longitudinal search-query patterns. Published at IEEE EICT 2019.</p></div>
+          <div class="tl-item"><span class="dot"></span><div class="per">Oct 2018 – Nov 2018</div><h4>Intern, Microsoft Young Bangla Program</h4><div class="org">Microsoft Bangladesh &amp; Centre for Research and Information</div><p>Inaugural Microsoft Young Bangla cohort on entrepreneurship, innovation and product development.</p></div>
+          <div class="tl-item"><span class="dot"></span><div class="per">Dec 2017 – May 2018</div><h4>Brand Ambassador, Samsung EDGE 2018</h4><div class="org">Samsung Bangladesh</div><p>National brand-ambassador cohort for the Samsung Galaxy line.</p></div>
+        </div>
+      </div>
+      <div class="reveal d1">
+        <p class="eyebrow" style="margin-bottom:22px;display:block">Education</p>
+        <div class="tl">
+          <div class="tl-item"><span class="dot"></span><div class="per">2026 – 2031</div><h4>Ph.D. in Computer Science <span class="badge" style="vertical-align:middle">Incoming</span></h4><div class="org">Florida Atlantic University · DeGiorgio Lab</div><p>Statistical and machine-learning methods for population genomic inference.</p></div>
+          <div class="tl-item"><span class="dot"></span><div class="per">2015 – 2019</div><h4>B.Sc. in Computer Science &amp; Engineering</h4><div class="org">Rajshahi University of Engineering &amp; Technology (RUET)</div><p>Coursework in machine learning, data mining, databases, algorithms, statistics and software engineering. Thesis published at IEEE EICT 2019.</p></div>
+          <div class="tl-item"><span class="dot"></span><div class="per">2012 – 2014</div><h4>Higher Secondary Certificate, Science</h4><div class="org">Chuadanga Government College · BISE Jessore</div><p>HSC 2014. GPA 5.00 / 5.00, all subjects A+ (Bangla, English, Physics, Chemistry, Mathematics, Biology).</p></div>
+          <div class="tl-item"><span class="dot"></span><div class="per">2010 – 2012</div><h4>Secondary School Certificate, Science</h4><div class="org">V. J. Government Secondary School, Chuadanga</div><p>SSC 2012. GPA 5.00 / 5.00.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ROADMAP ============ -->
+<section class="section" id="roadmap">
+  <div class="wrap">
+    <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:14px">
+      <div><p class="eyebrow reveal"><span class="n">14</span> / Research Roadmap</p><h2 class="reveal">A forward-looking PhD plan</h2></div>
+      <span class="badge soft reveal">Projected · 2026 – 2031</span>
+    </div>
+    <p class="lead reveal">A projected five-year trajectory through the doctoral program — from foundations and reproduction toward novel, interpretable methods and broad scientific impact.</p>
+    <div class="road">
+      <div class="ph reveal"><div class="no">1</div><div class="yr">2026 – 27</div><h3>Year 1</h3><div class="th">Foundations &amp; Reproduction</div><ul><li>Core coursework &amp; qualifying milestones</li><li>Reproduce SOTA sweep detectors</li><li>Coalescent pipelines (msprime, discoal)</li><li>First workshop submission</li></ul></div>
+      <div class="ph reveal d1"><div class="no">2</div><div class="yr">2027 – 28</div><h3>Year 2</h3><div class="th">Method Development</div><ul><li>Novel deep architectures for sweeps</li><li>Benchmark vs. likelihood scans</li><li>First first-author paper</li></ul></div>
+      <div class="ph reveal d2"><div class="no">3</div><div class="yr">2028 – 29</div><h3>Year 3</h3><div class="th">Generalisation</div><ul><li>Transfer across demographies</li><li>South Asian genome study</li><li>Dissertation proposal</li></ul></div>
+      <div class="ph reveal d1"><div class="no">4</div><div class="yr">2029 – 30</div><h3>Year 4</h3><div class="th">Breadth &amp; Interpretability</div><ul><li>Explainable-AI for genomics</li><li>Transfer to smart-grid anomalies</li><li>Research internship</li></ul></div>
+      <div class="ph reveal d2"><div class="no">5</div><div class="yr">2030 – 31</div><h3>Year 5</h3><div class="th">Synthesis &amp; Impact</div><ul><li>Dissertation &amp; defence</li><li>Open-source method release</li><li>Research job market</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SKILLS ============ -->
+<section class="section" id="skills">
+  <div class="wrap">
+    <p class="eyebrow reveal"><span class="n">15</span> / Technical Skills</p>
+    <h2 class="reveal">Computational toolkit</h2>
+    <div class="grid cols-4" style="margin-top:34px">
+      <div class="card skill reveal"><span class="spot"></span><h3>Programming Languages</h3><ul><li>Python</li><li>R</li><li>C / C++</li><li>SQL</li><li>Bash</li></ul></div>
+      <div class="card skill reveal d1"><span class="spot"></span><h3>Machine Learning</h3><ul><li>PyTorch</li><li>TensorFlow / Keras</li><li>scikit-learn</li><li>NumPy / pandas</li><li>CNN · Transfer Learning</li></ul></div>
+      <div class="card skill reveal d2"><span class="spot"></span><h3>Genomics &amp; Statistics</h3><ul><li>Coalescent theory</li><li>discoal · msprime</li><li>scikit-allel · VCF</li><li>Bayesian inference</li><li>Statistics &amp; R</li></ul></div>
+      <div class="card skill reveal d3"><span class="spot"></span><h3>Infrastructure</h3><ul><li>Slurm · HPC</li><li>Docker · Singularity</li><li>Snakemake · Nextflow</li><li>Git &amp; GitHub</li><li>Oracle · MySQL · ArcGIS</li></ul></div>
+    </div>
+  </div>
+</section>
+<!-- ============ RESEARCH BLOG ============ -->
+<section class="section" id="blog">
+  <div class="wrap">
+    <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:14px">
+      <div><p class="eyebrow reveal"><span class="n">16</span> / Research Blog</p><h2 class="reveal">Research notes &amp; writing</h2></div>
+      <span class="badge soft reveal"><i class="ti ti-rss"></i>Launching with the PhD</span>
+    </div>
+    <p class="lead reveal">Notes from the bench: literature reviews, paper summaries, technical tutorials, and honest updates from the PhD journey. The first posts are outlined below.</p>
+    <div class="grid cols-3 reveal" id="blog-grid" style="margin-top:34px"></div>
+  </div>
+</section>
+
+<!-- ============ READING LIST ============ -->
+<section class="section" id="reading">
+  <div class="wrap">
+    <p class="eyebrow reveal"><span class="n">17</span> / Reading List</p>
+    <h2 class="reveal">What I'm reading</h2>
+    <p class="lead reveal">The papers and books shaping the research — refreshed as the work moves.</p>
+    <div class="grid cols-4 reveal" id="reading-grid" style="margin-top:34px"></div>
+  </div>
+</section>
+
+<!-- ============ WHAT I'M WORKING ON ============ -->
+<section class="section" id="now">
+  <div class="wrap">
+    <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:14px">
+      <div><p class="eyebrow reveal"><span class="n">18</span> / Now</p><h2 class="reveal">What I'm working on</h2></div>
+      <span class="badge ok reveal"><span class="dot" style="width:7px;height:7px;border-radius:50%;background:var(--success);display:inline-block"></span> Updated June 2026</span>
+    </div>
+    <p class="lead reveal">A living snapshot of current papers, topics, skills, projects, goals and experiments.</p>
+    <div class="grid cols-3 reveal" id="now-grid" style="margin-top:34px"></div>
+  </div>
+</section>
+
+<!-- ============ COLLABORATION ============ -->
+<section class="section" id="collaborate">
+  <div class="wrap">
+    <p class="eyebrow reveal"><span class="n">19</span> / Collaboration</p>
+    <h2 class="reveal">Let's work together</h2>
+    <p class="lead reveal">I am actively open to collaboration. Here is where I can contribute and what I am looking for — whether you are an academic lab, an industry team, or an open-source maintainer.</p>
+    <div class="grid cols-3" style="margin-top:34px">
+      <div class="collab reveal"><div class="ic"><i class="ti ti-microscope"></i></div><h3>Academic Collaborations</h3><p>Co-authored methods papers and shared student projects in computational genomics and statistical genetics.</p><ul><li>Selective-sweep &amp; selection inference</li><li>Demographic-history reconstruction</li><li>Underrepresented-population genomics</li></ul></div>
+      <div class="collab reveal d1"><div class="ic"><i class="ti ti-building-factory-2"></i></div><h3>Industry Collaborations</h3><p>Applied ML for utilities and energy — turning operational data into deployable, interpretable decisions.</p><ul><li>Load forecasting &amp; theft detection</li><li>EV charging &amp; grid GIS analytics</li><li>Privacy-preserving synthetic data</li></ul></div>
+      <div class="collab reveal d2"><div class="ic"><i class="ti ti-brand-github"></i></div><h3>Open-Source Contributions</h3><p>Reproducible pipelines, simulation tooling, and benchmark datasets the community can build on.</p><ul><li>Sweep-detection benchmarks</li><li>Coalescent simulation workflows</li><li>Synthetic grid-data generators</li></ul></div>
+      <div class="collab reveal"><div class="ic"><i class="ti ti-bulb"></i></div><h3>Interested Domains</h3><p>Where I most want to go deeper next.</p><ul><li>Interpretable deep learning</li><li>Causal inference on infrastructure</li><li>Transfer &amp; domain adaptation</li></ul></div>
+      <div class="collab reveal d1"><div class="ic"><i class="ti ti-users-group"></i></div><h3>Students &amp; Mentees</h3><p>Happy to advise students entering computational biology and applied ML, and to share graduate-study guidance.</p><ul><li>Project co-supervision</li><li>Reproducible-research practices</li><li>Grad-school application advice</li></ul></div>
+      <div class="collab reveal d2"><div class="ic"><i class="ti ti-mail-share"></i></div><h3>How to Reach Me</h3><p>The fastest path is email with a short note on the problem and dataset.</p><ul><li>tjoarder2026@fau.edu</li><li>Google Scholar · GitHub · LinkedIn</li><li>Open to remote &amp; visiting work</li></ul><div style="margin-top:16px"><a href="#contact" class="btn btn-accent magnetic"><i class="ti ti-send"></i>Start a conversation</a></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ AWARDS ============ -->
+<section class="section" id="awards">
+  <div class="wrap">
+    <p class="eyebrow reveal"><span class="n">20</span> / Honors &amp; Certifications</p>
+    <h2 class="reveal">Awards &amp; credentials</h2>
+    <p class="lead reveal">A selection of academic honors, professional certifications, and competitive recognitions.</p>
+    <div class="grid cols-2" style="margin-top:34px">
+      <div class="award reveal"><span class="yr">2025</span><div><h3>IELTS Academic — Overall Band 7.0 (CEFR C1)</h3><p>British Council &amp; IDP. Listening 8.0, Reading 6.5, Writing 7.0, Speaking 6.5. Report 23BD000072JOAT050A.</p></div></div>
+      <div class="award reveal d1"><span class="yr">2019</span><div><h3>IEEE EICT 2019 Conference Paper Presentation</h3><p>4th Intl. Conf. on Electrical Information and Communication Technology, KUET · IEEE Bangladesh Section.</p></div></div>
+      <div class="award reveal"><span class="yr">2018</span><div><h3>HarvardX PH525.1x — Statistics and R (Verified)</h3><p>Harvard T.H. Chan School of Public Health via edX. Credential 5560979de0664437b62064de3dd77aec.</p></div></div>
+      <div class="award reveal d1"><span class="yr">2018</span><div><h3>Coursera — Introduction to Probability and Data</h3><p>Duke University via Coursera. Credential WS7P6HBRDHDS. Issued July 10, 2018.</p></div></div>
+      <div class="award reveal"><span class="yr">2018</span><div><h3>CCNA Routing &amp; Switching (4 courses)</h3><p>Cisco Networking Academy via RUET — Introduction to Networks, Routing &amp; Switching Essentials, Scaling Networks, Connecting Networks.</p></div></div>
+      <div class="award reveal d1"><span class="yr">2017</span><div><h3>Champion — Poster Presentation, Inter-University Science Festival</h3><p>Rajshahi University of Engineering &amp; Technology. November 30, 2017.</p></div></div>
+      <div class="award reveal"><span class="yr">2018</span><div><h3>Microsoft Young Bangla Internship Cohort</h3><p>Microsoft Bangladesh &amp; Centre for Research and Information (CRI). Inaugural cohort.</p></div></div>
+      <div class="award reveal d1"><span class="yr">2018</span><div><h3>Samsung EDGE 2018 Brand Ambassador</h3><p>Samsung Bangladesh. May 12, 2018. Signed by Seung Won Youn, Country Head.</p></div></div>
+      <div class="award reveal"><span class="yr">2019</span><div><h3>Mobile Game Development Capacity-Building Programs</h3><p>Ministry of Posts, Telecommunications &amp; IT, Bangladesh — advanced development &amp; graphic design (Unity, Blender).</p></div></div>
+      <div class="award reveal d1"><span class="yr">2022</span><div><h3>GIS Mapping of Distribution Network (ArcGIS)</h3><p>BREB internal training. 33 kV / 11 kV / 6.35 kV mapping for SCADA readiness.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CV BAND ============ -->
+<section class="section" id="cv">
+  <div class="wrap">
+    <div class="cvband reveal">
+      <div class="grid" style="grid-template-columns:1fr 1fr;gap:40px;align-items:center">
+        <div>
+          <p class="eyebrow">Curriculum Vitae</p>
+          <h2 style="font-size:clamp(26px,3.4vw,38px);margin-top:10px">Full academic CV &amp; profiles</h2>
+          <p class="lead">Download the complete curriculum vitae, or explore academic profiles for publications, source code, and professional history.</p>
+          <div class="cta">
+            <a href="assets/Tanvir_Anjum_Joarder_CV.pdf" target="_blank" rel="noopener" class="btn btn-accent magnetic"><i class="ti ti-download"></i>Download CV</a>
+            <a href="https://scholar.google.com/citations?hl=en&user=fFcWmdwAAAAJ" target="_blank" rel="noopener" class="btn btn-outline magnetic"><i class="ti ti-school"></i>Google Scholar</a>
+          </div>
+        </div>
+        <div class="profiles">
+          <a class="prof" href="https://scholar.google.com/citations?hl=en&user=fFcWmdwAAAAJ" target="_blank" rel="noopener"><span class="ic"><i class="ti ti-school"></i></span><span><b style="font-size:14px">Google Scholar</b><small>Citations &amp; metrics</small></span></a>
+          <a class="prof" href="https://orcid.org" target="_blank" rel="noopener"><span class="ic"><i class="ti ti-fingerprint"></i></span><span><b style="font-size:14px">ORCID</b><small>Add your iD</small></span></a>
+          <a class="prof" href="https://github.com/tanviranjumjoarder" target="_blank" rel="noopener"><span class="ic"><i class="ti ti-brand-github"></i></span><span><b style="font-size:14px">GitHub</b><small>@tanviranjumjoarder</small></span></a>
+          <a class="prof" href="https://www.linkedin.com/in/tanvir-anjum-joarder" target="_blank" rel="noopener"><span class="ic"><i class="ti ti-brand-linkedin"></i></span><span><b style="font-size:14px">LinkedIn</b><small>in/tanvir-anjum-joarder</small></span></a>
+        </div>
+      </div>
+      <hr class="hairline" style="margin:34px 0">
+      <div class="gh">
+        <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;margin-bottom:14px"><p class="eyebrow"><i class="ti ti-brand-github"></i> GitHub activity</p><a class="plink" href="https://github.com/tanviranjumjoarder" target="_blank" rel="noopener">@tanviranjumjoarder <i class="ti ti-external-link"></i></a></div>
+        <img src="https://ghchart.rshah.org/38BDF8/tanviranjumjoarder" alt="GitHub contribution graph for tanviranjumjoarder" loading="lazy" onerror="this.outerHTML='<a class=plink href=https://github.com/tanviranjumjoarder target=_blank rel=noopener>View contributions on GitHub →</a>'">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="section" id="contact">
+  <div class="wrap">
+    <p class="eyebrow reveal"><span class="n">21</span> / Contact</p>
+    <h2 class="reveal">Open to collaboration</h2>
+    <p class="lead reveal">Always glad to hear from fellow researchers, prospective collaborators, and students entering computational biology and machine learning. Inquiries about research collaboration, software contributions, or graduate-study advice are warmly encouraged.</p>
+    <div class="contact-cards reveal" style="margin-top:30px">
+      <a class="ccard" href="mailto:tjoarder2026@fau.edu"><span class="ic"><i class="ti ti-mail"></i></span><span><small style="color:var(--muted);text-transform:uppercase;font-size:12px;letter-spacing:.06em">University</small><div style="font-weight:500">tjoarder2026@fau.edu</div></span></a>
+      <a class="ccard" href="mailto:ussash93@gmail.com"><span class="ic"><i class="ti ti-mail"></i></span><span><small style="color:var(--muted);text-transform:uppercase;font-size:12px;letter-spacing:.06em">Personal</small><div style="font-weight:500">ussash93@gmail.com</div></span></a>
+    </div>
+    <div class="socials reveal d1">
+      <a href="https://scholar.google.com/citations?hl=en&user=fFcWmdwAAAAJ" target="_blank" rel="noopener"><i class="ti ti-school"></i>Google Scholar</a>
+      <a href="https://github.com/tanviranjumjoarder" target="_blank" rel="noopener"><i class="ti ti-brand-github"></i>GitHub</a>
+      <a href="https://www.linkedin.com/in/tanvir-anjum-joarder" target="_blank" rel="noopener"><i class="ti ti-brand-linkedin"></i>LinkedIn</a>
+      <a href="https://orcid.org" target="_blank" rel="noopener"><i class="ti ti-fingerprint"></i>ORCID</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div style="max-width:340px">
+        <a href="#hero" class="brand"><span class="logo">TJ</span>Tanvir Anjum Joarder</a>
+        <p style="color:var(--muted);font-size:14px;margin-top:12px">Machine Learning Scientist &amp; Computational Genomics Researcher · DeGiorgio Lab, Florida Atlantic University.</p>
+      </div>
+      <div>
+        <a class="fl" href="#featured">Research</a><a class="fl" href="#publications">Publications</a><a class="fl" href="#graph">Graph</a><a class="fl" href="#projects">Projects</a><a class="fl" href="#collaborate">Collaborate</a><a class="fl" href="#contact">Contact</a>
+      </div>
+      <div class="copy">
+        <span>© <span id="yr">2026</span> Tanvir Anjum Joarder. All rights reserved.</span>
+        <span>Designed as a research platform · <kbd style="font-family:JetBrains Mono;font-size:11px;background:rgba(148,163,184,.16);border-radius:5px;padding:2px 6px">Ctrl K</kbd> to search</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Person","name":"Tanvir Anjum Joarder","alternateName":"T. A. Joarder","url":"https://tanviranjumjoarder.github.io/","image":"https://tanviranjumjoarder.github.io/assets/profile.jpg","jobTitle":"PhD Researcher (Graduate Research Assistant)","description":"Machine learning scientist and computational genomics researcher building interpretable methods for population genomics, smart-grid analytics, and AI for healthcare.","email":"mailto:tjoarder2026@fau.edu","sameAs":["https://scholar.google.com/citations?hl=en&user=fFcWmdwAAAAJ","https://github.com/tanviranjumjoarder","https://www.linkedin.com/in/tanvir-anjum-joarder","https://orcid.org"],"knowsAbout":["Machine Learning","Deep Learning","Data Science","Population Genomics","Statistical Genetics","Natural Selection","Transfer Learning","AI for Healthcare","Cybersecurity","Explainable AI","Smart Grid Analytics","Electricity Theft Detection","Differential Privacy","Synthetic Data"],"affiliation":{"@type":"CollegeOrUniversity","name":"Florida Atlantic University"},"worksFor":{"@type":"Organization","name":"Bangladesh Rural Electrification Board"},"alumniOf":{"@type":"CollegeOrUniversity","name":"Rajshahi University of Engineering & Technology"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ItemList","name":"Publications of Tanvir Anjum Joarder","itemListElement":[
+{"@type":"ListItem","position":1,"item":{"@type":"ScholarlyArticle","headline":"A comprehensive review of carbon dioxide capture, transportation, utilization, and storage: a source of future energy","datePublished":"2025-03","isPartOf":"Environmental Science and Pollution Research","sameAs":"https://doi.org/10.1007/s11356-025-36284-9"}},
+{"@type":"ListItem","position":2,"item":{"@type":"ScholarlyArticle","headline":"Detecting Liver Cancer from Online Search Logs","datePublished":"2019-12","isPartOf":"IEEE EICT 2019","sameAs":"https://doi.org/10.1109/EICT48899.2019.9068842"}}
+]}
+</script>
+<script>
+(function(){
+'use strict';
+var $=function(s,c){return (c||document).querySelector(s);};
+var $$=function(s,c){return Array.prototype.slice.call((c||document).querySelectorAll(s));};
+var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+var root=document.documentElement;
+var PAL={acc:'#38BDF8',ind:'#818cf8',vio:'#a78bfa',grn:'#10B981',amb:'#f0b45a',mut:'#94A3B8'};
+
+/* ===================== EDITABLE CONTENT ===================== */
+var CONFIG={
+  repos:[
+    {name:'sweep-cnn',desc:'Convolutional & tensor-based architectures for selective-sweep detection from raw haplotype alignments.',lang:'Python',lc:'#3572A5',stars:0,commits:0,contrib:1,status:'Planned',url:'https://github.com/tanviranjumjoarder'},
+    {name:'grid-twin',desc:'Calibrated digital twin of a rural distribution grid for spatial causal-inference experiments.',lang:'Python',lc:'#3572A5',stars:0,commits:0,contrib:1,status:'Planned',url:'https://github.com/tanviranjumjoarder'},
+    {name:'dp-gridgen',desc:'Differentially private synthetic generator for electricity-distribution data using GAN pipelines.',lang:'Python',lc:'#3572A5',stars:0,commits:0,contrib:1,status:'Planned',url:'https://github.com/tanviranjumjoarder'},
+    {name:'coalescent-bench',desc:'Reproducible benchmark suite comparing ML sweep detectors against likelihood scans.',lang:'Snakemake',lc:'#10B981',stars:0,commits:0,contrib:1,status:'Planned',url:'https://github.com/tanviranjumjoarder'},
+    {name:'breb-analytics',desc:'Utilities for BERC-tariff billing, system-loss forecasting and transformer-load analytics.',lang:'SQL',lc:'#e38c00',stars:0,commits:0,contrib:1,status:'Private',url:'https://github.com/tanviranjumjoarder'},
+    {name:'portfolio',desc:'This research platform — a single-file, dependency-light personal research website.',lang:'HTML',lc:'#e34c26',stars:0,commits:0,contrib:1,status:'Active',url:'https://github.com/tanviranjumjoarder'}
+  ],
+  datasets:[
+    {name:'BREB Consumer & Billing',sub:'BERC-tariff records across consumer categories',domain:'Energy distribution',type:'Operational (real)',size:'100M+ consumers',avail:'Institutional',cls:'warn'},
+    {name:'Distribution Network GIS',sub:'Every pole, transformer & conductor, georeferenced',domain:'Energy / spatial',type:'Operational (real)',size:'33 / 11 / 6.35 kV',avail:'Institutional',cls:'warn'},
+    {name:'Smart-Meter Load Profiles',sub:'Feeder & consumer time-series for theft detection',domain:'Energy / time-series',type:'Operational (real)',size:'Feeder-level',avail:'Institutional',cls:'warn'},
+    {name:'Synthetic Rural Grid',sub:'Provenance-anchored synthetic network for EV siting',domain:'Energy / synthetic',type:'Synthetic',size:'Configurable',avail:'Open on release',cls:'ok'},
+    {name:'DP Synthetic Consumer Data',sub:'Differentially private release for open research',domain:'Privacy / synthetic',type:'Synthetic (DP)',size:'Configurable',avail:'Planned open',cls:'soft'},
+    {name:'Coalescent Sweep Simulations',sub:'Labelled windows for training selection detectors',domain:'Genomics',type:'Simulated',size:'Millions of windows',avail:'Open on release',cls:'ok'},
+    {name:'South Asian Genome Panel',sub:'Curated from public sources for diversity studies',domain:'Genomics',type:'Curated',size:'TBD',avail:'Planned',cls:'soft'}
+  ],
+  posts:[
+    {cat:'Literature Review',title:'Reading the selective-sweep literature, 2015–2025',ex:'A working map of how the field moved from summary statistics to deep learning for detecting natural selection.',date:'Outline',read:'12 min'},
+    {cat:'Paper Summary',title:'SweepFinder, BALLET & VolcanoFinder, in plain terms',ex:'What each likelihood scan actually computes, and where a learned detector can add value.',date:'Outline',read:'9 min'},
+    {cat:'Technical Tutorial',title:'Simulating sweeps with discoal and msprime',ex:'A reproducible pipeline for generating labelled training data from coalescent models.',date:'Outline',read:'15 min'},
+    {cat:'Research Notes',title:'Treating haplotype matrices as images',ex:'Why a population sample looks like a multi-channel image to a CNN — and the pitfalls of row order.',date:'Draft',read:'7 min'},
+    {cat:'PhD Journey',title:'From a national grid to a genomics lab',ex:'Carrying the instincts of a 100-million-consumer utility into computational evolutionary biology.',date:'Outline',read:'6 min'},
+    {cat:'Research Reflection',title:'Why synthetic data needs provenance',ex:'A synthetic dataset is only as defensible as the real structure it is anchored to.',date:'Outline',read:'8 min'}
+  ],
+  reading:{
+    'Currently Reading':[{t:'Coalescent Theory: An Introduction',a:'John Wakeley',s:'The grammar of genealogies under neutrality.'},{t:'Deep-learning sweep detectors',a:'Recent survey, 2023',s:'State of the art before method work.'}],
+    'Recent Papers':[{t:'diploS/HIC & feature-image methods',a:'Kern & Schrider',s:'Images of haplotypes for selection.'},{t:'Domain adaptation for popgen',a:'Various, 2022–24',s:'Closing the sim-to-real gap.'}],
+    'Important Books':[{t:'The Elements of Statistical Learning',a:'Hastie, Tibshirani, Friedman',s:'The statistical backbone.'},{t:'Deep Learning',a:'Goodfellow, Bengio, Courville',s:'Foundations for the architectures.'}],
+    'Seminal Research':[{t:'The Neutral Theory of Molecular Evolution',a:'Motoo Kimura',s:'The null every test argues against.'},{t:'The Coalescent',a:'J. F. C. Kingman',s:'Genealogy as a stochastic process.'}]
+  },
+  now:[
+    {title:'Current Papers',icon:'ti-file-pencil',items:[{t:'Provenance-anchored synthetic data for EV siting',st:'Drafting'},{t:'Spatial deterrence spillover via a BREB digital twin',st:'Analysis'}]},
+    {title:'Research Topics',icon:'ti-topology-star-3',items:[{t:'Interpretable sweep detection',st:'Core'},{t:'Differential privacy for grid data',st:'Active'},{t:'Transfer across demographies',st:'Reading'}]},
+    {title:'Skills Being Learned',icon:'ti-stairs-up',items:[{t:'Advanced coalescent simulation',st:'In progress'},{t:'PyTorch tensor models',st:'In progress'},{t:'Causal inference (spatial)',st:'New'}]},
+    {title:'Active Projects',icon:'ti-rocket',items:[{t:'sweep-cnn prototype',st:'Building'},{t:'grid-twin calibration',st:'Building'},{t:'This research platform',st:'Live'}]},
+    {title:'Upcoming Goals',icon:'ti-target-arrow',items:[{t:'First workshop submission',st:'2026–27'},{t:'Reproduce SOTA detectors',st:'Year 1'},{t:'Qualifying milestones',st:'Year 1'}]},
+    {title:'Research Experiments',icon:'ti-flask-2',items:[{t:'Haplotype image orderings',st:'Running'},{t:'DP–utility tradeoff sweeps',st:'Queued'},{t:'Spillover radius estimation',st:'Queued'}]}
+  ],
+  cites:[
+    'M. S. A. Joarder, M. S. Islam, M. H. Hasan, A. Kutub, M. F. Kabir, F. Rashid, and T. A. Joarder, "A comprehensive review of carbon dioxide capture, transportation, utilization, and storage: a source of future energy," Environmental Science and Pollution Research, vol. 32, pp. 9299-9332, 2025. doi:10.1007/s11356-025-36284-9',
+    'M. S. Joarder, F. Rashid, and T. A. Joarder, "Solution to air pollution for removing CO2 and SO2 from flue gases: a prospective approach," in Proc. Int. Conf. on Mechanical Engineering and Renewable Energy (ICMERE), 2019, pp. 11-13.',
+    'M. S. A. Joarder, F. Rashid, M. G. Zakir, and T. A. Joarder, "Electricity generation from the rotational speed of train wheel: an approach of future energy," in Proc. Int. Conf. on Mechanical Engineering and Renewable Energy (ICMERE), 2021, pp. 12-14.',
+    'M. Joarder, T. Joarder, and F. Rashid, "Safety at industrial working place by separating Carbon Dioxide Gas," in Proc. Int. Conf. on Mechanical, Industrial and Materials Engineering (ICMIME), RUET, 2019.',
+    'T. A. Joarder, B. Ahmed, and A. H. M. S. Sattar, "Detecting Liver Cancer from Online Search Logs," in 2019 4th Int. Conf. on Electrical Information and Communication Technology (EICT), IEEE, 2019. doi:10.1109/EICT48899.2019.9068842'
+  ],
+  bibtex:[
+    '@article{joarder2025co2review,\n  title={A comprehensive review of carbon dioxide capture, transportation, utilization, and storage: a source of future energy},\n  author={Joarder, M. S. A. and Islam, M. S. and Hasan, M. H. and Kutub, A. and Kabir, M. F. and Rashid, F. and Joarder, T. A.},\n  journal={Environmental Science and Pollution Research},\n  volume={32}, pages={9299--9332}, year={2025}, publisher={Springer},\n  doi={10.1007/s11356-025-36284-9}\n}',
+    '@inproceedings{joarder2019airpollution,\n  title={Solution to air pollution for removing CO2 and SO2 from flue gases: a prospective approach},\n  author={Joarder, M. S. and Rashid, F. and Joarder, T. A.},\n  booktitle={Proc. Int. Conf. on Mechanical Engineering and Renewable Energy (ICMERE)},\n  pages={11--13}, year={2019}\n}',
+    '@inproceedings{joarder2021trainwheel,\n  title={Electricity generation from the rotational speed of train wheel: an approach of future energy},\n  author={Joarder, M. S. A. and Rashid, F. and Zakir, M. G. and Joarder, T. A.},\n  booktitle={Proc. Int. Conf. on Mechanical Engineering and Renewable Energy (ICMERE)},\n  pages={12--14}, year={2021}\n}',
+    '@inproceedings{joarder2019safety,\n  title={Safety at industrial working place by separating Carbon Dioxide Gas},\n  author={Joarder, M. and Joarder, T. and Rashid, F.},\n  booktitle={Proc. Int. Conf. on Mechanical, Industrial and Materials Engineering (ICMIME), RUET},\n  year={2019}\n}',
+    '@inproceedings{joarder2019liver,\n  title={Detecting Liver Cancer from Online Search Logs},\n  author={Joarder, T. A. and Ahmed, B. and Sattar, A. H. M. S.},\n  booktitle={2019 4th Int. Conf. on Electrical Information and Communication Technology (EICT)},\n  organization={IEEE}, year={2019},\n  doi={10.1109/EICT48899.2019.9068842}\n}'
+  ]
+};
+
+/* modal content: featured research, areas, projects */
+var DETAIL={
+  ev:{title:'Provenance-Anchored Synthetic Data for EV Charging Siting',body:[
+    ['Scientific significance','Rural distribution grids lack open datasets, so EV-charger siting decisions are made without defensible evidence. This framework generates synthetic data whose every record is anchored to documented grid provenance — making siting reproducible and auditable.'],
+    ['Methods','Provenance graph linking pole GIS, transformer capacity and feeder topology; constrained synthetic generation; multi-objective siting optimisation; a validation framework that scores fidelity against held-out real aggregates.'],
+    ['Current progress','Dataset schema and provenance model designed; siting objective formalised. About 35% complete.'],
+    ['Future direction','Release the generator and a benchmark siting task; extend to mixed urban-rural feeders.'],
+    ['Technologies','Python, GeoPandas, optimisation (OR-Tools), reproducible workflows.'],
+    ['Expected impact','A citable, shareable substitute for proprietary grid data, enabling open EV-infrastructure research in low-data regions.']
+  ]},
+  spillover:{title:'Spatial Deterrence Spillover from Anti-Theft Inspections',body:[
+    ['Scientific significance','Do inspections deter theft beyond the inspected locality? Quantifying spatial spillover changes how scarce inspection resources should be deployed across a national grid.'],
+    ['Methods','Calibrated digital twin of BREB feeders; simulated inspection regimes; spatial difference-in-differences and spillover-radius estimation on non-technical losses.'],
+    ['Current progress','Twin calibration against operational loss patterns under way. About 28% complete.'],
+    ['Future direction','Validate against natural experiments in inspection rollout; derive optimal spatial inspection policies.'],
+    ['Technologies','Python, spatial econometrics, agent-based simulation, GIS.'],
+    ['Expected impact','Evidence-based inspection targeting that reduces theft at lower cost — directly useful to utilities.']
+  ]},
+  dp:{title:'Differentially Private Synthetic Data for Electricity Distribution',body:[
+    ['Scientific significance','A 100-million-consumer grid holds invaluable research data that cannot be shared. Formal differential privacy lets us release useful synthetic surrogates without exposing individuals.'],
+    ['Methods','Generative adversarial pipelines with DP training (DP-SGD); utility-privacy tradeoff analysis; downstream-task validation (forecasting, theft detection).'],
+    ['Current progress','Pipeline prototyping and privacy-accounting setup. About 22% complete.'],
+    ['Future direction','Release DP synthetic benchmarks; characterise the privacy budget needed for faithful load curves.'],
+    ['Technologies','PyTorch, Opacus, GANs, privacy accounting.'],
+    ['Expected impact','Open, privacy-preserving energy datasets that unlock external research on operational grids.']
+  ]},
+  sweep:{title:'Deep Learning for Selective Sweep Detection',body:[
+    ['Scientific significance','Natural selection leaves subtle patterns in genetic variation. Detecting and localising selective sweeps tells us which parts of the genome adaptation has shaped.'],
+    ['Methods','Convolutional and tensor-based networks over haplotype alignments treated as multi-channel images; trained on coalescent simulations; benchmarked against likelihood scans (SweepFinder, etc.).'],
+    ['Current progress','Core methodological thread; architectures and simulation pipeline in development. About 45% complete.'],
+    ['Future direction','Interpretable localisation, calibration under model misspecification, and release as open software.'],
+    ['Technologies','PyTorch, discoal, msprime, scikit-allel, Slurm/HPC.'],
+    ['Expected impact','More sensitive, better-calibrated sweep detection that generalises beyond the training demography.']
+  ]},
+  transfer:{title:'Transfer Learning Across Population Histories',body:[
+    ['Scientific significance','Detectors trained on one demographic model often fail on populations with different histories. Transfer learning aims to make selection inference robust across demographies.'],
+    ['Methods','Domain adaptation and invariant-representation learning; simulation of diverse demographic scenarios; evaluation of sim-to-real generalisation.'],
+    ['Current progress','Early experiments on adaptation strategies. About 30% complete.'],
+    ['Future direction','Principled uncertainty under unseen histories; pairing with the South Asian genomics study.'],
+    ['Technologies','PyTorch, domain-adaptation methods, coalescent simulators.'],
+    ['Expected impact','Selection detectors that practitioners can trust on understudied populations.']
+  ]},
+  southasia:{title:'South Asian Population Genomics',body:[
+    ['Scientific significance','South Asians are roughly a quarter of humanity yet are markedly underrepresented in genomic studies, biasing what we know about human adaptation and disease.'],
+    ['Methods','Demographic-history inference; selection scans tailored to South Asian structure; careful use of curated public data.'],
+    ['Current progress','Data assembly and scoping. About 20% complete.'],
+    ['Future direction','Apply transfer-learning detectors; characterise population-specific signals of selection.'],
+    ['Technologies','msprime, scikit-allel, statistical genetics, R.'],
+    ['Expected impact','Reducing a real equity gap in genomics and improving inference for a vast, understudied population.']
+  ]},
+  'area-ml':{title:'Machine Learning',body:[
+    ['Methods','Supervised & unsupervised learning, representation learning, gradient boosting, transfer learning.'],
+    ['Tools','scikit-learn, XGBoost, PyTorch, NumPy/pandas.'],
+    ['Datasets','BREB billing & load data, coalescent simulations, biomedical search-query data.'],
+    ['Publications','IEEE EICT 2019 (liver-cancer classification).'],
+    ['Future directions','Methods that transfer cleanly between genomic and infrastructure domains.']
+  ]},
+  'area-dl':{title:'Deep Learning',body:[
+    ['Methods','CNNs and tensor-based architectures over structured scientific signals treated as images.'],
+    ['Tools','PyTorch, TensorFlow/Keras, HPC (Slurm).'],
+    ['Datasets','Haplotype alignments from discoal/msprime; smart-meter time-series.'],
+    ['Publications','In preparation (sweep detection).'],
+    ['Future directions','Interpretable, well-calibrated architectures for selection inference.']
+  ]},
+  'area-ds':{title:'Data Science',body:[
+    ['Methods','Reproducible pipelines, feature engineering, anomaly detection, forecasting, visual analytics.'],
+    ['Tools','Python, SQL, Oracle/MySQL, ArcGIS, Snakemake/Nextflow.'],
+    ['Datasets','National billing, transformer-load, complaint and GIS datasets.'],
+    ['Publications','Applied work feeding the energy research threads.'],
+    ['Future directions','Decision-grade analytics over messy, national-scale operational data.']
+  ]},
+  'area-genomics':{title:'Population Genomics',body:[
+    ['Methods','Selective-sweep detection, demographic inference, coalescent modelling.'],
+    ['Tools','msprime, discoal, scikit-allel, SweepFinder-family scans.'],
+    ['Datasets','Simulated sweeps; curated South Asian panels (planned).'],
+    ['Publications','In preparation.'],
+    ['Future directions','Equitable inference for underrepresented populations.']
+  ]},
+  'area-health':{title:'AI for Healthcare',body:[
+    ['Methods','Supervised classification on noisy, temporally structured biomedical signals.'],
+    ['Tools','scikit-learn, time-series methods.'],
+    ['Datasets','Longitudinal online search-query data.'],
+    ['Publications','IEEE EICT 2019 (early HCC detection).'],
+    ['Future directions','Robust early-detection signals from behavioural and clinical data.']
+  ]},
+  'area-cyber':{title:'Cybersecurity',body:[
+    ['Methods','Anomaly & fraud detection, robustness under adversarial/imbalanced settings.'],
+    ['Tools','XGBoost, isolation forests, autoencoders.'],
+    ['Datasets','Smart-meter profiles for non-technical-loss detection.'],
+    ['Publications','Applied research thread (theft detection).'],
+    ['Future directions','Adversarially robust monitoring for utility systems.']
+  ]},
+  'area-xai':{title:'Explainable AI',body:[
+    ['Methods','Feature-attribution, SHAP-style explanations, interpretable-by-design models.'],
+    ['Tools','SHAP, captum, model-agnostic explainers.'],
+    ['Datasets','All high-stakes models above.'],
+    ['Publications','Cross-cutting across threads.'],
+    ['Future directions','Explanations scientists and operators can actually act on.']
+  ]},
+  'proj-liver':{title:'Liver Cancer Detection from Search Logs',body:[
+    ['Methodology','Built a supervised pipeline over longitudinal online search-query patterns; benchmarked six classifiers with cross-validation.'],
+    ['Outcomes','Random Forest 97.5%, Decision Tree 95.8%, SVM 94.3%, Neural Network 93.5%, Naive Bayes 90.7%, k-NN 85.5%. Published at IEEE EICT 2019.'],
+    ['Technologies','Python, scikit-learn, SVM, Random Forest.']
+  ]},
+  'proj-platform':{title:'National Consumer Analytics Platform',body:[
+    ['Methodology','Operational analytics layer over the national rural grid: BERC-tariff billing engine across industrial, commercial, residential and charity categories; transformer-overload detection; integrated complaint registration and call routing.'],
+    ['Outcomes','Serves an organisation reaching 80%+ of the population of Bangladesh; underpins sales/loss forecasting and anomaly detection.'],
+    ['Technologies','Oracle, MySQL, Python.']
+  ]},
+  'proj-gis':{title:'GIS Mapping of the Distribution Network',body:[
+    ['Methodology','Integrated the national 33 kV and 11 kV network into a unified ArcGIS layer; georeferenced every pole, transformer and conductor and linked them to telemetry.'],
+    ['Outcomes','Enabled spatial load/outage analytics, SCADA readiness, and automated single-line diagrams.'],
+    ['Technologies','ArcGIS, GIS, SQL.']
+  ]},
+  'proj-theft':{title:'Electricity Theft Detection',body:[
+    ['Methodology','Supervised and unsupervised anomaly detection over smart-meter profiles to flag non-technical losses; benchmarked under realistic class imbalance and adversarial behaviour.'],
+    ['Outcomes','A detection approach tailored to the national rural grid; basis for the digital-twin spillover study.'],
+    ['Technologies','Python, XGBoost, anomaly detection.']
+  ]},
+  'proj-ev':{title:'EV Charging Demand Modelling',body:[
+    ['Methodology','Data-driven modelling of EV charging demand on rural feeders; analysed transformer-loading impact of large-scale adoption; proposed siting criteria.'],
+    ['Outcomes','Feeds the provenance-anchored synthetic-data and siting framework.'],
+    ['Technologies','EV-grid modelling, optimisation, forecasting.']
+  ]},
+  'proj-game':{title:'Infinity Run: Android Game',body:[
+    ['Methodology','Endless-runner mobile game in Unity with C#; 2D/3D assets modelled in Blender.'],
+    ['Outcomes','Built under the Government of Bangladesh Capacity Building for Mobile Game Development Program.'],
+    ['Technologies','Unity, C#, Blender.']
+  ]}
+};
+
+/* ===================== CORE UI ===================== */
+(function(){
+  var tbtn=$('#theme');
+  function icon(){tbtn.innerHTML='<i class="ti ti-'+(root.getAttribute('data-theme')==='dark'?'sun':'moon')+'"></i>';}
+  icon();
+  tbtn.addEventListener('click',function(){
+    var n=root.getAttribute('data-theme')==='dark'?'light':'dark';
+    root.setAttribute('data-theme',n);try{localStorage.setItem('theme',n);}catch(e){}icon();
+  });
+})();
+(function(){
+  var mb=$('#menubtn'),mob=$('#mobile');
+  mb.addEventListener('click',function(){var o=mob.classList.toggle('open');mb.setAttribute('aria-expanded',o);mb.innerHTML='<i class="ti ti-'+(o?'x':'menu-2')+'"></i>';});
+  $$('a',mob).forEach(function(a){a.addEventListener('click',function(){mob.classList.remove('open');mb.setAttribute('aria-expanded','false');mb.innerHTML='<i class="ti ti-menu-2"></i>';});});
+})();
+(function(){
+  var nav=$('#nav'),prog=$('#progress');
+  function onScroll(){var y=window.scrollY||0;nav.classList.toggle('scrolled',y>10);var h=document.documentElement.scrollHeight-window.innerHeight;prog.style.width=(h>0?(y/h*100):0)+'%';}
+  onScroll();window.addEventListener('scroll',onScroll,{passive:true});
+})();
+(function(){
+  var rev=$$('.reveal');
+  if('IntersectionObserver' in window && !reduce){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+    rev.forEach(function(el){io.observe(el);});
+  } else rev.forEach(function(el){el.classList.add('in');});
+})();
+$$('[data-dup]').forEach(function(t){t.innerHTML+=t.innerHTML;});
+// add '+' suffix marker before animating
+$$('.hstat b').forEach(function(b){var lbl=b.parentElement?b.parentElement.textContent:'';if(b.getAttribute('data-count')==='8'||/Repos/.test(lbl)){if(!b.querySelector('.suf')){var s=document.createElement('span');s.className='suf';b.insertBefore(s,b.firstChild);}}});
+(function(){
+  function animate(el){
+    var target=+el.getAttribute('data-count'),suf=el.querySelector('.suf'),dur=1500,t0=null;
+    var last=el.childNodes[el.childNodes.length-1];
+    if(reduce){last.nodeValue=target;if(suf)suf.textContent='+';return;}
+    function step(ts){if(!t0)t0=ts;var p=Math.min((ts-t0)/dur,1);var v=Math.round(target*(1-Math.pow(1-p,3)));last.nodeValue=v;if(suf&&p>=1)suf.textContent='+';if(p<1)requestAnimationFrame(step);}
+    requestAnimationFrame(step);
+  }
+  function watch(sel){var els=$$(sel);if(!els.length)return;
+    if('IntersectionObserver' in window){var seen=new WeakSet();var o=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting&&!seen.has(e.target)){seen.add(e.target);animate(e.target);o.unobserve(e.target);}});},{threshold:.5});els.forEach(function(e){o.observe(e);});}
+    else els.forEach(animate);
+  }
+  watch('.hstat b');watch('.metric b');
+})();
+$$('.spot').forEach(function(sp){var el=sp.parentElement;el.addEventListener('pointermove',function(e){var r=el.getBoundingClientRect();el.style.setProperty('--mx',(e.clientX-r.left)+'px');el.style.setProperty('--my',(e.clientY-r.top)+'px');});});
+if(matchMedia('(pointer:fine)').matches && !reduce){
+  $$('.magnetic').forEach(function(b){
+    b.addEventListener('pointermove',function(e){var r=b.getBoundingClientRect();var x=e.clientX-r.left-r.width/2,y=e.clientY-r.top-r.height/2;b.style.transform='translate('+(x*.22)+'px,'+(y*.3)+'px)';});
+    b.addEventListener('pointerleave',function(){b.style.transform='';});
+  });
+}
+(function(){var rot=$('#rot');if(!rot||reduce)return;var w=['evolutionary history','energy systems','disease signals','hidden selection'],i=0;rot.style.transition='opacity .3s';setInterval(function(){i=(i+1)%w.length;rot.style.opacity=0;setTimeout(function(){rot.textContent=w[i];rot.style.opacity=1;},300);},2800);})();
+(function(){var y=$('#yr');if(y)y.textContent=new Date().getFullYear();})();
+(function(){$$('.feat-prog .fill').forEach(function(f){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){f.style.width=f.getAttribute('data-fill')+'%';io.unobserve(f);}});},{threshold:.4});io.observe(f);});})();
+
+/* ===================== RENDER CONFIG SECTIONS ===================== */
+(function(){
+  function spot(scope){$$(scope+' .spot').forEach(function(sp){var el=sp.parentElement;el.addEventListener('pointermove',function(e){var rc=el.getBoundingClientRect();el.style.setProperty('--mx',(e.clientX-rc.left)+'px');el.style.setProperty('--my',(e.clientY-rc.top)+'px');});});}
+  var R=$('#repos');
+  if(R){R.innerHTML=CONFIG.repos.map(function(r){
+    var planned=r.status!=='Active';
+    return '<div class="repo"><span class="spot"></span><div class="rt"><i class="ti ti-brand-github"></i>'+r.name+'</div>'+
+      '<p>'+r.desc+'</p><div class="repo-stats">'+
+      '<span class="lang"><i style="background:'+r.lc+'"></i>'+r.lang+'</span>'+
+      '<span><i class="ti ti-star"></i>'+(planned?'—':r.stars)+'</span>'+
+      '<span><i class="ti ti-git-commit"></i>'+(planned?'—':r.commits)+'</span>'+
+      '<span><i class="ti ti-users"></i>'+r.contrib+'</span>'+
+      '<span class="badge '+(r.status==='Active'?'ok':(r.status==='Private'?'soft':'warn'))+'">'+r.status+'</span>'+
+      '</div><div style="margin-top:16px"><a class="plink" href="'+r.url+'" target="_blank" rel="noopener"><i class="ti ti-external-link"></i>View on GitHub</a></div></div>';
+  }).join('');spot('#repos');}
+  var D=$('#dataset-body');
+  if(D)D.innerHTML=CONFIG.datasets.map(function(d){
+    return '<tr><td class="dname">'+d.name+'<small>'+d.sub+'</small></td><td>'+d.domain+'</td><td>'+d.type+'</td><td>'+d.size+'</td><td><span class="badge '+d.cls+'">'+d.avail+'</span></td></tr>';
+  }).join('');
+  var B=$('#blog-grid');
+  if(B){B.innerHTML=CONFIG.posts.map(function(p){
+    return '<article class="post"><span class="spot"></span><div class="cat">'+p.cat+'</div><h3>'+p.title+'</h3><p>'+p.ex+'</p><div class="meta-row"><span>'+p.date+'</span><span><i class="ti ti-clock"></i> '+p.read+'</span></div></article>';
+  }).join('');spot('#blog-grid');}
+  var RD=$('#reading-grid');
+  if(RD){RD.innerHTML=Object.keys(CONFIG.reading).map(function(k){
+    var ic={'Currently Reading':'ti-book','Recent Papers':'ti-file-text','Important Books':'ti-books','Seminal Research':'ti-award'}[k]||'ti-bookmark';
+    return '<div class="card read-col"><span class="spot"></span><h3><i class="ti '+ic+'"></i>'+k+'</h3><ul class="read-list">'+CONFIG.reading[k].map(function(it){return '<li class="read-item"><b>'+it.t+'</b><span class="auth">'+it.a+'</span><small>'+it.s+'</small></li>';}).join('')+'</ul></div>';
+  }).join('');spot('#reading-grid');}
+  var N=$('#now-grid');
+  if(N){N.innerHTML=CONFIG.now.map(function(c){
+    return '<div class="card now-col"><span class="spot"></span><h3><i class="ti '+c.icon+'"></i>'+c.title+'</h3><ul class="now-list">'+c.items.map(function(it){return '<li><i class="ti ti-point-filled"></i>'+it.t+'<span class="st">'+it.st+'</span></li>';}).join('')+'</ul></div>';
+  }).join('');spot('#now-grid');}
+})();
+
+/* ===================== MODAL ===================== */
+var modal=$('#modal'),modalTitle=$('#modal-title'),modalBody=$('#modal-body');
+function openModal(title,html){modalTitle.textContent=title;modalBody.innerHTML=html;modal.classList.add('open');document.body.style.overflow='hidden';}
+function closeModal(){modal.classList.remove('open');document.body.style.overflow='';}
+$('#modal-close').addEventListener('click',closeModal);
+modal.addEventListener('click',function(e){if(e.target===modal)closeModal();});
+function detailHTML(d){return d.body.map(function(s){return '<h4>'+s[0]+'</h4><p>'+s[1]+'</p>';}).join('');}
+document.addEventListener('click',function(e){
+  var t=e.target.closest('[data-modal]');if(!t)return;
+  var key=t.getAttribute('data-modal');var d=DETAIL[key];if(!d)return;
+  e.preventDefault();openModal(d.title,detailHTML(d));
+});
+function copyBtn(){return '<button class="btn btn-outline" id="copybtn" style="margin-top:16px"><i class="ti ti-copy"></i>Copy</button>';}
+function copyWire(text){var b=$('#copybtn');if(b)b.addEventListener('click',function(){try{navigator.clipboard.writeText(text);b.innerHTML='<i class="ti ti-check"></i>Copied';setTimeout(function(){b.innerHTML='<i class="ti ti-copy"></i>Copy';},1600);}catch(e){}});}
+document.addEventListener('click',function(e){
+  var c=e.target.closest('[data-cite]');var bb=e.target.closest('[data-bibtex]');
+  if(c){var i=+c.getAttribute('data-cite');var tx=CONFIG.cites[i];openModal('Citation','<p style="white-space:pre-wrap;font-size:14px;line-height:1.6">'+tx+'</p>'+copyBtn());copyWire(tx);}
+  if(bb){var j=+bb.getAttribute('data-bibtex');var tb=CONFIG.bibtex[j];openModal('BibTeX','<pre style="white-space:pre-wrap;font-family:JetBrains Mono,monospace;font-size:12.5px;line-height:1.55;color:var(--ink-soft);background:var(--surface-2);border:1px solid var(--line);border-radius:12px;padding:16px;overflow:auto">'+tb.replace(/</g,'&lt;')+'</pre>'+copyBtn());copyWire(tb);}
+});
+
+/* ===================== PUBLICATIONS SEARCH/FILTER/SORT ===================== */
+(function(){
+  var list=$('#publist'),empty=$('#pub-empty');if(!list)return;
+  var pubs=$$('.pub',list);var fbtns=$$('.filters button');var search=$('#pub-search');var sort=$('#pub-sort');
+  var state={f:'All',q:'',s:'cites'};
+  function apply(){
+    var shown=0;
+    pubs.forEach(function(p){
+      var okF=state.f==='All'||p.getAttribute('data-type')===state.f;
+      var okQ=!state.q||p.textContent.toLowerCase().indexOf(state.q)>-1;
+      var vis=okF&&okQ;p.style.display=vis?'':'none';if(vis)shown++;
+    });
+    if(empty)empty.style.display=shown?'none':'block';
+    var arr=pubs.slice().sort(function(a,b){
+      if(state.s==='cites')return (+b.getAttribute('data-cites'))-(+a.getAttribute('data-cites'));
+      if(state.s==='year')return (+b.getAttribute('data-year'))-(+a.getAttribute('data-year'));
+      return (+a.getAttribute('data-year'))-(+b.getAttribute('data-year'));
+    });
+    arr.forEach(function(p){list.appendChild(p);});
+  }
+  fbtns.forEach(function(b){b.addEventListener('click',function(){fbtns.forEach(function(x){x.setAttribute('aria-pressed','false');});b.setAttribute('aria-pressed','true');state.f=b.getAttribute('data-f');apply();});});
+  if(search)search.addEventListener('input',function(){state.q=search.value.toLowerCase().trim();apply();});
+  if(sort)sort.addEventListener('change',function(){state.s=sort.value;apply();});
+  apply();
+})();
+
+/* ===================== COMMAND PALETTE ===================== */
+var openModalRef;
+(function(){
+  var pal=$('#palette'),inp=$('#palette-input'),res=$('#palette-results');
+  var sections=[
+    ['featured','Featured Research','ti-flask','Six flagship research programs'],
+    ['vision','Research Vision','ti-eye','Current, 5-year & long-term'],
+    ['areas','Research Areas','ti-grid-dots','Seven methodological areas'],
+    ['graph','Research Graph','ti-topology-ring','Connected knowledge graph'],
+    ['lab','Genomics Lab','ti-dna-2','Live scientific visualizations'],
+    ['publications','Publications','ti-books','5 publications · 84 citations'],
+    ['opensource','Open Source','ti-brand-github','Research software & pipelines'],
+    ['datasets','Datasets','ti-database','Real & synthetic datasets'],
+    ['projects','Projects','ti-layout-grid','Engineering & research projects'],
+    ['timeline','Timeline','ti-timeline','Career by year'],
+    ['journey','Journey Map','ti-map-2','Bangladesh to Florida'],
+    ['experience','Experience','ti-briefcase','Work & education'],
+    ['roadmap','Roadmap','ti-route','Five-year PhD plan'],
+    ['blog','Research Blog','ti-rss','Notes & writing'],
+    ['reading','Reading List','ti-book','What I am reading'],
+    ['now','What I am working on','ti-activity','Living snapshot'],
+    ['collaborate','Collaboration','ti-users-group','How to work with me'],
+    ['awards','Awards','ti-award','Honors & certifications'],
+    ['contact','Contact','ti-mail','Get in touch']
+  ];
+  var items=[];
+  sections.forEach(function(s){items.push({icon:s[2],title:s[1],sub:s[3],group:'Navigate',act:function(){jump('#'+s[0]);}});});
+  ['ev','spillover','dp','sweep','transfer','southasia'].forEach(function(k){var d=DETAIL[k];items.push({icon:'ti-flask-2',title:d.title,sub:'Featured research',group:'Research',act:function(){jump('#featured');setTimeout(function(){openModal(d.title,detailHTML(d));},420);}});});
+  $$('.pub').forEach(function(p){var h=$('h3 a',p);if(h)items.push({icon:'ti-file-text',title:h.textContent,sub:'Publication',group:'Publications',act:function(){jump('#publications');}});});
+  CONFIG.datasets.forEach(function(d){items.push({icon:'ti-database',title:d.name,sub:d.domain+' · '+d.type,group:'Datasets',act:function(){jump('#datasets');}});});
+  items=items.concat([
+    {icon:'ti-download',title:'Download CV',sub:'PDF',group:'Actions',act:function(){window.open('assets/Tanvir_Anjum_Joarder_CV.pdf','_blank');}},
+    {icon:'ti-school',title:'Google Scholar',sub:'External',group:'Actions',act:function(){window.open('https://scholar.google.com/citations?hl=en&user=fFcWmdwAAAAJ','_blank');}},
+    {icon:'ti-brand-github',title:'GitHub',sub:'External',group:'Actions',act:function(){window.open('https://github.com/tanviranjumjoarder','_blank');}},
+    {icon:'ti-moon',title:'Toggle theme',sub:'Light / dark',group:'Actions',act:function(){$('#theme').click();}}
+  ]);
+  var active=0,filtered=items.slice();
+  function jump(hash){closePal();var el=$(hash);if(el)el.scrollIntoView({behavior:reduce?'auto':'smooth'});}
+  function render(){
+    var q=inp.value.toLowerCase().trim();
+    filtered=items.filter(function(it){return !q||(it.title+' '+it.sub+' '+it.group).toLowerCase().indexOf(q)>-1;});
+    if(!filtered.length){res.innerHTML='<div class="palette-empty">No matches. Try genomics, grid, or publications.</div>';return;}
+    active=0;var groups={},order=[];filtered.forEach(function(it){if(!groups[it.group]){groups[it.group]=[];order.push(it.group);}groups[it.group].push(it);});
+    var html='',idx=0;
+    order.forEach(function(g){
+      html+='<div class="palette-group">'+g+'</div>';
+      groups[g].forEach(function(it){
+        html+='<div class="palette-item" data-i="'+idx+'"><span class="pi"><i class="ti '+it.icon+'"></i></span><span><div class="pt">'+it.title+'</div><div class="ps">'+it.sub+'</div></span><i class="ti ti-corner-down-left go"></i></div>';
+        idx++;
+      });
+    });
+    res.innerHTML=html;highlight();
+    $$('.palette-item',res).forEach(function(el){
+      el.addEventListener('click',function(){filtered[+el.getAttribute('data-i')].act();});
+      el.addEventListener('mousemove',function(){active=+el.getAttribute('data-i');highlight();});
+    });
+  }
+  function highlight(){$$('.palette-item',res).forEach(function(el){el.classList.toggle('active',+el.getAttribute('data-i')===active);});}
+  function openPal(){pal.classList.add('open');inp.value='';render();setTimeout(function(){inp.focus();},30);document.body.style.overflow='hidden';}
+  function closePal(){pal.classList.remove('open');document.body.style.overflow='';}
+  $('#palette-open').addEventListener('click',openPal);
+  pal.addEventListener('click',function(e){if(e.target===pal)closePal();});
+  inp.addEventListener('input',render);
+  function scrollActive(){var el=$('.palette-item.active',res);if(el)el.scrollIntoView({block:'nearest'});}
+  document.addEventListener('keydown',function(e){
+    if((e.ctrlKey||e.metaKey)&&(e.key==='k'||e.key==='K')){e.preventDefault();pal.classList.contains('open')?closePal():openPal();return;}
+    if(e.key==='/'&&!/INPUT|TEXTAREA|SELECT/.test((document.activeElement||{}).tagName||'')){e.preventDefault();openPal();return;}
+    if(pal.classList.contains('open')){
+      if(e.key==='Escape')closePal();
+      else if(e.key==='ArrowDown'){e.preventDefault();active=Math.min(active+1,filtered.length-1);highlight();scrollActive();}
+      else if(e.key==='ArrowUp'){e.preventDefault();active=Math.max(active-1,0);highlight();scrollActive();}
+      else if(e.key==='Enter'){e.preventDefault();if(filtered[active])filtered[active].act();}
+    }
+    if(e.key==='Escape'&&modal.classList.contains('open'))closeModal();
+  });
+})();
+
+/* ===================== CANVAS ENGINE ===================== */
+var DPR=Math.min(window.devicePixelRatio||1,2);
+var A='#38BDF8',V='#a78bfa',Gr='#10B981',Am='#f0b45a';
+function rrect(c,x,y,w,h,r){c.beginPath();c.moveTo(x+r,y);c.arcTo(x+w,y,x+w,y+h,r);c.arcTo(x+w,y+h,x,y+h,r);c.arcTo(x,y+h,x,y,r);c.arcTo(x,y,x+w,y,r);c.closePath();}
+
+/* ---- neural network background ---- */
+(function(){
+  var cv=$('#neural');if(!cv||reduce)return;
+  var ctx=cv.getContext('2d'),W,H,pts=[],mouse={x:-999,y:-999};
+  function resize(){W=cv.width=innerWidth*DPR;H=cv.height=innerHeight*DPR;ctx.setTransform(DPR,0,0,DPR,0,0);
+    var n=Math.min(90,Math.round(innerWidth*innerHeight/16000));pts=[];
+    for(var i=0;i<n;i++)pts.push({x:Math.random()*innerWidth,y:Math.random()*innerHeight,vx:(Math.random()-.5)*.35,vy:(Math.random()-.5)*.35});}
+  resize();
+  var rt;window.addEventListener('resize',function(){clearTimeout(rt);rt=setTimeout(resize,200);});
+  window.addEventListener('pointermove',function(e){mouse.x=e.clientX;mouse.y=e.clientY;},{passive:true});
+  window.addEventListener('pointerleave',function(){mouse.x=mouse.y=-999;});
+  var dark=function(){return root.getAttribute('data-theme')!=='light';};
+  function step(){
+    requestAnimationFrame(step);if(document.hidden)return;
+    ctx.clearRect(0,0,innerWidth,innerHeight);
+    var lc=dark()?'56,189,248':'30,58,138';
+    for(var i=0;i<pts.length;i++){var p=pts[i];
+      var dx=mouse.x-p.x,dy=mouse.y-p.y,d2=dx*dx+dy*dy;
+      if(d2<26000){var f=(1-d2/26000)*0.5;p.vx+=dx/Math.sqrt(d2+1)*f*0.04;p.vy+=dy/Math.sqrt(d2+1)*f*0.04;}
+      p.x+=p.vx;p.y+=p.vy;p.vx*=0.995;p.vy*=0.995;
+      if(p.x<0||p.x>innerWidth)p.vx*=-1;if(p.y<0||p.y>innerHeight)p.vy*=-1;
+      p.x=Math.max(0,Math.min(innerWidth,p.x));p.y=Math.max(0,Math.min(innerHeight,p.y));
+    }
+    for(var a=0;a<pts.length;a++){
+      for(var b=a+1;b<pts.length;b++){var p=pts[a],q=pts[b];var dx=p.x-q.x,dy=p.y-q.y,dd=dx*dx+dy*dy;
+        if(dd<14000){var al=(1-dd/14000)*0.5;ctx.strokeStyle='rgba('+lc+','+al+')';ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(p.x,p.y);ctx.lineTo(q.x,q.y);ctx.stroke();}}
+      ctx.fillStyle='rgba('+lc+',0.85)';ctx.beginPath();ctx.arc(pts[a].x,pts[a].y,1.6,0,6.3);ctx.fill();
+    }
+  }
+  requestAnimationFrame(step);
+})();
+
+/* ---- mini-viz registry ---- */
+var VIZ={};
+VIZ.ml=function(c,w,h,t,s){if(!s.i){s.i=1;s.L=[3,4,4,2];s.n=[];var T=s.L.length;for(var l=0;l<T;l++){for(var k=0;k<s.L[l];k++)s.n.push({x:(l+1)/(T+1)*w,y:(k+1)/(s.L[l]+1)*h,l:l});}}var tt=t/1000;
+  for(var a=0;a<s.n.length;a++)for(var b=0;b<s.n.length;b++){if(s.n[b].l===s.n[a].l+1){var pu=(Math.sin(tt*2+a+b)+1)/2;c.strokeStyle='rgba(56,189,248,'+(.05+pu*.25)+')';c.lineWidth=1;c.beginPath();c.moveTo(s.n[a].x,s.n[a].y);c.lineTo(s.n[b].x,s.n[b].y);c.stroke();}}
+  s.n.forEach(function(p,i){var q=(Math.sin(tt*3+i)+1)/2;c.fillStyle=i%3?A:V;c.globalAlpha=.55+q*.45;c.beginPath();c.arc(p.x,p.y,3.4,0,6.3);c.fill();});c.globalAlpha=1;};
+VIZ.dl=function(c,w,h,t,s){var tt=t/1000,n=4;for(var i=0;i<n;i++){var pw=w*.3-i*8,ph=h*.62-i*8,x=w*.13+i*(w*.135),y=h*.5-ph/2+Math.sin(tt+i)*3;var g=c.createLinearGradient(x,y,x+pw,y+ph);g.addColorStop(0,'rgba(56,189,248,.24)');g.addColorStop(1,'rgba(167,139,250,.12)');c.fillStyle=g;c.strokeStyle='rgba(56,189,248,.5)';c.lineWidth=1;rrect(c,x,y,pw,ph,6);c.fill();c.stroke();}var sx=w*(.1+.8*((tt%2)/2));c.strokeStyle='rgba(16,185,129,.7)';c.lineWidth=1.5;c.beginPath();c.moveTo(sx,h*.12);c.lineTo(sx,h*.88);c.stroke();};
+VIZ.data=function(c,w,h,t,s){if(!s.i){s.i=1;s.b=[];for(var k=0;k<7;k++)s.b.push(Math.random());}var tt=t/1000,bw=w/9;for(var k=0;k<7;k++){var v=(Math.sin(tt*1.4+k*.7)*.5+.5)*.6+s.b[k]*.3;var bh=v*h*.7,x=w*.1+k*bw,y=h*.85-bh;c.fillStyle=k%2?A:V;c.globalAlpha=.8;rrect(c,x,y,bw*.62,bh,3);c.fill();}c.globalAlpha=1;c.strokeStyle='rgba(148,163,184,.3)';c.beginPath();c.moveTo(w*.06,h*.86);c.lineTo(w*.94,h*.86);c.stroke();var dx=w*.06+((tt*.18)%1)*w*.88;c.fillStyle=Gr;c.beginPath();c.arc(dx,h*.2,3,0,6.3);c.fill();};
+VIZ.genomics=function(c,w,h,t,s){helixDraw(c,w,h,t,s,true);};
+VIZ.health=function(c,w,h,t,s){if(!s.i){s.i=1;s.off=0;}s.off+=1.6;var cx=w,base=h/2;c.strokeStyle=A;c.lineWidth=1.8;c.beginPath();for(var x=0;x<w;x++){var px=(x+s.off)%w;var seg=px% (w/2);var y=base;var u=seg/(w/2);if(u>.42&&u<.5){y=base-(u-.42)/.08*h*.32;}else if(u>=.5&&u<.54){y=base-h*.32+(u-.5)/.04*h*.5;}else if(u>=.54&&u<.6){y=base+h*.18-(u-.54)/.06*h*.18;}c.lineTo(x,y);}c.stroke();c.fillStyle='rgba(56,189,248,.12)';c.fillRect(0,0,w,h);};
+VIZ.cyber=function(c,w,h,t,s){if(!s.i){s.i=1;s.p=[];for(var k=0;k<22;k++)s.p.push({x:Math.random()*w,y:Math.random()*h,an:Math.random()<.12});}var tt=t/1000;s.p.forEach(function(p,i){p.x+=Math.sin(tt+i)*.2;p.y+=Math.cos(tt*.8+i)*.2;});for(var a=0;a<s.p.length;a++)for(var b=a+1;b<s.p.length;b++){var dx=s.p[a].x-s.p[b].x,dy=s.p[a].y-s.p[b].y,dd=dx*dx+dy*dy;if(dd<2600){c.strokeStyle='rgba(148,163,184,'+(.3*(1-dd/2600))+')';c.beginPath();c.moveTo(s.p[a].x,s.p[a].y);c.lineTo(s.p[b].x,s.p[b].y);c.stroke();}}s.p.forEach(function(p){var pulse=p.an?(Math.sin(tt*4)*.5+.5):0;c.fillStyle=p.an?'rgba(244,90,90,'+(.6+pulse*.4)+')':'rgba(56,189,248,.8)';c.beginPath();c.arc(p.x,p.y,p.an?3.6+pulse*2:2.2,0,6.3);c.fill();});};
+VIZ.xai=function(c,w,h,t,s){if(!s.i){s.i=1;s.v=[.9,.66,.5,.38,.24];}var tt=t/1000,n=s.v.length,gap=h/(n+1);for(var k=0;k<n;k++){var y=gap*(k+1)-6,len=(s.v[k]*(.85+Math.sin(tt+k)*.08))*w*.72;var g=c.createLinearGradient(w*.16,0,w*.16+len,0);g.addColorStop(0,A);g.addColorStop(1,V);c.fillStyle=g;rrect(c,w*.16,y,len,12,6);c.fill();c.fillStyle='rgba(148,163,184,.6)';c.beginPath();c.arc(w*.1,y+6,3,0,6.3);c.fill();}};
+VIZ.grid=function(c,w,h,t,s){if(!s.i){s.i=1;s.nd=[];var cols=6,rows=4;for(var r=0;r<rows;r++)for(var q=0;q<cols;q++)s.nd.push({x:(q+.5)/cols*w,y:(r+.5)/rows*h,ev:Math.random()<.18});}var tt=t/1000;c.strokeStyle='rgba(56,189,248,.16)';c.lineWidth=1;s.nd.forEach(function(p,i){if(i+1<s.nd.length&&(i+1)%6!==0){c.beginPath();c.moveTo(p.x,p.y);c.lineTo(s.nd[i+1].x,s.nd[i+1].y);c.stroke();}if(i+6<s.nd.length){c.beginPath();c.moveTo(p.x,p.y);c.lineTo(s.nd[i+6].x,s.nd[i+6].y);c.stroke();}});s.nd.forEach(function(p,i){var pulse=p.ev?(Math.sin(tt*2+i)*.5+.5):0;c.fillStyle=p.ev?Gr:'rgba(148,163,184,.55)';c.beginPath();c.arc(p.x,p.y,p.ev?3+pulse*2:2,0,6.3);c.fill();});};
+VIZ.spill=function(c,w,h,t,s){if(!s.i){s.i=1;s.src=[{x:w*.32,y:h*.5},{x:w*.7,y:h*.42}];}var tt=t/1000;s.src.forEach(function(p,j){for(var k=0;k<3;k++){var rr=((tt*.4+k/3+j*.2)%1);var rad=rr*Math.min(w,h)*.5;c.strokeStyle='rgba('+(j?'16,185,129':'56,189,248')+','+(.5*(1-rr))+')';c.lineWidth=1.4;c.beginPath();c.arc(p.x,p.y,rad,0,6.3);c.stroke();}c.fillStyle=j?Gr:A;c.beginPath();c.arc(p.x,p.y,3.4,0,6.3);c.fill();});};
+VIZ.gan=function(c,w,h,t,s){var tt=t/1000,cell=h/8;for(var r=0;r<8;r++)for(var q=0;q<5;q++){var x=w*.06+q*cell,y=(h-8*cell)/2+r*cell;var n=Math.random();c.fillStyle='rgba(148,163,184,'+(n*.5)+')';c.fillRect(x,y,cell-1,cell-1);}c.fillStyle=A;c.font='16px sans-serif';c.fillText('→',w*.46,h*.55);for(var r2=0;r2<8;r2++)for(var q2=0;q2<5;q2++){var x2=w*.6+q2*cell,y2=(h-8*cell)/2+r2*cell;var v=(Math.sin(tt+r2*.6+q2*.5)*.5+.5);c.fillStyle='rgba(56,189,248,'+(.15+v*.5)+')';c.fillRect(x2,y2,cell-1,cell-1);}};
+VIZ.sweep=function(c,w,h,t,s){var tt=t/1000,cols=24,rows=10,cw=w/cols,ch=h/rows;var sweepX=(Math.sin(tt*.5)*.5+.5)*cols;if(!s.i){s.i=1;s.m=[];for(var r=0;r<rows;r++){s.m[r]=[];for(var q=0;q<cols;q++)s.m[r][q]=Math.random()<.5?1:0;}}for(var r=0;r<rows;r++)for(var q=0;q<cols;q++){var near=Math.abs(q-sweepX)<3;var val=near?1:s.m[r][q];c.fillStyle=val?'rgba(56,189,248,'+(near?.9:.6)+')':'rgba(148,163,184,.12)';c.fillRect(q*cw,r*ch,cw-1,ch-1);}c.strokeStyle='rgba(240,180,90,.8)';c.lineWidth=1.4;c.strokeRect((sweepX-3)*cw,0,6*cw,h);};
+VIZ.transfer=function(c,w,h,t,s){if(!s.i){s.i=1;s.a=[];s.b=[];for(var k=0;k<10;k++){s.a.push({x:w*.22+Math.cos(k)*22,y:h*.5+Math.sin(k)*22});s.b.push({x:w*.78+Math.cos(k)*22,y:h*.5+Math.sin(k*1.3)*22});}}var tt=t/1000;c.fillStyle='rgba(56,189,248,.8)';s.a.forEach(function(p){c.beginPath();c.arc(p.x,p.y,2.6,0,6.3);c.fill();});c.fillStyle='rgba(167,139,250,.8)';s.b.forEach(function(p){c.beginPath();c.arc(p.x,p.y,2.6,0,6.3);c.fill();});for(var k=0;k<3;k++){var pr=((tt*.5+k/3)%1);var x=w*.22+(w*.56)*pr,y=h*.5+Math.sin(pr*Math.PI)*-h*.18;c.fillStyle='rgba(16,185,129,.9)';c.beginPath();c.arc(x,y,3,0,6.3);c.fill();}c.strokeStyle='rgba(148,163,184,.3)';c.beginPath();c.moveTo(w*.22,h*.5);c.bezierCurveTo(w*.4,h*.2,w*.6,h*.2,w*.78,h*.5);c.stroke();};
+VIZ.popmap=function(c,w,h,t,s){if(!s.i){s.i=1;s.cl=[{x:w*.3,y:h*.4,col:A},{x:w*.62,y:h*.34,col:V},{x:w*.5,y:h*.68,col:Gr}];s.p=[];for(var k=0;k<40;k++){var cc=s.cl[k%3];s.p.push({cx:cc.x,cy:cc.y,col:cc.col,a:Math.random()*6.3,r:6+Math.random()*22});}}var tt=t/1000;s.p.forEach(function(p,i){var x=p.cx+Math.cos(p.a+tt*.4)*p.r,y=p.cy+Math.sin(p.a+tt*.4)*p.r;c.fillStyle=p.col;c.globalAlpha=.75;c.beginPath();c.arc(x,y,2,0,6.3);c.fill();});c.globalAlpha=1;};
+
+function helixDraw(c,w,h,t,s,mini){var tt=t/1000,turns=mini?2.2:3.4,amp=mini?h*.3:h*.34,mx=w*.5,steps=mini?34:60;for(var i=0;i<steps;i++){var p=i/steps,y=h*.1+p*h*.8,ph=p*Math.PI*2*turns+tt*1.2;var x1=mx+Math.sin(ph)*amp,x2=mx+Math.sin(ph+Math.PI)*amp,z=Math.cos(ph);if(i%(mini?3:4)===0){c.strokeStyle='rgba(148,163,184,'+(.2+(z+1)/2*.3)+')';c.lineWidth=1;c.beginPath();c.moveTo(x1,y);c.lineTo(x2,y);c.stroke();}c.fillStyle=z>0?A:V;c.globalAlpha=.5+(z+1)/2*.5;c.beginPath();c.arc(x1,y,mini?2.4:3.2,0,6.3);c.fill();c.fillStyle=z>0?V:A;c.beginPath();c.arc(x2,y,mini?2.4:3.2,0,6.3);c.fill();}c.globalAlpha=1;}
+
+(function(){
+  var canvases=$$('canvas[data-viz]');if(!canvases.length)return;
+  var map=new Map(),list=[];
+  function fit(tk){var r=tk.cv.getBoundingClientRect();tk.w=Math.max(1,r.width);tk.h=Math.max(1,r.height);tk.cv.width=tk.w*DPR;tk.cv.height=tk.h*DPR;tk.ctx=tk.cv.getContext('2d');tk.ctx.setTransform(DPR,0,0,DPR,0,0);tk.st.i=0;}
+  canvases.forEach(function(cv){var tk={cv:cv,type:cv.getAttribute('data-viz'),st:{},vis:false};fit(tk);map.set(cv,tk);list.push(tk);});
+  function drawOne(tk,t){var fn=VIZ[tk.type];if(!fn)return;tk.ctx.clearRect(0,0,tk.w,tk.h);fn(tk.ctx,tk.w,tk.h,t,tk.st);}
+  if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){var tk=map.get(e.target);if(tk){tk.vis=e.isIntersecting;if(e.isIntersecting&&reduce)drawOne(tk,0);}});},{threshold:.02});canvases.forEach(function(cv){io.observe(cv);});}
+  else list.forEach(function(tk){tk.vis=true;});
+  var rt;window.addEventListener('resize',function(){clearTimeout(rt);rt=setTimeout(function(){list.forEach(fit);},220);});
+  if(reduce){list.forEach(function(tk){drawOne(tk,0);});return;}
+  var last=0;function loop(t){requestAnimationFrame(loop);if(document.hidden)return;if(t-last<1000/38)return;last=t;for(var i=0;i<list.length;i++){if(list[i].vis)drawOne(list[i],t);}}
+  requestAnimationFrame(loop);
+})();
+
+/* ---- knowledge graph ---- */
+(function(){
+  var cv=$('#graph-canvas'),wrap=$('#graph-wrap'),tip=$('#graph-tip');if(!cv)return;
+  var ctx,W,H,vis=false;
+  var N=[
+    {id:'hub',label:'Research Program',col:'#e2e8f0',hub:true,info:{Methods:'Robust, interpretable ML',Tools:'Python · PyTorch · R',Projects:'6 active threads',Papers:'5 published'}},
+    {id:'ml',label:'Machine Learning',col:A,info:{Methods:'Supervised, representation, transfer',Tools:'scikit-learn, XGBoost',Projects:'Liver-cancer, theft detection',Papers:'IEEE EICT 2019'}},
+    {id:'dl',label:'Deep Learning',col:A,info:{Methods:'CNN, tensor models',Tools:'PyTorch, Keras',Projects:'Sweep detection',Papers:'In prep'}},
+    {id:'stat',label:'Statistical Genetics',col:V,info:{Methods:'Coalescent, likelihood scans',Tools:'msprime, SweepFinder',Projects:'Sweep theory',Papers:'In prep'}},
+    {id:'gen',label:'Population Genomics',col:V,info:{Methods:'Selection & demographic inference',Tools:'discoal, scikit-allel',Projects:'South Asian genomics',Papers:'In prep'}},
+    {id:'xai',label:'Explainable AI',col:A,info:{Methods:'Attribution, SHAP',Tools:'SHAP, captum',Projects:'Interpretable detectors',Papers:'Cross-cutting'}},
+    {id:'health',label:'AI for Healthcare',col:Am,info:{Methods:'Temporal classification',Tools:'scikit-learn',Projects:'Early HCC detection',Papers:'IEEE EICT 2019'}},
+    {id:'cyber',label:'Cybersecurity',col:Am,info:{Methods:'Anomaly & fraud detection',Tools:'XGBoost, autoencoders',Projects:'Theft detection',Papers:'Applied'}},
+    {id:'grid',label:'Smart Grid Analytics',col:Gr,info:{Methods:'Forecasting, GIS, synthetic data',Tools:'Oracle, ArcGIS, GANs',Projects:'EV siting, DP data',Papers:'In prep'}}
+  ];
+  var E=[['hub','ml'],['hub','dl'],['hub','stat'],['hub','gen'],['hub','xai'],['hub','health'],['hub','cyber'],['hub','grid'],['ml','dl'],['dl','gen'],['stat','gen'],['dl','health'],['ml','cyber'],['cyber','grid'],['xai','dl'],['xai','grid'],['ml','health'],['gen','xai']];
+  var idx={};N.forEach(function(n,i){idx[n.id]=i;});
+  function place(){var r=cv.getBoundingClientRect();W=r.width;H=r.height;cv.width=W*DPR;cv.height=H*DPR;ctx=cv.getContext('2d');ctx.setTransform(DPR,0,0,DPR,0,0);
+    var cx=W/2,cy=H/2,rad=Math.min(W,H)*.33;var ring=N.filter(function(n){return !n.hub;});
+    N.forEach(function(n){if(n.hub){n.bx=cx;n.by=cy;}});
+    ring.forEach(function(n,i){var a=i/ring.length*Math.PI*2-Math.PI/2;n.bx=cx+Math.cos(a)*rad;n.by=cy+Math.sin(a)*rad*.84;});
+    N.forEach(function(n){if(n.x==null){n.x=n.bx;n.y=n.by;}n.r=n.hub?26:18;});
+  }
+  place();
+  var rt;window.addEventListener('resize',function(){clearTimeout(rt);rt=setTimeout(function(){N.forEach(function(n){n.x=null;});place();},220);});
+  if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){vis=e.isIntersecting;});},{threshold:.05});io.observe(cv);}else vis=true;
+  var drag=null,hover=null,mp={x:-999,y:-999};
+  function pos(e){var r=cv.getBoundingClientRect();return {x:(e.touches?e.touches[0].clientX:e.clientX)-r.left,y:(e.touches?e.touches[0].clientY:e.clientY)-r.top};}
+  function hit(p){for(var i=0;i<N.length;i++){var n=N[i];if((p.x-n.x)*(p.x-n.x)+(p.y-n.y)*(p.y-n.y)<(n.r+7)*(n.r+7))return n;}return null;}
+  cv.addEventListener('pointerdown',function(e){var p=pos(e);var n=hit(p);if(n){drag=n;cv.style.cursor='grabbing';}});
+  window.addEventListener('pointermove',function(e){if(drag){var p=pos(e);drag.x=p.x;drag.y=p.y;}});
+  window.addEventListener('pointerup',function(){drag=null;cv.style.cursor='grab';});
+  cv.addEventListener('pointermove',function(e){var p=pos(e);mp=p;var n=hit(p);
+    if(n){hover=n;tip.innerHTML='<h4>'+n.label+'</h4><div class="gt-tags">'+Object.keys(n.info).map(function(k){return '<span>'+k+'</span>';}).join('')+'</div><p>'+Object.keys(n.info).map(function(k){return '<b style="color:var(--ink-soft)">'+k+':</b> '+n.info[k];}).join('<br>')+'</p>';tip.style.left=n.x+'px';tip.style.top=(n.y-n.r)+'px';tip.style.opacity=1;cv.style.cursor='grab';}
+    else{hover=null;tip.style.opacity=0;cv.style.cursor='default';}
+  });
+  cv.addEventListener('pointerleave',function(){hover=null;tip.style.opacity=0;});
+  function draw(t){var tt=t/1000;ctx.clearRect(0,0,W,H);
+    E.forEach(function(e){var a=N[idx[e[0]]],b=N[idx[e[1]]];var hl=hover&&(hover.id===e[0]||hover.id===e[1]);ctx.strokeStyle=hl?'rgba(56,189,248,.55)':'rgba(148,163,184,.16)';ctx.lineWidth=hl?1.8:1;ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.stroke();
+      var pr=(tt*.4+idx[e[0]]*.1)%1;var px=a.x+(b.x-a.x)*pr,py=a.y+(b.y-a.y)*pr;ctx.fillStyle='rgba(56,189,248,'+(hl?.9:.4)+')';ctx.beginPath();ctx.arc(px,py,hl?2.6:1.8,0,6.3);ctx.fill();});
+    N.forEach(function(n,i){if(n!==drag&&!reduce){n.x+=(n.bx-n.x)*.02+Math.sin(tt+i)*.12;n.y+=(n.by-n.y)*.02+Math.cos(tt*.9+i)*.12;}
+      var act=hover===n;ctx.save();ctx.shadowColor=n.col;ctx.shadowBlur=act?22:10;
+      ctx.fillStyle=n.hub?'rgba(56,189,248,.16)':'rgba(11,20,40,.92)';ctx.strokeStyle=n.col;ctx.lineWidth=act?2.4:1.6;ctx.beginPath();ctx.arc(n.x,n.y,n.r,0,6.3);ctx.fill();ctx.stroke();ctx.restore();
+      ctx.fillStyle=n.col;ctx.beginPath();ctx.arc(n.x,n.y,n.hub?7:4,0,6.3);ctx.fill();
+      ctx.fillStyle='rgba(226,232,240,'+(act?1:.72)+')';ctx.font=(n.hub?'600 12px':'11px')+' Inter,sans-serif';ctx.textAlign='center';ctx.fillText(n.label,n.x,n.y+n.r+14);});
+  }
+  if(reduce){draw(0);return;}
+  var last=0;function loop(t){requestAnimationFrame(loop);if(document.hidden||!vis)return;if(t-last<1000/40)return;last=t;draw(t);}
+  requestAnimationFrame(loop);
+})();
+
+/* ---- genomics lab ---- */
+(function(){
+  var cv=$('#lab-canvas');if(!cv)return;
+  var ctx,W,H,vis=false;
+  var state={mode:'helix',play:true,seed:Math.random()*999,i:0};
+  var META={
+    helix:{sub:'Structure',title:'DNA Double Helix',desc:'Genetic information is encoded along two antiparallel strands. Variation in this sequence between individuals is the raw signal every method here learns from.',facts:[['Bases','A · C · G · T'],['Pairs per turn','~10.5'],['Strands','Antiparallel']]},
+    sweep:{sub:'Natural selection',title:'Selective Sweep',desc:'When a beneficial mutation rises to high frequency, it drags nearby variation with it — erasing diversity around the selected site. Detecting that valley is the core task.',facts:[['Signal','Reduced diversity'],['Around','Selected locus'],['Detect with','CNN + scans']]},
+    tree:{sub:'Demographic history',title:'Population Tree',desc:'Populations split, migrate and change size over time. Reconstructing this branching history is essential to telling selection apart from demography.',facts:[['Splits','Divergence events'],['Branch length','Time / drift'],['Infer with','msprime']]},
+    coalescent:{sub:'Ancestral process',title:'Coalescent Genealogy',desc:'Looking backward in time, sampled lineages merge into common ancestors. The coalescent is the stochastic model that generates training data for the detectors.',facts:[['Direction','Backward in time'],['Events','Coalescences'],['Tool','discoal · msprime']]},
+    haplotype:{sub:'Linked variation',title:'Haplotype Structure',desc:'Nearby variants are inherited together as haplotypes. A population sample becomes a matrix of 0/1 alleles — which a CNN can read like an image.',facts:[['Rows','Sampled chromosomes'],['Columns','Variant sites'],['As','Multi-channel image']]}
+  };
+  function fit(){var r=cv.getBoundingClientRect();W=Math.max(1,r.width);H=Math.max(1,r.height);cv.width=W*DPR;cv.height=H*DPR;ctx=cv.getContext('2d');ctx.setTransform(DPR,0,0,DPR,0,0);state.i=0;}
+  fit();var rt;window.addEventListener('resize',function(){clearTimeout(rt);rt=setTimeout(fit,220);});
+  function facts(m){var f=META[m].facts;return f.map(function(p){return '<div><span>'+p[0]+'</span><b>'+p[1]+'</b></div>';}).join('');}
+  function setMeta(m){var d=META[m];$('#lab-sub').textContent=d.sub;$('#lab-title').textContent=d.title;$('#lab-desc').textContent=d.desc;$('#lab-facts').innerHTML=facts(m);}
+  setMeta('helix');
+  function draw(t){ctx.clearRect(0,0,W,H);var m=state.mode;
+    if(m==='helix')helixDraw(ctx,W,H,t,state,false);
+    else if(m==='sweep')labSweep(t);
+    else if(m==='tree')labTree(t);
+    else if(m==='coalescent')labCoal(t);
+    else labHap(t);
+  }
+  function rng(){state.seed=(state.seed*9301+49297)%233280;return state.seed/233280;}
+  function labSweep(t){var tt=t/1000;var n=120,base=H*.78;ctx.strokeStyle='rgba(148,163,184,.25)';ctx.beginPath();ctx.moveTo(W*.06,base);ctx.lineTo(W*.94,base);ctx.stroke();
+    ctx.beginPath();var cxp=W*.5;for(var i=0;i<=n;i++){var x=W*.06+i/n*W*.88;var d=(x-cxp)/(W*.2);var div=1-Math.exp(-d*d)*0.9;var y=base-div*H*.5;i?ctx.lineTo(x,y):ctx.moveTo(x,y);}ctx.strokeStyle=A;ctx.lineWidth=2;ctx.stroke();
+    ctx.fillStyle='rgba(56,189,248,.12)';ctx.lineTo(W*.94,base);ctx.lineTo(W*.06,base);ctx.fill();
+    ctx.fillStyle=Am;ctx.beginPath();ctx.arc(cxp,base-H*.5+H*.5*.1,5,0,6.3);ctx.fill();ctx.fillStyle='rgba(226,232,240,.7)';ctx.font='11px Inter';ctx.textAlign='center';ctx.fillText('selected locus',cxp,base+18);ctx.fillStyle='rgba(148,163,184,.7)';ctx.fillText('nucleotide diversity π',W*.5,H*.12);}
+  function labTree(t){var tt=t/1000;ctx.strokeStyle=V;ctx.lineWidth=2;var top=H*.14,bot=H*.8;
+    function branch(x,y,dx,depth){if(depth<=0){ctx.fillStyle=A;ctx.beginPath();ctx.arc(x,y,4,0,6.3);ctx.fill();return;}var ny=y+(bot-top)/3;ctx.strokeStyle=depth%2?V:A;ctx.beginPath();ctx.moveTo(x,y);ctx.lineTo(x-dx,ny);ctx.moveTo(x,y);ctx.lineTo(x+dx,ny);ctx.stroke();branch(x-dx,ny,dx*.54,depth-1);branch(x+dx,ny,dx*.54,depth-1);}
+    branch(W*.5,top,W*.22,3);ctx.fillStyle='rgba(148,163,184,.7)';ctx.font='11px Inter';ctx.textAlign='center';ctx.fillText('ancestral population',W*.5,top-6);}
+  function labCoal(t){var tt=t/1000;if(!state.i){state.i=1;state.lin=[];var k=8;for(var i=0;i<k;i++)state.lin.push({x:W*.1+i*(W*.8/(k-1)),merge:.15+Math.random()*.8});}
+    ctx.strokeStyle=A;ctx.lineWidth=1.6;var top=H*.12,bot=H*.86;state.lin.forEach(function(l,i){var prog=(tt*.12+i*.05)%1;ctx.strokeStyle=i%2?A:V;ctx.beginPath();ctx.moveTo(l.x,bot);ctx.lineTo(W*.5+(l.x-W*.5)*.2,top+H*.2);ctx.stroke();ctx.fillStyle=i%2?A:V;ctx.beginPath();ctx.arc(l.x,bot,3.4,0,6.3);ctx.fill();});
+    ctx.fillStyle='rgba(226,232,240,.85)';ctx.beginPath();ctx.arc(W*.5,top+H*.16,6,0,6.3);ctx.fill();ctx.fillStyle='rgba(148,163,184,.7)';ctx.font='11px Inter';ctx.textAlign='center';ctx.fillText('MRCA',W*.5,top+H*.16-12);ctx.fillText('present-day samples',W*.5,bot+18);}
+  function labHap(t){var tt=t/1000;var cols=28,rows=14,cw=W*.88/cols,ch=H*.7/rows,ox=W*.06,oy=H*.14;if(!state.i){state.i=1;state.h=[];for(var r=0;r<rows;r++){state.h[r]=[];for(var q=0;q<cols;q++)state.h[r][q]=Math.random()<.5?1:0;}}
+    var sweepC=cols*.5,band=4;for(var r=0;r<rows;r++)for(var q=0;q<cols;q++){var near=Math.abs(q-sweepC)<band;var v=near?1:state.h[r][q];var fl=(Math.sin(tt*2+r*.3+q*.2)*.5+.5);ctx.fillStyle=v?'rgba(56,189,248,'+(near?.85:.5+fl*.2)+')':'rgba(148,163,184,.12)';ctx.fillRect(ox+q*cw,oy+r*ch,cw-1,ch-1);}
+    ctx.strokeStyle='rgba(240,180,90,.8)';ctx.lineWidth=1.4;ctx.strokeRect(ox+(sweepC-band)*cw,oy,2*band*cw,rows*ch);ctx.fillStyle='rgba(148,163,184,.7)';ctx.font='11px Inter';ctx.textAlign='center';ctx.fillText('haplotypes × variant sites',W*.5,oy-4);}
+  var tabs=$$('.lab-tab');
+  tabs.forEach(function(b){b.addEventListener('click',function(){tabs.forEach(function(x){x.setAttribute('aria-pressed','false');});b.setAttribute('aria-pressed','true');state.mode=b.getAttribute('data-lab');state.i=0;setMeta(state.mode);if(reduce)draw(0);});});
+  var playBtn=$('#lab-play');
+  if(playBtn)playBtn.addEventListener('click',function(){state.play=!state.play;playBtn.innerHTML=state.play?'<i class="ti ti-player-pause"></i>Pause':'<i class="ti ti-player-play"></i>Play';});
+  var reseed=$('#lab-reseed');if(reseed)reseed.addEventListener('click',function(){state.seed=Math.random()*999;state.i=0;if(reduce)draw(0);});
+  if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){vis=e.isIntersecting;});},{threshold:.05});io.observe(cv);}else vis=true;
+  if(reduce){draw(0);return;}
+  var last=0,acc=0,lp=0;function loop(t){requestAnimationFrame(loop);if(document.hidden||!vis)return;if(t-last<1000/40)return;last=t;if(state.play){lp=t;draw(t);}else draw(lp);}
+  requestAnimationFrame(loop);
+})();
+
+/* ---- journey plane ---- */
+(function(){
+  var path=$('#route'),plane=$('#plane'),svg=$('#journeysvg');if(!path||!plane)return;
+  var len=path.getTotalLength(),vis=false,s=0;
+  if('IntersectionObserver' in window&&svg){var io=new IntersectionObserver(function(es){es.forEach(function(e){vis=e.isIntersecting;});},{threshold:.05});io.observe(svg);}else vis=true;
+  function set(p){var pt=path.getPointAtLength(p*len);plane.setAttribute('transform','translate('+pt.x+','+pt.y+')');}
+  if(reduce){set(.5);return;}
+  function step(){requestAnimationFrame(step);if(document.hidden||!vis)return;s=(s+.0015)%1;set(s);}
+  requestAnimationFrame(step);
+})();
+
+})();
+</script>
+</body>
+</html>
