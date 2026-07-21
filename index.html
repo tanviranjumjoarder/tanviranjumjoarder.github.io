@@ -9,6 +9,8 @@
 <meta name="keywords" content="Tanvir Anjum Joarder, PhD researcher, machine learning scientist, computational genomics, statistical genetics, population genomics, deep learning, selective sweep detection, transfer learning, explainable AI, smart grid analytics, electricity theft detection, EV charging, Florida Atlantic University, DeGiorgio Lab, BREB" />
 <meta name="robots" content="index, follow, max-image-preview:large" />
 <link rel="canonical" href="https://tanviranjumjoarder.github.io/" />
+<link rel="me" href="https://orcid.org/0009-0005-3990-735X" />
+<link rel="me" href="https://scholar.google.com/citations?user=fFcWmdwAAAAJ&amp;hl=en" />
 <meta property="og:type" content="profile" />
 <meta property="og:site_name" content="Tanvir Anjum Joarder · Research" />
 <meta property="og:title" content="Tanvir Anjum Joarder · ML Scientist & Computational Genomics Researcher" />
@@ -41,7 +43,7 @@
 <style>
 /* ============ DESIGN TOKENS ============ */
 :root,[data-theme="dark"]{
-  --bg:#070e1e; --bg-2:#0a1326; --surface:#0e1830; --surface-2:#121d38; --surface-3:#1b2746;
+  --bg:#0a0e17; --bg-2:#0c1122; --surface:#0e1830; --surface-2:#121d38; --surface-3:#1b2746;
   --primary:#0F172A; --secondary:#1E3A8A; --accent:#38BDF8; --accent-2:#818cf8; --accent-3:#a78bfa; --success:#10B981;
   --accent-text:#56c6fb;
   --ink:#E7EDF5; --ink-soft:#cbd5e1; --muted:#9aa8bd; --faint:#6b7a90;
@@ -53,23 +55,25 @@
   --grad-text:linear-gradient(100deg,#38BDF8,#818cf8 52%,#a78bfa);
   --shadow:0 1px 2px rgba(0,0,0,.5),0 22px 60px -20px rgba(2,6,23,.9);
   --glow:0 0 0 1px rgba(56,189,248,.16),0 10px 50px -10px rgba(56,189,248,.4);
+  --grid:148,163,184;
   --maxw:1200px; --r:18px; --r-sm:12px;
   --display:'Fraunces',Georgia,'Times New Roman',serif;
 }
 [data-theme="light"]{
-  /* Pearl + indigo/teal — layered, softly shaded academic palette */
-  --bg:#f3f5fa; --bg-2:#e9edf5; --surface:#ffffff; --surface-2:#f7f9fd; --surface-3:#edf1f8;
-  --accent:#1e40af; --accent-2:#4338ca; --accent-3:#0e7490; --success:#0f766e;
-  --accent-text:#1e3a8a;
-  --ink:#101728; --ink-soft:#333d54; --muted:#5a6478; --faint:#8d96a8;
-  --line:#dce2ee; --line-soft:#e7ebf4;
-  --glass:rgba(255,255,255,.74); --glass-2:rgba(255,255,255,.92); --glass-brd:#d8dfee;
+  /* Warm scientific paper — editorial whites, Oxford-blue ink, restrained teal */
+  --bg:#f7f5f1; --bg-2:#f1efe8; --surface:#ffffff; --surface-2:#faf9f5; --surface-3:#f2f0ea;
+  --accent:#1d4ed8; --accent-2:#4338ca; --accent-3:#0e7490; --success:#0f766e;
+  --accent-text:#1e40af;
+  --ink:#15181f; --ink-soft:#3a4150; --muted:#5f6677; --faint:#8b93a2;
+  --line:#e4e2da; --line-soft:#eeece5;
+  --glass:rgba(255,255,255,.72); --glass-2:rgba(255,255,255,.9); --glass-brd:#e2dfd6;
   --grad:linear-gradient(115deg,#1e3a8a,#4338ca 55%,#0e7490);
-  --grad-2:linear-gradient(135deg,#1e40af,#0f766e);
+  --grad-2:linear-gradient(135deg,#1d4ed8,#0f766e);
   --grad-3:linear-gradient(135deg,#4338ca,#0e7490);
   --grad-text:linear-gradient(115deg,#1e3a8a,#4338ca 60%,#0e7490);
-  --shadow:0 2px 5px rgba(23,32,64,.06),0 24px 56px -24px rgba(23,32,64,.28);
-  --glow:0 0 0 1px rgba(67,56,202,.16),0 14px 36px -16px rgba(67,56,202,.28);
+  --shadow:0 1px 2px rgba(35,40,55,.04),0 18px 44px -22px rgba(35,40,55,.20);
+  --glow:0 0 0 1px rgba(67,56,202,.14),0 14px 36px -16px rgba(67,56,202,.22);
+  --grid:60,74,110;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
@@ -93,20 +97,14 @@ img{max-width:100%;display:block}
 .hairline{height:1px;background:var(--line);border:0;margin:18px 0}
 .center{text-align:center;margin-left:auto;margin-right:auto}
 
-/* ============ AMBIENT BACKGROUND ============ */
-.bgwrap{position:fixed;inset:0;z-index:-2;overflow:hidden;background:radial-gradient(120% 82% at 82% -12%,rgba(56,90,190,.30),transparent 60%),radial-gradient(100% 80% at 0% 2%,rgba(56,189,248,.13),transparent 55%),radial-gradient(95% 75% at 50% 120%,rgba(124,92,210,.14),transparent 60%),var(--bg)}
-#neural{position:fixed;inset:0;z-index:-1;width:100%;height:100%;pointer-events:none;opacity:.5;transition:opacity .6s ease}
-.gridfx{position:fixed;inset:0;z-index:-2;background-image:linear-gradient(var(--line-soft) 1px,transparent 1px),linear-gradient(90deg,var(--line-soft) 1px,transparent 1px);background-size:54px 54px;-webkit-mask:radial-gradient(120% 90% at 50% 0%,#000,transparent 75%);mask:radial-gradient(120% 90% at 50% 0%,#000,transparent 75%);opacity:.5}
-.aurora{position:fixed;inset:-15%;z-index:-2;filter:blur(80px);opacity:.32;pointer-events:none}
-.aurora .blob{position:absolute;border-radius:50%;animation:float 34s ease-in-out infinite}
-.b1{width:46vw;height:46vw;background:radial-gradient(circle,rgba(56,189,248,.42),transparent 65%);top:-12%;left:-8%}
-.b2{width:40vw;height:40vw;background:radial-gradient(circle,rgba(167,139,250,.4),transparent 65%);top:-6%;right:-6%;animation-delay:-11s}
-.b3{width:38vw;height:38vw;background:radial-gradient(circle,rgba(16,185,129,.26),transparent 65%);bottom:-14%;left:36%;animation-delay:-20s}
-/* Light mode: clean academic surface — no neural, no aurora, soft scientific grid */
-[data-theme="light"] #neural{display:none}
-[data-theme="light"] .aurora{display:none}
-[data-theme="light"] .bgwrap{background:radial-gradient(110% 80% at 85% -10%,rgba(67,56,202,.10),transparent 55%),radial-gradient(100% 80% at 0% 0%,rgba(14,116,144,.08),transparent 55%),radial-gradient(90% 70% at 50% 115%,rgba(30,58,138,.07),transparent 60%),linear-gradient(180deg,#f6f8fc,#e7ebf4)}
-[data-theme="light"] .gridfx{opacity:.75;background-image:radial-gradient(rgba(30,58,138,.055) 1px,transparent 1.6px);background-size:26px 26px;-webkit-mask:radial-gradient(140% 110% at 50% 0%,#000,transparent 88%);mask:radial-gradient(140% 110% at 50% 0%,#000,transparent 88%)}
+/* ============ AMBIENT BACKGROUND — minimal editorial ============ */
+/* Two static layers only: a soft directional glow (bgwrap) + a fine hairline grid that   */
+/* fades from the top toward the centre (gridfx). No canvas, no animation, no color blobs. */
+.bgwrap{position:fixed;inset:0;z-index:-3;overflow:hidden;background:radial-gradient(72% 56% at 86% -10%,rgba(72,118,216,.15),transparent 60%),radial-gradient(58% 46% at 6% 2%,rgba(120,150,220,.055),transparent 60%),var(--bg)}
+.gridfx{position:fixed;inset:0;z-index:-2;pointer-events:none;opacity:1;background-image:linear-gradient(rgba(var(--grid),.05) 1px,transparent 1px),linear-gradient(90deg,rgba(var(--grid),.05) 1px,transparent 1px);background-size:56px 56px;-webkit-mask:linear-gradient(180deg,#000 0%,rgba(0,0,0,.42) 34%,transparent 66%);mask:linear-gradient(180deg,#000 0%,rgba(0,0,0,.42) 34%,transparent 66%)}
+/* Light mode: warm paper — gentler glow, fainter grid */
+[data-theme="light"] .bgwrap{background:radial-gradient(74% 54% at 88% -12%,rgba(70,104,196,.065),transparent 58%),radial-gradient(54% 42% at 6% 2%,rgba(14,116,144,.03),transparent 60%),linear-gradient(180deg,#f9f7f3,#f1efe8)}
+[data-theme="light"] .gridfx{background-image:linear-gradient(rgba(var(--grid),.05) 1px,transparent 1px),linear-gradient(90deg,rgba(var(--grid),.05) 1px,transparent 1px);-webkit-mask:linear-gradient(180deg,#000 0%,rgba(0,0,0,.4) 32%,transparent 64%);mask:linear-gradient(180deg,#000 0%,rgba(0,0,0,.4) 32%,transparent 64%)}
 
 /* gradient TEXT darkened in light mode for legible high contrast */
 [data-theme="light"] .grad,[data-theme="light"] .eyebrow .n,[data-theme="light"] .hstat b,[data-theme="light"] .metric b,[data-theme="light"] .portrait .fallback b,[data-theme="light"] .rtl-node .yr,[data-theme="light"] .chip i{background:var(--grad-text);-webkit-background-clip:text;background-clip:text;color:transparent}
@@ -517,6 +515,12 @@ header.nav.scrolled .bar{height:60px}
 .socials{display:flex;flex-wrap:wrap;gap:12px;margin-top:18px}
 .socials a{display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border:1px solid var(--line);border-radius:999px;color:var(--muted);font-size:14px;transition:.25s;background:var(--surface)}
 .socials a:hover{color:var(--ink);border-color:var(--accent);transform:translateY(-2px)}
+.socials a svg{width:16px;height:16px;flex:none}
+/* ORCID iD badge — official mark */
+.orcid-id{display:inline-flex;align-items:center;gap:8px;font-family:"JetBrains Mono",monospace;font-size:12.5px;color:var(--ink-soft);text-decoration:none;transition:.2s}
+.orcid-id svg{width:17px;height:17px;flex:none}
+.orcid-id:hover{color:var(--accent-text)}
+.orcid-id .lbl{letter-spacing:.01em}
 footer{border-top:1px solid var(--line-soft);padding:56px 0 42px;position:relative}
 .foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:24px}
 .foot a.fl{color:var(--muted);font-size:14px;transition:.2s;margin-right:16px}
@@ -566,15 +570,12 @@ footer{border-top:1px solid var(--line-soft);padding:56px 0 42px;position:relati
 @media(prefers-reduced-motion:reduce){
   *{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}
   .reveal{opacity:1;transform:none}
-  #neural,.aurora{display:none}
 }
 </style>
 </head>
 <body>
 <div class="bgwrap"></div>
 <div class="gridfx"></div>
-<div class="aurora"><span class="blob b1"></span><span class="blob b2"></span><span class="blob b3"></span></div>
-<canvas id="neural" aria-hidden="true"></canvas>
 <div class="progress" id="progress"></div>
 <a href="#hero" class="sr-only">Skip to content</a>
 <header class="nav" id="nav">
@@ -635,9 +636,13 @@ footer{border-top:1px solid var(--line-soft);padding:56px 0 42px;position:relati
         <a href="assets/Tanvir_Anjum_Joarder_CV.pdf" target="_blank" rel="noopener" class="btn btn-outline magnetic"><i class="ti ti-download"></i>Curriculum Vitae</a>
         <a href="https://scholar.google.com/citations?hl=en&user=fFcWmdwAAAAJ" target="_blank" rel="noopener" class="btn btn-ghost"><i class="ti ti-school"></i>Scholar</a>
       </div>
+      <a class="orcid-id reveal d3" href="https://orcid.org/0009-0005-3990-735X" target="_blank" rel="noopener me" style="margin-top:18px" aria-label="ORCID iD: 0009-0005-3990-735X (verified)">
+        <svg viewBox="0 0 256 256" aria-hidden="true"><path fill="#A6CE39" d="M256 128c0 70.7-57.3 128-128 128S0 198.7 0 128 57.3 0 128 0s128 57.3 128 128z"/><path fill="#FFF" d="M86.3 186.2H70.9V79.1h15.4v107.1zM108.9 79.1h41.6c39.6 0 57 28.3 57 53.6 0 27.5-21.5 53.6-56.8 53.6h-41.8V79.1zm15.4 93.3h24.5c34.9 0 42.9-26.5 42.9-39.7 0-21.5-13.7-39.7-43.7-39.7h-23.7v79.4zM88.7 56.8c0 5.5-4.5 10.1-10.1 10.1s-10.1-4.6-10.1-10.1c0-5.6 4.5-10.1 10.1-10.1s10.1 4.6 10.1 10.1z"/></svg>
+        <span class="lbl">orcid.org/0009-0005-3990-735X</span>
+      </a>
       <div class="hero-stats reveal d3" id="hero-stats">
         <div class="hstat"><span class="spot"></span><b data-count="5">0</b><span>Publications</span></div>
-        <div class="hstat"><span class="spot"></span><b data-count="86">0</b><span>Citations</span></div>
+        <div class="hstat"><span class="spot"></span><b data-count="92">0</b><span>Citations</span></div>
         <div class="hstat"><span class="spot"></span><b data-count="9">0</b><span>Research Areas</span></div>
         <div class="hstat"><span class="spot"></span><b data-count="8"><span class="suf"></span>0</b><span>Years in Research &amp; Industry</span></div>
         <div class="hstat"><span class="spot"></span><b data-count="6">0</b><span>Projects</span></div>
@@ -710,6 +715,7 @@ footer{border-top:1px solid var(--line-soft);padding:56px 0 42px;position:relati
           <hr class="hairline">
           <div class="socials" style="margin-top:0">
             <a href="https://scholar.google.com/citations?hl=en&user=fFcWmdwAAAAJ" target="_blank" rel="noopener"><i class="ti ti-school"></i>Scholar</a>
+            <a href="https://orcid.org/0009-0005-3990-735X" target="_blank" rel="noopener me"><svg viewBox="0 0 256 256" aria-hidden="true"><path fill="#A6CE39" d="M256 128c0 70.7-57.3 128-128 128S0 198.7 0 128 57.3 0 128 0s128 57.3 128 128z"/><path fill="#FFF" d="M86.3 186.2H70.9V79.1h15.4v107.1zM108.9 79.1h41.6c39.6 0 57 28.3 57 53.6 0 27.5-21.5 53.6-56.8 53.6h-41.8V79.1zm15.4 93.3h24.5c34.9 0 42.9-26.5 42.9-39.7 0-21.5-13.7-39.7-43.7-39.7h-23.7v79.4zM88.7 56.8c0 5.5-4.5 10.1-10.1 10.1s-10.1-4.6-10.1-10.1c0-5.6 4.5-10.1 10.1-10.1s10.1 4.6 10.1 10.1z"/></svg>ORCID</a>
             <a href="https://github.com/tanviranjumjoarder" target="_blank" rel="noopener"><i class="ti ti-brand-github"></i>GitHub</a>
             <a href="https://www.linkedin.com/in/tanvir-anjum-joarder" target="_blank" rel="noopener"><i class="ti ti-brand-linkedin"></i>LinkedIn</a>
           </div>
@@ -901,10 +907,11 @@ footer{border-top:1px solid var(--line-soft);padding:56px 0 42px;position:relati
     <p class="lead reveal">Author shown in bold. Search, filter and sort below — export a citation or BibTeX from any entry. For the complete, live list, visit Google Scholar.</p>
     <div class="metrics reveal">
       <div class="metric"><b data-count="5">0</b><span>Publications</span></div>
-      <div class="metric"><b data-count="86">0</b><span>Citations</span></div>
+      <div class="metric"><b data-count="92">0</b><span>Citations</span></div>
       <div class="metric"><b data-count="4">0</b><span>h-index</span></div>
-      <div class="metric"><b data-count="1">0</b><span>i10-index</span></div>
+      <div class="metric"><b data-count="2">0</b><span>i10-index</span></div>
     </div>
+    <p class="reveal" style="text-align:center;margin:-16px 0 26px;font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--muted);display:flex;align-items:center;justify-content:center;gap:8px"><span style="width:7px;height:7px;border-radius:50%;background:var(--success);display:inline-block;box-shadow:0 0 0 3px rgba(16,185,129,.16)"></span><span data-scholar-updated>Citations auto-sync from Google Scholar</span></p>
     <div class="pubtools reveal">
       <div class="search"><i class="ti ti-search"></i><input id="pub-search" type="text" placeholder="Search title, author, venue…" aria-label="Search publications"></div>
       <div class="filters" role="group" aria-label="Filter by type">
@@ -919,12 +926,12 @@ footer{border-top:1px solid var(--line-soft);padding:56px 0 42px;position:relati
       </select>
     </div>
     <div id="publist">
-      <article class="pub reveal" data-type="Journal" data-year="2025" data-cites="59" data-pub="0"><div class="ref">[1]</div><div>
+      <article class="pub reveal" data-type="Journal" data-year="2025" data-cites="63" data-pub="0"><div class="ref">[1]</div><div>
         <h3><a href="https://link.springer.com/article/10.1007/s11356-025-36284-9" target="_blank" rel="noopener">A comprehensive review of carbon dioxide capture, transportation, utilization, and storage: a source of future energy</a></h3>
         <p class="auth">M. S. A. Joarder, M. S. Islam, M. H. Hasan, A. Kutub, M. F. Kabir, F. Rashid, <b>T. A. Joarder</b></p>
         <p class="ven">Environmental Science and Pollution Research, vol. 32, pp. 9299–9332, Springer, March 2025.</p>
         <p class="doi">DOI: 10.1007/s11356-025-36284-9</p>
-        <div class="tags"><span class="badge">Q1 Journal</span><span class="cites"><i class="ti ti-quote"></i>58 citations</span>
+        <div class="tags"><span class="badge">Q1 Journal</span><span class="cites"><i class="ti ti-quote"></i>63 citations</span>
           <a class="plink" href="https://link.springer.com/article/10.1007/s11356-025-36284-9" target="_blank" rel="noopener"><i class="ti ti-external-link"></i>Springer</a>
           <a class="plink" href="https://doi.org/10.1007/s11356-025-36284-9" target="_blank" rel="noopener"><i class="ti ti-link"></i>DOI</a>
           <a class="plink" href="https://scholar.google.com/scholar?cluster=14651681253337623933" target="_blank" rel="noopener"><i class="ti ti-school"></i>Scholar</a>
@@ -945,7 +952,7 @@ footer{border-top:1px solid var(--line-soft);padding:56px 0 42px;position:relati
         <h3><a href="https://www.researchgate.net/publication/359928987" target="_blank" rel="noopener">Electricity generation from the rotational speed of train wheel: an approach of future energy</a></h3>
         <p class="auth">M. S. A. Joarder, F. Rashid, M. G. Zakir, <b>T. A. Joarder</b></p>
         <p class="ven">Proc. International Conference on Mechanical Engineering and Renewable Energy 2021 (ICMERE), pp. 12–14, December 2021.</p>
-        <div class="tags"><span class="badge">Conference</span><span class="cites"><i class="ti ti-quote"></i>6 citations</span>
+        <div class="tags"><span class="badge">Conference</span><span class="cites"><i class="ti ti-quote"></i>7 citations</span>
           <a class="plink" href="https://www.researchgate.net/publication/359928987" target="_blank" rel="noopener"><i class="ti ti-external-link"></i>ResearchGate</a>
           <a class="plink" href="https://scholar.google.com/scholar?cluster=11243375042023998161" target="_blank" rel="noopener"><i class="ti ti-school"></i>Scholar</a>
           <a class="plink pdf-link" href="assets/papers/joarder-2021-train-wheel-electricity.pdf" target="_blank" rel="noopener"><i class="ti ti-file-type-pdf"></i>PDF</a>
@@ -1187,7 +1194,7 @@ footer{border-top:1px solid var(--line-soft);padding:56px 0 42px;position:relati
         </div>
         <div class="profiles">
           <a class="prof" href="https://scholar.google.com/citations?hl=en&user=fFcWmdwAAAAJ" target="_blank" rel="noopener"><span class="ic"><i class="ti ti-school"></i></span><span><b style="font-size:14px">Google Scholar</b><small>Citations &amp; metrics</small></span></a>
-          <a class="prof" href="https://orcid.org" target="_blank" rel="noopener"><span class="ic"><i class="ti ti-fingerprint"></i></span><span><b style="font-size:14px">ORCID</b><small>Add your iD</small></span></a>
+          <a class="prof" href="https://orcid.org/0009-0005-3990-735X" target="_blank" rel="noopener me"><span class="ic"><svg viewBox="0 0 256 256" style="width:21px;height:21px" aria-hidden="true"><path fill="#A6CE39" d="M256 128c0 70.7-57.3 128-128 128S0 198.7 0 128 57.3 0 128 0s128 57.3 128 128z"/><path fill="#FFF" d="M86.3 186.2H70.9V79.1h15.4v107.1zM108.9 79.1h41.6c39.6 0 57 28.3 57 53.6 0 27.5-21.5 53.6-56.8 53.6h-41.8V79.1zm15.4 93.3h24.5c34.9 0 42.9-26.5 42.9-39.7 0-21.5-13.7-39.7-43.7-39.7h-23.7v79.4zM88.7 56.8c0 5.5-4.5 10.1-10.1 10.1s-10.1-4.6-10.1-10.1c0-5.6 4.5-10.1 10.1-10.1s10.1 4.6 10.1 10.1z"/></svg></span><span><b style="font-size:14px">ORCID</b><small>0009-0005-3990-735X</small></span></a>
           <a class="prof" href="https://github.com/tanviranjumjoarder" target="_blank" rel="noopener"><span class="ic"><i class="ti ti-brand-github"></i></span><span><b style="font-size:14px">GitHub</b><small>@tanviranjumjoarder</small></span></a>
           <a class="prof" href="https://www.linkedin.com/in/tanvir-anjum-joarder" target="_blank" rel="noopener"><span class="ic"><i class="ti ti-brand-linkedin"></i></span><span><b style="font-size:14px">LinkedIn</b><small>in/tanvir-anjum-joarder</small></span></a>
         </div>
@@ -1215,7 +1222,7 @@ footer{border-top:1px solid var(--line-soft);padding:56px 0 42px;position:relati
       <a href="https://scholar.google.com/citations?hl=en&user=fFcWmdwAAAAJ" target="_blank" rel="noopener"><i class="ti ti-school"></i>Google Scholar</a>
       <a href="https://github.com/tanviranjumjoarder" target="_blank" rel="noopener"><i class="ti ti-brand-github"></i>GitHub</a>
       <a href="https://www.linkedin.com/in/tanvir-anjum-joarder" target="_blank" rel="noopener"><i class="ti ti-brand-linkedin"></i>LinkedIn</a>
-      <a href="https://orcid.org" target="_blank" rel="noopener"><i class="ti ti-fingerprint"></i>ORCID</a>
+      <a href="https://orcid.org/0009-0005-3990-735X" target="_blank" rel="noopener me"><svg viewBox="0 0 256 256" aria-hidden="true"><path fill="#A6CE39" d="M256 128c0 70.7-57.3 128-128 128S0 198.7 0 128 57.3 0 128 0s128 57.3 128 128z"/><path fill="#FFF" d="M86.3 186.2H70.9V79.1h15.4v107.1zM108.9 79.1h41.6c39.6 0 57 28.3 57 53.6 0 27.5-21.5 53.6-56.8 53.6h-41.8V79.1zm15.4 93.3h24.5c34.9 0 42.9-26.5 42.9-39.7 0-21.5-13.7-39.7-43.7-39.7h-23.7v79.4zM88.7 56.8c0 5.5-4.5 10.1-10.1 10.1s-10.1-4.6-10.1-10.1c0-5.6 4.5-10.1 10.1-10.1s10.1 4.6 10.1 10.1z"/></svg>ORCID</a>
     </div>
   </div>
 </section>
@@ -1240,7 +1247,7 @@ footer{border-top:1px solid var(--line-soft);padding:56px 0 42px;position:relati
 </footer>
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Person","name":"Tanvir Anjum Joarder","alternateName":"T. A. Joarder","url":"https://tanviranjumjoarder.github.io/","image":"https://tanviranjumjoarder.github.io/assets/profile.jpg","jobTitle":"PhD Researcher (Graduate Research Assistant)","description":"Machine learning scientist and computational genomics researcher building interpretable methods for population genomics, smart-grid analytics, and AI for healthcare.","email":"mailto:tjoarder2026@fau.edu","sameAs":["https://scholar.google.com/citations?hl=en&user=fFcWmdwAAAAJ","https://github.com/tanviranjumjoarder","https://www.linkedin.com/in/tanvir-anjum-joarder","https://orcid.org"],"knowsAbout":["Machine Learning","Deep Learning","Data Science","Population Genomics","Statistical Genetics","Natural Selection","Transfer Learning","AI for Healthcare","Cybersecurity","Explainable AI","Smart Grid Analytics","Electricity Theft Detection","Differential Privacy","Synthetic Data"],"affiliation":{"@type":"CollegeOrUniversity","name":"Florida Atlantic University"},"worksFor":{"@type":"Organization","name":"Bangladesh Rural Electrification Board"},"alumniOf":{"@type":"CollegeOrUniversity","name":"Rajshahi University of Engineering & Technology"}}
+{"@context":"https://schema.org","@type":"Person","name":"Tanvir Anjum Joarder","alternateName":"T. A. Joarder","url":"https://tanviranjumjoarder.github.io/","image":"https://tanviranjumjoarder.github.io/assets/profile.jpg","jobTitle":"PhD Researcher (Graduate Research Assistant)","description":"Machine learning scientist and computational genomics researcher building interpretable methods for population genomics, smart-grid analytics, and AI for healthcare.","email":"mailto:tjoarder2026@fau.edu","identifier":{"@type":"PropertyValue","propertyID":"ORCID","value":"https://orcid.org/0009-0005-3990-735X"},"sameAs":["https://scholar.google.com/citations?hl=en&user=fFcWmdwAAAAJ","https://orcid.org/0009-0005-3990-735X","https://github.com/tanviranjumjoarder","https://www.linkedin.com/in/tanvir-anjum-joarder"],"knowsAbout":["Machine Learning","Deep Learning","Data Science","Population Genomics","Statistical Genetics","Natural Selection","Transfer Learning","AI for Healthcare","Cybersecurity","Explainable AI","Smart Grid Analytics","Electricity Theft Detection","Differential Privacy","Synthetic Data"],"affiliation":{"@type":"CollegeOrUniversity","name":"Florida Atlantic University"},"worksFor":{"@type":"Organization","name":"Bangladesh Rural Electrification Board"},"alumniOf":{"@type":"CollegeOrUniversity","name":"Rajshahi University of Engineering & Technology"}}
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"ItemList","name":"Publications of Tanvir Anjum Joarder","itemListElement":[
@@ -1584,7 +1591,48 @@ document.addEventListener('click',function(e){
   fbtns.forEach(function(b){b.addEventListener('click',function(){fbtns.forEach(function(x){x.setAttribute('aria-pressed','false');});b.setAttribute('aria-pressed','true');state.f=b.getAttribute('data-f');apply();});});
   if(search)search.addEventListener('input',function(){state.q=search.value.toLowerCase().trim();apply();});
   if(sort)sort.addEventListener('change',function(){state.s=sort.value;apply();});
+  window.__reapplyPubs=apply;
   apply();
+})();
+
+/* ===================== LIVE SCHOLAR METRICS (auto-sync from metrics.json) ===================== */
+/* The website never hardcodes citation counts as the source of truth: it reads them from        */
+/* assets/data/metrics.json, which a scheduled GitHub Action regenerates from Google Scholar.    */
+(function(){
+  var SRC='assets/data/metrics.json';
+  function lastNode(el){return el.childNodes[el.childNodes.length-1];}
+  function labelOf(b){
+    var lab='',sps=b.parentElement?b.parentElement.querySelectorAll('span'):[];
+    for(var i=0;i<sps.length;i++){var tx=sps[i].textContent.trim();if(tx)lab=tx;}
+    return lab;
+  }
+  function setStat(label,val){
+    if(val==null)return;
+    $$('.hstat b, .metric b').forEach(function(b){
+      if(labelOf(b).toLowerCase()===label.toLowerCase()){
+        b.setAttribute('data-count',val);
+        var n=lastNode(b);if(n&&n.nodeType===3)n.nodeValue=val;
+      }
+    });
+  }
+  function apply(m){
+    if(!m)return;
+    var t=m.totals||{};
+    setStat('Citations',t.citations);setStat('Publications',t.publications);
+    setStat('h-index',t.hindex);setStat('i10-index',t.i10index);
+    var papers=m.papers||{};
+    $$('.pub').forEach(function(p){
+      var link=p.querySelector('a[href*="cluster="]');if(!link)return;
+      var mo=link.href.match(/cluster=(\d+)/);if(!mo)return;
+      var c=papers[mo[1]];if(c==null)return;
+      p.setAttribute('data-cites',c);
+      var big=p.querySelector('.rcites b');if(big)big.textContent=c;
+      var chip=p.querySelector('.cites');if(chip)chip.innerHTML='<i class="ti ti-quote"></i>'+c+' citation'+(c===1?'':'s');
+    });
+    if(window.__reapplyPubs)window.__reapplyPubs();
+    if(m.updated)$$('[data-scholar-updated]').forEach(function(el){el.textContent='Citations synced from Google Scholar · '+m.updated;});
+  }
+  try{fetch(SRC,{cache:'no-store'}).then(function(r){return r.ok?r.json():null;}).then(apply).catch(function(){});}catch(e){}
 })();
 
 /* ===================== COMMAND PALETTE ===================== */
@@ -1597,7 +1645,7 @@ var openModalRef;
     ['areas','Research Areas','ti-grid-dots','Seven methodological areas'],
     ['graph','Research Graph','ti-topology-ring','Connected knowledge graph'],
     ['lab','Genomics Lab','ti-dna-2','Live scientific visualizations'],
-    ['publications','Publications','ti-books','5 publications · 86 citations'],
+    ['publications','Publications','ti-books','5 publications · 92 citations'],
     ['software','Software & Data','ti-package','Research code & datasets'],
     ['projects','Projects','ti-layout-grid','Engineering & research projects'],
     ['experience','Trajectory','ti-timeline','Career, education & journey'],
@@ -1666,40 +1714,7 @@ var DPR=Math.min(window.devicePixelRatio||1,2);
 var A='#38BDF8',V='#a78bfa',Gr='#10B981',Am='#f0b45a';
 function rrect(c,x,y,w,h,r){c.beginPath();c.moveTo(x+r,y);c.arcTo(x+w,y,x+w,y+h,r);c.arcTo(x+w,y+h,x,y+h,r);c.arcTo(x,y+h,x,y,r);c.arcTo(x,y,x+w,y,r);c.closePath();}
 
-/* ---- ambient neural network (dark only, slow, throttled) ---- */
-(function(){
-  var cv=$('#neural');if(!cv||reduce)return;
-  var ctx=cv.getContext('2d'),W,H,pts=[],mouse={x:-999,y:-999};
-  function resize(){W=cv.width=innerWidth*DPR;H=cv.height=innerHeight*DPR;ctx.setTransform(DPR,0,0,DPR,0,0);
-    var n=Math.min(46,Math.round(innerWidth*innerHeight/30000));pts=[];
-    for(var i=0;i<n;i++)pts.push({x:Math.random()*innerWidth,y:Math.random()*innerHeight,vx:(Math.random()-.5)*.14,vy:(Math.random()-.5)*.14});}
-  resize();
-  var rt;window.addEventListener('resize',function(){clearTimeout(rt);rt=setTimeout(resize,200);});
-  window.addEventListener('pointermove',function(e){mouse.x=e.clientX;mouse.y=e.clientY;},{passive:true});
-  window.addEventListener('pointerleave',function(){mouse.x=mouse.y=-999;});
-  var light=function(){return root.getAttribute('data-theme')==='light';};
-  var last=0;
-  function step(ts){
-    requestAnimationFrame(step);
-    if(document.hidden||light())return;
-    if(ts-last<1000/30)return;last=ts;
-    ctx.clearRect(0,0,innerWidth,innerHeight);
-    var lc='56,189,248';
-    for(var i=0;i<pts.length;i++){var p=pts[i];
-      var dx=mouse.x-p.x,dy=mouse.y-p.y,d2=dx*dx+dy*dy;
-      if(d2<20000){var f=(1-d2/20000)*0.4;p.vx+=dx/Math.sqrt(d2+1)*f*0.02;p.vy+=dy/Math.sqrt(d2+1)*f*0.02;}
-      p.x+=p.vx;p.y+=p.vy;p.vx*=0.999;p.vy*=0.999;
-      if(p.x<0||p.x>innerWidth)p.vx*=-1;if(p.y<0||p.y>innerHeight)p.vy*=-1;
-      p.x=Math.max(0,Math.min(innerWidth,p.x));p.y=Math.max(0,Math.min(innerHeight,p.y));
-    }
-    for(var a=0;a<pts.length;a++){
-      for(var b=a+1;b<pts.length;b++){var p=pts[a],q=pts[b];var dx=p.x-q.x,dy=p.y-q.y,dd=dx*dx+dy*dy;
-        if(dd<9000){var al=(1-dd/9000)*0.3;ctx.strokeStyle='rgba('+lc+','+al+')';ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(p.x,p.y);ctx.lineTo(q.x,q.y);ctx.stroke();}}
-      ctx.fillStyle='rgba('+lc+',0.55)';ctx.beginPath();ctx.arc(pts[a].x,pts[a].y,1.4,0,6.3);ctx.fill();
-    }
-  }
-  requestAnimationFrame(step);
-})();
+/* Background is now pure CSS (minimal editorial: soft glow + fading hairline grid). No canvas. */
 
 /* ---- mini-viz registry ---- */
 var VIZ={};
