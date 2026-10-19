@@ -1,8 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" width="1200" height="400" role="img" aria-label="Four pictures explaining the research in simple words">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" width="1200" height="400" role="img" aria-label="Four research threads: selection inference, trustworthy evaluation, energy analytics and academic continuity AI">
 <rect width="1200" height="400" rx="22" fill="#0b1220"/>
 <g transform="translate(30,30)">
 <rect width="270" height="340" rx="18" fill="#111a2e" stroke="#38BDF8" stroke-opacity=".45"/>
-<circle cx="34" cy="34" r="16" fill="#38BDF8" fill-opacity=".18"/><text x="34" y="40" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="16" font-weight="700" fill="#38BDF8">1</text>
+<circle cx="34" cy="34" r="16" fill="#38BDF8" fill-opacity=".18"/><text x="34" y="40" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#38BDF8">01</text>
 <line x1="135.0" y1="65" x2="135.0" y2="65" stroke="#94a3b8" stroke-opacity=".35"/><circle cx="135.0" cy="65" r="5" fill="#38BDF8"/><circle cx="135.0" cy="65" r="5" fill="#a78bfa"/>
 <line x1="110.60989290941623" y1="80" x2="159.39010709058377" y2="80" stroke="#94a3b8" stroke-opacity=".35"/><circle cx="110.60989290941623" cy="80" r="5" fill="#38BDF8"/><circle cx="159.39010709058377" cy="80" r="5" fill="#a78bfa"/>
 <line x1="101.01449749658883" y1="95" x2="168.98550250341117" y2="95" stroke="#94a3b8" stroke-opacity=".35"/><circle cx="101.01449749658883" cy="95" r="5" fill="#38BDF8"/><circle cx="168.98550250341117" cy="95" r="5" fill="#a78bfa"/>
@@ -13,47 +13,47 @@
 <line x1="156.4630656876589" y1="170" x2="113.53693431234109" y2="170" stroke="#94a3b8" stroke-opacity=".35"/><circle cx="156.4630656876589" cy="170" r="5" fill="#38BDF8"/><circle cx="113.53693431234109" cy="170" r="5" fill="#a78bfa"/>
 <line x1="131.03732703508322" y1="185" x2="138.96267296491678" y2="185" stroke="#94a3b8" stroke-opacity=".35"/><circle cx="131.03732703508322" cy="185" r="5" fill="#38BDF8"/><circle cx="138.96267296491678" cy="185" r="5" fill="#a78bfa"/>
 <g><circle cx="165" cy="130" r="30" fill="#38BDF8" fill-opacity=".08" stroke="#e2e8f0" stroke-width="4"/><line x1="187" y1="152" x2="213" y2="178" stroke="#e2e8f0" stroke-width="8" stroke-linecap="round"/><animateTransform attributeName="transform" type="translate" values="-50,-40;-20,10;-50,-40" dur="5s" repeatCount="indefinite"/></g>
-<text x="135" y="240" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="21" font-weight="700" fill="#e2e8f0">Find clues in DNA</text>
-<text x="135" y="276" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="15" fill="#94a3b8">Nature leaves footprints</text>
-<text x="135" y="298" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="15" fill="#94a3b8">in our genes. Computers</text>
-<text x="135" y="320" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="15" fill="#94a3b8">learn to spot them.</text>
+<text x="135" y="240" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="19" font-weight="700" fill="#e2e8f0">Selection Inference</text>
+<text x="135" y="276" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="15" fill="#94a3b8">Deep learning that detects</text>
+<text x="135" y="298" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="15" fill="#94a3b8">the footprints of natural</text>
+<text x="135" y="320" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="15" fill="#94a3b8">selection in genomes.</text>
 </g>
 <g transform="translate(320,30)">
 <rect width="270" height="340" rx="18" fill="#111a2e" stroke="#a78bfa" stroke-opacity=".45"/>
-<circle cx="34" cy="34" r="16" fill="#a78bfa" fill-opacity=".18"/><text x="34" y="40" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="16" font-weight="700" fill="#a78bfa">2</text>
+<circle cx="34" cy="34" r="16" fill="#a78bfa" fill-opacity=".18"/><text x="34" y="40" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#a78bfa">02</text>
 <rect x="54" y="81.0" width="32" height="99.0" rx="5" fill="#a78bfa" fill-opacity="0.9"><animate attributeName="height" values="99.0;74.25;99.0" dur="3s" begin="0.0s" repeatCount="indefinite"/><animate attributeName="y" values="81.0;105.75;81.0" dur="3s" begin="0.0s" repeatCount="indefinite"/></rect>
 <rect x="94" y="103.0" width="32" height="77.0" rx="5" fill="#a78bfa" fill-opacity="0.75"><animate attributeName="height" values="77.0;57.75;77.0" dur="3s" begin="0.3s" repeatCount="indefinite"/><animate attributeName="y" values="103.0;122.25;103.0" dur="3s" begin="0.3s" repeatCount="indefinite"/></rect>
 <rect x="134" y="119.5" width="32" height="60.50000000000001" rx="5" fill="#a78bfa" fill-opacity="0.6000000000000001"><animate attributeName="height" values="60.50000000000001;45.37500000000001;60.50000000000001" dur="3s" begin="0.6s" repeatCount="indefinite"/><animate attributeName="y" values="119.5;134.625;119.5" dur="3s" begin="0.6s" repeatCount="indefinite"/></rect>
 <rect x="174" y="136.0" width="32" height="44.0" rx="5" fill="#a78bfa" fill-opacity="0.45000000000000007"><animate attributeName="height" values="44.0;33.0;44.0" dur="3s" begin="0.8999999999999999s" repeatCount="indefinite"/><animate attributeName="y" values="136.0;147.0;136.0" dur="3s" begin="0.8999999999999999s" repeatCount="indefinite"/></rect>
 <text x="70" y="63" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="34" font-weight="800" fill="#f0b45a">?<animate attributeName="opacity" values="1;.2;1" dur="1.6s" repeatCount="indefinite"/></text>
 <line x1="44" y1="181" x2="226" y2="181" stroke="#94a3b8" stroke-opacity=".5"/>
-<text x="135" y="240" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="21" font-weight="700" fill="#e2e8f0">Check the scoreboards</text>
-<text x="135" y="276" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="15" fill="#94a3b8">Did an AI see the test</text>
-<text x="135" y="298" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="15" fill="#94a3b8">answers early? Would its</text>
-<text x="135" y="320" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="15" fill="#94a3b8">win still hold?</text>
+<text x="135" y="240" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="19" font-weight="700" fill="#e2e8f0">Trustworthy Evaluation</text>
+<text x="135" y="276" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="15" fill="#94a3b8">Testing whether benchmark</text>
+<text x="135" y="298" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="15" fill="#94a3b8">claims survive hidden</text>
+<text x="135" y="320" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="15" fill="#94a3b8">test-set contamination.</text>
 </g>
 <g transform="translate(610,30)">
 <rect width="270" height="340" rx="18" fill="#111a2e" stroke="#10B981" stroke-opacity=".45"/>
-<circle cx="34" cy="34" r="16" fill="#10B981" fill-opacity=".18"/><text x="34" y="40" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="16" font-weight="700" fill="#10B981">3</text>
+<circle cx="34" cy="34" r="16" fill="#10B981" fill-opacity=".18"/><text x="34" y="40" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#10B981">03</text>
 <line x1="70" y1="65" x2="70" y2="185" stroke="#94a3b8" stroke-width="6"/><line x1="48" y1="75" x2="92" y2="75" stroke="#94a3b8" stroke-width="5"/>
 <path d="M92 75 Q 150 105 195 87" fill="none" stroke="#10B981" stroke-opacity=".6" stroke-width="2"/>
 <circle r="4" fill="#10B981"><animateMotion dur="2s" repeatCount="indefinite" path="M92 75 Q 150 105 195 87"/></circle>
 <circle cx="200" cy="130" r="26" fill="#f0b45a" fill-opacity=".9"><animate attributeName="fill-opacity" values=".35;.95;.35" dur="2s" repeatCount="indefinite"/></circle><rect x="190" y="156" width="20" height="14" rx="3" fill="#94a3b8"/><line x1="200" y1="87" x2="200" y2="104" stroke="#94a3b8" stroke-width="2"/>
-<text x="135" y="240" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="21" font-weight="700" fill="#e2e8f0">Keep the lights on</text>
-<text x="135" y="276" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="15" fill="#94a3b8">Power-company data shows</text>
-<text x="135" y="298" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="15" fill="#94a3b8">where electricity leaks</text>
-<text x="135" y="320" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="15" fill="#94a3b8">and where chargers fit.</text>
+<text x="135" y="240" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="19" font-weight="700" fill="#e2e8f0">Energy Analytics</text>
+<text x="135" y="276" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="15" fill="#94a3b8">ML on utility data to find</text>
+<text x="135" y="298" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="15" fill="#94a3b8">system losses and to site</text>
+<text x="135" y="320" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="15" fill="#94a3b8">EV chargers and substations.</text>
 </g>
 <g transform="translate(900,30)">
 <rect width="270" height="340" rx="18" fill="#111a2e" stroke="#f0b45a" stroke-opacity=".45"/>
-<circle cx="34" cy="34" r="16" fill="#f0b45a" fill-opacity=".18"/><text x="34" y="40" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="16" font-weight="700" fill="#f0b45a">4</text>
+<circle cx="34" cy="34" r="16" fill="#f0b45a" fill-opacity=".18"/><text x="34" y="40" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#f0b45a">04</text>
 <g transform="translate(78,125)"><ellipse rx="34" ry="40" fill="#8b6b4a"/><circle cx="-14" cy="-10" r="12" fill="#fff"/><circle cx="14" cy="-10" r="12" fill="#fff"/><circle cx="-14" cy="-10" r="5" fill="#111"/><circle cx="14" cy="-10" r="5" fill="#111"/><path d="M-5 4 L0 12 L5 4Z" fill="#f0b45a"/><path d="M-30 -32 L-20 -44 L-14 -30Z M30 -32 L20 -44 L14 -30Z" fill="#8b6b4a"/><animateTransform attributeName="transform" type="translate" values="78,125;78,119;78,125" dur="2.4s" repeatCount="indefinite"/></g>
 <rect x="150" y="100" width="13" height="60" rx="3" fill="#f4645a" fill-opacity=".85"><animateTransform attributeName="transform" type="rotate" values="0 163 160;0 163 160;35 163 160;35 163 160;0 163 160" keyTimes="0;0.10;0.18;.9;1" dur="4s" repeatCount="indefinite"/></rect>
 <rect x="180" y="100" width="13" height="60" rx="3" fill="#f4645a" fill-opacity=".85"><animateTransform attributeName="transform" type="rotate" values="0 193 160;0 193 160;35 193 160;35 193 160;0 193 160" keyTimes="0;0.20;0.28;.9;1" dur="4s" repeatCount="indefinite"/></rect>
 <rect x="210" y="100" width="13" height="60" rx="3" fill="#10B981" fill-opacity=".85"><animateTransform attributeName="transform" type="rotate" values="0 223 160;0 223 160;0 223 160;0 223 160;0 223 160" keyTimes="0;0.30;0.38;.9;1" dur="4s" repeatCount="indefinite"/></rect>
-<text x="135" y="240" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="21" font-weight="700" fill="#e2e8f0">Rescue a cancelled class</text>
-<text x="135" y="276" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="15" fill="#94a3b8">A storm moves one class.</text>
-<text x="135" y="298" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="15" fill="#94a3b8">AI helpers fix every</text>
-<text x="135" y="320" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="15" fill="#94a3b8">deadline it knocks over.</text>
+<text x="135" y="240" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="19" font-weight="700" fill="#e2e8f0">Academic Continuity AI</text>
+<text x="135" y="276" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="15" fill="#94a3b8">Agents that reschedule</text>
+<text x="135" y="298" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="15" fill="#94a3b8">disrupted courses and verify</text>
+<text x="135" y="320" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="15" fill="#94a3b8">every dependent deadline.</text>
 </g>
 </svg>

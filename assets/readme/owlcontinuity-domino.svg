@@ -2,33 +2,33 @@
 <rect width="1200" height="230" rx="22" fill="#0b1220"/>
 <g><animate attributeName="opacity" values=".45;.45;1;1;.45" keyTimes="0;0.04;0.09;0.92;1" dur="10s" repeatCount="indefinite"/>
 <rect x="30" y="50" width="200" height="120" rx="16" fill="#111a2e" stroke="#94a3b8" stroke-width="2"/>
-<text x="130" y="100" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="19" font-weight="700" fill="#e2e8f0">Storm closes campus</text>
+<text x="130" y="100" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="17" font-weight="700" fill="#e2e8f0">Storm closes campus</text>
 <text x="130" y="132" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="14" fill="#94a3b8">simulated notice</text>
 <path d="M234 110 l22 0 m-8 -7 l8 7 l-8 7" fill="none" stroke="#94a3b8" stroke-width="2.5" stroke-linecap="round"/>
 </g>
 <g><animate attributeName="opacity" values=".45;.45;1;1;.45" keyTimes="0;0.19;0.24;0.92;1" dur="10s" repeatCount="indefinite"/>
 <rect x="264" y="50" width="200" height="120" rx="16" fill="#111a2e" stroke="#38BDF8" stroke-width="2"/>
-<text x="364" y="100" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="19" font-weight="700" fill="#e2e8f0">Lab moves to Thu</text>
+<text x="364" y="100" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="17" font-weight="700" fill="#e2e8f0">Lab moves to Thu</text>
 <text x="364" y="132" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="14" fill="#38BDF8">only free slot</text>
 <path d="M468 110 l22 0 m-8 -7 l8 7 l-8 7" fill="none" stroke="#94a3b8" stroke-width="2.5" stroke-linecap="round"/>
 </g>
 <g><animate attributeName="opacity" values=".45;.45;1;1;.45" keyTimes="0;0.34;0.39;0.92;1" dur="10s" repeatCount="indefinite"/>
 <rect x="498" y="50" width="200" height="120" rx="16" fill="#111a2e" stroke="#f4645a" stroke-width="2"/>
-<text x="598" y="100" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="19" font-weight="700" fill="#e2e8f0">Memo due 26 h later</text>
+<text x="598" y="100" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="17" font-weight="700" fill="#e2e8f0">Memo due 26 h later</text>
 <text x="598" y="132" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="14" fill="#f4645a">rule needs 48 h  ✗</text>
 <path d="M702 110 l22 0 m-8 -7 l8 7 l-8 7" fill="none" stroke="#94a3b8" stroke-width="2.5" stroke-linecap="round"/>
 </g>
 <g><animate attributeName="opacity" values=".45;.45;1;1;.45" keyTimes="0;0.49;0.54;0.92;1" dur="10s" repeatCount="indefinite"/>
 <rect x="732" y="50" width="200" height="120" rx="16" fill="#111a2e" stroke="#10B981" stroke-width="2"/>
-<text x="832" y="100" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="19" font-weight="700" fill="#e2e8f0">Memo moves to Tue</text>
+<text x="832" y="100" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="17" font-weight="700" fill="#e2e8f0">Memo moves to Tue</text>
 <text x="832" y="132" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="14" fill="#10B981">123 h later  ✓</text>
 <path d="M936 110 l22 0 m-8 -7 l8 7 l-8 7" fill="none" stroke="#94a3b8" stroke-width="2.5" stroke-linecap="round"/>
 </g>
 <g><animate attributeName="opacity" values=".45;.45;1;1;.45" keyTimes="0;0.64;0.69;0.92;1" dur="10s" repeatCount="indefinite"/>
 <rect x="966" y="50" width="200" height="120" rx="16" fill="#111a2e" stroke="#f0b45a" stroke-width="2"/>
-<text x="1066" y="100" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="19" font-weight="700" fill="#e2e8f0">Professor approves</text>
+<text x="1066" y="100" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="17" font-weight="700" fill="#e2e8f0">Professor approves</text>
 <text x="1066" y="132" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="14" fill="#f0b45a">nothing auto-posts</text>
 </g>
-<text x="600" y="206" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="13" fill="#94a3b8">fictional DEMO-101 course · every time gap checked with code · plays on a loop</text>
-<text x="30" y="34" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="16" font-weight="700" fill="#f0b45a">🦉 OwlContinuity · the domino effect of one cancelled class</text>
+<text x="600" y="206" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="13" fill="#94a3b8">fictional DEMO-101 course · every time gap verified in code</text>
+<text x="30" y="34" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="16" font-weight="700" fill="#f0b45a">OwlContinuity · how one cancelled class cascades</text>
 </svg>
