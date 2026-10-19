@@ -664,8 +664,10 @@ footer{border-top:1px solid var(--line-soft);padding:56px 0 42px;position:relati
   --grad-text:linear-gradient(90deg,#38BDF8,#a78bfa);
   --shadow:0 1px 2px rgba(0,0,0,.4),0 18px 40px -24px rgba(2,6,23,.9);
   --glow:0 0 0 1px rgba(56,189,248,.25);
+  --banner:radial-gradient(55% 70% at 88% 14%,rgba(56,189,248,.15),transparent 62%),#0b1220;
 }
-[data-theme="dark"] .bgwrap{background:#0b1220}
+[data-theme="dark"] .bgwrap{background:#070c17}
+[data-theme="dark"] body{background:#070c17}
 [data-theme="dark"] .bgwrap::before,[data-theme="dark"] .bgwrap::after{display:none}
 [data-theme="dark"] .gridfx{display:none}
 
@@ -676,7 +678,7 @@ footer{border-top:1px solid var(--line-soft);padding:56px 0 42px;position:relati
 [data-theme="dark"] .spot{background:radial-gradient(260px circle at var(--mx,50%) var(--my,50%),rgba(148,163,184,.06),transparent 70%)}
 [data-theme="dark"] :is(.area-viz,.proj-viz,.feat-viz,.xp-canvas,.lab-canvas-wrap){background:#0f172a}
 [data-theme="dark"] :is(.graph-wrap,.lab,.journey-wrap){background:#0f172a;border-color:rgba(148,163,184,.14);box-shadow:none}
-[data-theme="dark"] .scroller{background:#0b1220}
+[data-theme="dark"] .scroller{background:transparent;border-color:transparent}
 
 /* numbers in plain white, labels muted */
 [data-theme="dark"] :is(.hstat,.metric){background:#111a2e}
@@ -684,7 +686,7 @@ footer{border-top:1px solid var(--line-soft);padding:56px 0 42px;position:relati
 [data-theme="dark"] .progress{background:#38BDF8;box-shadow:none}
 
 /* hero as the README banner, without decoration */
-[data-theme="dark"] .hero-grid{background:#0f172a;border:1px solid rgba(148,163,184,.12);border-radius:22px;padding:44px 44px 44px 48px}
+[data-theme="dark"] .hero-grid{background:var(--banner);border:1px solid rgba(148,163,184,.12);border-radius:22px;padding:44px 44px 44px 48px}
 [data-theme="dark"] .statuspill{background:transparent;border:0;padding:0;color:#10B981}
 [data-theme="dark"] .hero h1{font-family:-apple-system,BlinkMacSystemFont,"Inter","Segoe UI",Helvetica,Arial,sans-serif;font-weight:700;letter-spacing:-.025em;color:#e2e8f0;font-size:clamp(34px,4.3vw,58px)}
 [data-theme="dark"] .hero .tag{font-family:"Inter",-apple-system,"Segoe UI",sans-serif;font-style:italic;font-weight:500;background:linear-gradient(90deg,#38BDF8,#a78bfa);-webkit-background-clip:text;background-clip:text;color:transparent}
@@ -692,6 +694,11 @@ footer{border-top:1px solid var(--line-soft);padding:56px 0 42px;position:relati
 [data-theme="dark"] .hero .lead{color:#94a3b8}
 [data-theme="dark"] .hero .lead strong{color:#e2e8f0!important}
 @media(max-width:1040px){[data-theme="dark"] .hero-grid{padding:28px 22px}}
+
+/* every section sits on the README banner panel: deep navy, faint blue corner light */
+[data-theme="dark"] .section{padding:22px 0}
+[data-theme="dark"] .section>.wrap{background:var(--banner);border:1px solid rgba(148,163,184,.12);border-radius:22px;padding:64px 52px;width:calc(100% - 32px)}
+@media(max-width:1040px){[data-theme="dark"] .section>.wrap{padding:40px 22px}}
 
 /* photo: plain frame, no coloured ring */
 [data-theme="dark"] .portrait .ring{display:none}
