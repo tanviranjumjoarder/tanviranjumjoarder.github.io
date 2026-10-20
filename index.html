@@ -246,7 +246,6 @@ header.nav.scrolled .bar{height:60px}
 .hstat b{font-family:"Space Grotesk";font-size:clamp(26px,3.4vw,38px);font-weight:700;display:block;font-variant-numeric:tabular-nums;background:var(--grad-text);-webkit-background-clip:text;background-clip:text;color:transparent}
 .hstat span{font-size:11.5px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-top:3px;display:block}
 .hstat .suf{font:inherit;display:inline;margin:0;letter-spacing:inherit;text-transform:none;color:inherit}
-.hstat b:has(.suf){display:flex;flex-direction:row-reverse;justify-content:flex-end;align-items:baseline}
 .portrait{position:relative;justify-self:end;width:100%;max-width:400px;margin-top:56px}
 @media(min-width:1041px){.hero h1{white-space:nowrap}}
 .portrait .ring{position:absolute;inset:-16px;border-radius:28px;background:var(--grad);opacity:.45;filter:blur(26px);animation:pulse 9s ease-in-out infinite}
@@ -716,6 +715,29 @@ footer{border-top:1px solid var(--line-soft);padding:56px 0 42px;position:relati
 .rmap .rm-c:focus-visible{outline:none}
 @media(max-width:760px){.rmap{overflow-x:auto;-webkit-overflow-scrolling:touch}.rmap svg{min-width:760px}}
 
+/* review fixes: dated stats, research grouping, status labels, folded details, skill proof links */
+.stat-src{margin-top:10px;font-family:"JetBrains Mono",monospace;font-size:11.5px;color:var(--faint)}
+.stat-src a{color:var(--muted);text-decoration:underline;text-underline-offset:3px}
+.feat-group{grid-column:1/-1;font-family:"JetBrains Mono",monospace;font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin:6px 0 -6px}
+.feat-group:not(:first-child){margin-top:14px}
+.proj-group{grid-column:1/-1;font-family:"JetBrains Mono",monospace;font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin:4px 0 -6px}
+.proj-group:not(:first-child){margin-top:18px}
+.feat-links{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center}
+.plink.lockd{color:var(--faint);cursor:default}
+.pstat{display:inline-block;margin-top:6px;font-family:"JetBrains Mono",monospace;font-size:11.5px;color:var(--accent-text,var(--accent))}
+.prior{display:inline-block;margin-top:4px;font-family:"JetBrains Mono",monospace;font-size:11px;color:#f0b45a}
+[data-theme="light"] .prior{color:var(--accent-2)}
+details.more{margin-top:18px}
+details.more>summary{cursor:pointer;list-style:none;display:inline-flex;align-items:center;gap:8px;font-size:13.5px;color:var(--accent-text,var(--accent));font-weight:500}
+details.more>summary::-webkit-details-marker{display:none}
+details.more>summary::before{content:"+";font-family:"JetBrains Mono",monospace;width:18px;height:18px;border:1px solid currentColor;border-radius:5px;display:inline-grid;place-items:center;font-size:12px;line-height:1}
+details.more[open]>summary::before{content:"−"}
+details.more[open]>summary{margin-bottom:14px}
+details.tmore{margin:4px 0 0}
+.more-awards .grid{margin-top:4px}
+.proof{color:inherit;text-decoration:underline;text-decoration-color:rgba(56,189,248,.5);text-underline-offset:4px;cursor:pointer}
+.proof:hover{color:var(--accent)}
+
 /* research at a glance */
 .glance{margin-top:46px}
 .glance .eyebrow{margin-bottom:14px}
@@ -731,9 +753,9 @@ footer{border-top:1px solid var(--line-soft);padding:56px 0 42px;position:relati
   <div class="wrap bar">
     <a href="#hero" class="brand"><span class="logo">TJ</span><span class="hide-sm">Tanvir Anjum Joarder</span></a>
     <nav class="navlinks" aria-label="Primary">
-      <a href="#featured">Research</a><a href="#lab">Genomics</a><a href="#learn">Learn</a>
-      <a href="#publications">Publications</a><a href="#software">Code</a><a href="#projects">Projects</a>
-      <a href="#experience">Experience</a><a href="#contact">Contact</a>
+      <a href="#featured">Research</a><a href="#publications">Publications</a><a href="#projects">Projects</a>
+      <a href="#software">Code</a><a href="#experience">Experience</a><a href="#lab">Genomics</a>
+      <a href="#learn">Learn</a><a href="#contact">Contact</a>
     </nav>
     <div class="navtools">
       <button class="kbd-hint" id="palette-open" aria-label="Open command palette"><i class="ti ti-search"></i>Search <kbd>Ctrl K</kbd></button>
@@ -789,13 +811,14 @@ footer{border-top:1px solid var(--line-soft);padding:56px 0 42px;position:relati
         <span class="lbl">orcid.org/0009-0005-3990-735X</span>
       </a>
       <div class="hero-stats reveal d3" id="hero-stats">
-        <div class="hstat"><span class="spot"></span><b data-count="5">0</b><span>Publications</span></div>
-        <div class="hstat"><span class="spot"></span><b data-count="107">0</b><span>Citations</span></div>
-        <div class="hstat"><span class="spot"></span><b data-count="4">0</b><span>h-index</span></div>
-        <div class="hstat"><span class="spot"></span><b data-count="2">0</b><span>i10-index</span></div>
-        <div class="hstat"><span class="spot"></span><b data-count="8"><span class="suf"></span>0</b><span>Years in Research &amp; Industry</span></div>
-        <div class="hstat"><span class="spot"></span><b data-count="9">0</b><span>Projects</span></div>
+        <div class="hstat"><span class="spot"></span><b data-count="5">5</b><span>Publications</span></div>
+        <div class="hstat"><span class="spot"></span><b data-count="107">107</b><span>Citations</span></div>
+        <div class="hstat"><span class="spot"></span><b data-count="4">4</b><span>h-index</span></div>
+        <div class="hstat"><span class="spot"></span><b data-count="2">2</b><span>i10-index</span></div>
+        <div class="hstat"><span class="spot"></span><b data-count="8">8<span class="suf">+</span></b><span>Years in Research &amp; Industry</span></div>
+        <div class="hstat"><span class="spot"></span><b data-count="9">9</b><span>Projects</span></div>
       </div>
+      <p class="stat-src reveal d3">Publication metrics from <a href="https://scholar.google.com/citations?user=fFcWmdwAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a>, updated automatically · <span class="scholar-date">18 October 2026</span></p>
     </div>
     <div class="portrait reveal d2">
       <div class="ring"></div>
@@ -818,15 +841,15 @@ footer{border-top:1px solid var(--line-soft);padding:56px 0 42px;position:relati
 <section class="scroller" aria-label="Research interests">
   <div class="mqmask">
     <div class="mq" data-dup>
-      <span class="chip"><i class="ti ti-cpu"></i>Machine Learning</span>
-      <span class="chip"><i class="ti ti-binary-tree"></i>Deep Learning</span>
-      <span class="chip"><i class="ti ti-chart-dots-3"></i>Data Science</span>
       <span class="chip"><i class="ti ti-dna-2"></i>Population Genomics</span>
       <span class="chip"><i class="ti ti-arrows-shuffle"></i>Natural Selection</span>
-      <span class="chip"><i class="ti ti-sigma"></i>Statistical Genetics</span>
-      <span class="chip"><i class="ti ti-git-merge"></i>Coalescent Simulation</span>
       <span class="chip"><i class="ti ti-chart-histogram"></i>Selective Sweeps</span>
+      <span class="chip"><i class="ti ti-git-merge"></i>Coalescent Simulation</span>
+      <span class="chip"><i class="ti ti-sigma"></i>Statistical Genetics</span>
       <span class="chip"><i class="ti ti-server-2"></i>HPC Simulation</span>
+      <span class="chip"><i class="ti ti-binary-tree"></i>Deep Learning</span>
+      <span class="chip"><i class="ti ti-cpu"></i>Machine Learning</span>
+      <span class="chip"><i class="ti ti-chart-dots-3"></i>Data Science</span>
       <span class="chip"><i class="ti ti-topology-star-3"></i>Network Science</span>
     </div>
   </div>
@@ -853,10 +876,13 @@ footer{border-top:1px solid var(--line-soft);padding:56px 0 42px;position:relati
     <div class="grid" style="grid-template-columns:1.7fr 1fr;gap:48px;margin-top:34px">
       <div class="reveal">
         <p style="color:var(--ink-soft);font-size:16.5px">Tanvir Anjum Joarder is a PhD student in Computer Science in the <strong style="color:var(--ink)">DeGiorgio Lab</strong> at the Department of Electrical Engineering and Computer Science, Florida Atlantic University, where he started in Fall 2026 as a Graduate Research Assistant. His doctoral research is on <em>statistical and machine learning methods for population genomic inference</em>.</p>
-        <p style="color:var(--ink-soft);font-size:16.5px;margin-top:16px">He received his B.Sc. in Computer Science and Engineering from Rajshahi University of Engineering and Technology (RUET), Bangladesh, in 2019. His undergraduate thesis, supervised by Professor A. H. M. Sarowar Sattar, investigated supervised classification for early detection of hepatocellular carcinoma from longitudinal online search-query patterns, and was published at IEEE EICT 2019. He achieved the maximum GPA of 5.00 in both his Higher Secondary (2014) and Secondary School (2012) certificates.</p>
-        <p style="color:var(--ink-soft);font-size:16.5px;margin-top:16px">From January 2022 to August 2026 he was Assistant General Manager (IT) at the <strong style="color:var(--ink)">Bangladesh Rural Electrification Board</strong>, leading machine learning for unit-sales prediction and system-loss forecasting, BERC-tariff billing and anomaly detection, ArcGIS mapping of the 33 kV / 11 kV / 6.35 kV network for SCADA readiness, and transformer load, complaint and website systems for an organisation serving more than 80% of the population of Bangladesh.</p>
         <p style="color:var(--ink-soft);font-size:16.5px;margin-top:16px">In the lab he works on simulation-based deep learning for population genetics. Natural selection leaves a recognisable footprint in genetic variation, but real genomes do not come labelled, so the field trains models on genomes simulated under known evolutionary histories and then applies them to real samples. His work covers both ends of that chain: generating large, reproducible coalescent-simulation datasets with <em>discoal</em> on a high-performance computing cluster, and building the convolutional networks that learn from them. Separately, he built <em>contamsens</em>, a sensitivity-analysis framework that asks how much unmeasured test-set contamination it would take to overturn a published machine-learning benchmark claim; its audit of the Open LLM Leaderboard was pre-registered on OSF.</p>
-        <p style="color:var(--ink-soft);font-size:16.5px;margin-top:16px">His graduate coursework adds network science, a centrality and community study of Spotify's artist collaboration network, and software engineering, the requirements and UML design of SolarPath, a readiness check for home-solar interconnection applications. At the AI Promptathon during FAU Hackathon 2026 he built OwlContinuity, three AI agents in FAU's owlONE platform that rebuild a disrupted course schedule, check dependent deadlines with code and answer students only from professor-approved sources. He also continues applied work for power distribution, including electricity-theft screening, EV-charging siting and open GIS tools.</p>
+        <p style="color:var(--ink-soft);font-size:16.5px;margin-top:16px">From January 2022 to August 2026 he was Assistant General Manager (IT) at the <strong style="color:var(--ink)">Bangladesh Rural Electrification Board</strong>, leading machine learning for unit-sales prediction and system-loss forecasting, BERC-tariff billing and anomaly detection, ArcGIS mapping of the 33 kV / 11 kV / 6.35 kV network for SCADA readiness, and transformer load, complaint and website systems for an organisation serving more than 80% of the population of Bangladesh.</p>
+        <details class="more">
+          <summary>More background</summary>
+          <p style="color:var(--ink-soft);font-size:16.5px;margin-top:16px">He received his B.Sc. in Computer Science and Engineering from Rajshahi University of Engineering and Technology (RUET), Bangladesh, in 2019. His undergraduate thesis, supervised by Professor A. H. M. Sarowar Sattar, investigated supervised classification for early detection of hepatocellular carcinoma from longitudinal online search-query patterns, and was published at IEEE EICT 2019. He achieved the maximum GPA of 5.00 in both his Higher Secondary (2014) and Secondary School (2012) certificates.</p>
+          <p style="color:var(--ink-soft);font-size:16.5px;margin-top:16px">His graduate coursework adds network science, a centrality and community study of Spotify's artist collaboration network, and software engineering, the requirements and UML design of SolarPath, a readiness check for home-solar interconnection applications. At the AI Promptathon during FAU Hackathon 2026 he built OwlContinuity, three AI agents in FAU's owlONE platform that rebuild a disrupted course schedule, check dependent deadlines with code and answer students only from professor-approved sources. He also continues applied work for power distribution, including electricity-theft screening, EV-charging siting and open GIS tools.</p>
+        </details>
       </div>
       <div class="reveal d1">
         <div class="card" style="position:sticky;top:90px">
@@ -880,13 +906,15 @@ footer{border-top:1px solid var(--line-soft);padding:56px 0 42px;position:relati
     </div>
   </div>
 </section>
+
 <!-- ============ CURRENT RESEARCH ============ -->
 <section class="section" id="featured">
   <div class="wrap">
     <p class="eyebrow reveal"><span class="n">02</span> / Current Research</p>
     <h2 class="reveal">Current research</h2>
-    <p class="lead reveal">Four active threads: selection inference in the DeGiorgio Lab, trustworthy evaluation of machine-learning benchmarks, and two applied problems from rural power distribution. Open any card for methods and status.</p>
+    <p class="lead reveal">My primary research is simulation-based deep learning for detecting natural selection, in the DeGiorgio Lab. Alongside it I work on trustworthy evaluation of machine-learning benchmarks and on two applied problems from rural power distribution. Open any card for methods, status and links.</p>
     <div class="feat" id="feat-grid">
+      <p class="feat-group reveal">Primary research · PhD</p>
 
       <article class="feat-card wide reveal" data-modal="sweep" role="button" tabindex="0" aria-label="Open lab page: Simulation-Based Deep Learning for Natural Selection">
         <div class="feat-viz"><canvas data-viz="sweep"></canvas><span class="feat-domain"><span class="badge">Genomics · Deep Learning</span></span><span class="feat-num">01</span></div>
@@ -894,17 +922,18 @@ footer{border-top:1px solid var(--line-soft);padding:56px 0 42px;position:relati
           <h3>Simulation-Based Deep Learning for Natural Selection</h3>
           <p class="sig">Natural selection leaves a footprint in the genome: a valley of low genetic diversity around an adaptive mutation. Convolutional networks trained on large sets of coalescent simulations learn to recognise that footprint in population samples. Ongoing doctoral work in the DeGiorgio Lab; results will be shared once published. Open the card for the ideas behind it, or try the sweep explorer below.</p>
           <div class="tags"><span class="badge soft">CNN</span><span class="badge soft">Coalescent Simulation</span><span class="badge soft">discoal</span><span class="badge soft">Slurm · HPC</span></div>
-          <div class="feat-foot"><span class="plink" data-modal="sweep">Open lab page <i class="ti ti-arrow-up-right"></i></span><span class="badge warn"><i class="ti ti-flask"></i>Core PhD project</span></div>
+          <div class="feat-foot"><span class="feat-links"><span class="plink" data-modal="sweep">Open lab page <i class="ti ti-arrow-up-right"></i></span><a class="plink" href="#tool-discoal"><i class="ti ti-cpu"></i>Simulation pipeline</a><a class="plink" href="#xp-sweep"><i class="ti ti-adjustments-horizontal"></i>Sweep explainer</a><span class="plink lockd"><i class="ti ti-lock"></i>Model code private until publication</span></span><span class="badge warn"><i class="ti ti-flask"></i>Core PhD project</span></div>
         </div>
       </article>
 
+      <p class="feat-group reveal">Related and applied research</p>
       <article class="feat-card reveal" data-modal="contam" role="button" tabindex="0" aria-label="Open lab page: Contamination Robustness Values for ML Benchmark Claims">
         <div class="feat-viz"><canvas data-viz="cyber"></canvas><span class="feat-domain"><span class="badge">Trustworthy AI · Evaluation</span></span><span class="feat-num">02</span></div>
         <div class="feat-body">
           <h3>Contamination Robustness Values for ML Benchmark Claims</h3>
           <p class="sig">How much test-set contamination would it take to overturn a leaderboard claim? contamsens bounds that effect instead of trying to detect contamination. In a pre-registered audit of the Open LLM Leaderboard, 49 of 58 adjacent ranking claims (84.5%) were not contamination-robust.</p>
           <div class="tags"><span class="badge soft">Sensitivity Analysis</span><span class="badge soft">Partial Identification</span><span class="badge soft">Pre-registered</span><span class="badge soft">Python</span></div>
-          <div class="feat-foot"><span class="plink" data-modal="contam">Open lab page <i class="ti ti-arrow-up-right"></i></span><span class="badge ok"><i class="ti ti-file-text"></i>Manuscript complete</span></div>
+          <div class="feat-foot"><span class="feat-links"><span class="plink" data-modal="contam">Open lab page <i class="ti ti-arrow-up-right"></i></span><a class="plink" href="https://github.com/tanviranjumjoarder/contamsens" target="_blank" rel="noopener"><i class="ti ti-brand-github"></i>Code</a><a class="plink" href="https://osf.io/2436z" target="_blank" rel="noopener"><i class="ti ti-file-certificate"></i>OSF pre-registration</a></span><span class="badge ok"><i class="ti ti-file-text"></i>Manuscript complete</span></div>
         </div>
       </article>
 
@@ -914,7 +943,7 @@ footer{border-top:1px solid var(--line-soft);padding:56px 0 42px;position:relati
           <h3>Optimal Siting of EV Charging Stations &amp; Substations</h3>
           <p class="sig">An optimisation framework that predicts where to place EV charging stations and new substations, and which existing substations to relocate, from pole GIS, transformer capacity and feeder topology. Where no open dataset exists for rural networks, it uses synthetic data anchored to real network structure.</p>
           <div class="tags"><span class="badge soft">Siting Optimization</span><span class="badge soft">Substations</span><span class="badge soft">GIS</span></div>
-          <div class="feat-foot"><span class="plink" data-modal="ev">Open lab page <i class="ti ti-arrow-up-right"></i></span><span class="badge ok"><i class="ti ti-progress"></i>In progress</span></div>
+          <div class="feat-foot"><span class="feat-links"><span class="plink" data-modal="ev">Open lab page <i class="ti ti-arrow-up-right"></i></span><span class="plink lockd"><i class="ti ti-lock"></i>No public code yet</span></span><span class="badge ok"><i class="ti ti-progress"></i>In progress</span></div>
         </div>
       </article>
 
@@ -924,7 +953,7 @@ footer{border-top:1px solid var(--line-soft);padding:56px 0 42px;position:relati
           <h3>Electricity Theft &amp; System-Loss Detection in Rural Distribution</h3>
           <p class="sig">Finding consumers whose metered use is too low for their connection, the usual sign of meter faults, bypass connections or billing errors. The work began as a deployed screening tool, the Low-usage Industrial Consumer Tracker, which merges monthly billing exports and lists low-consumption industrial consumers for field inspection, and now extends to anomaly detection on consumption profiles.</p>
           <div class="tags"><span class="badge soft">Anomaly Detection</span><span class="badge soft">Billing Data</span><span class="badge soft">System Loss</span><span class="badge soft">Python</span></div>
-          <div class="feat-foot"><span class="plink" data-modal="theft">Open lab page <i class="ti ti-arrow-up-right"></i></span><span class="badge ok"><i class="ti ti-progress"></i>In progress</span></div>
+          <div class="feat-foot"><span class="feat-links"><span class="plink" data-modal="theft">Open lab page <i class="ti ti-arrow-up-right"></i></span><a class="plink" href="https://github.com/tanviranjumjoarder/Low-usage-Industrial-Consumer-Tracker-App" target="_blank" rel="noopener"><i class="ti ti-brand-github"></i>Screening tool code</a></span><span class="badge ok"><i class="ti ti-progress"></i>In progress</span></div>
         </div>
       </article>
 
@@ -932,131 +961,19 @@ footer{border-top:1px solid var(--line-soft);padding:56px 0 42px;position:relati
   </div>
 </section>
 
-<!-- ============ RESEARCH AREAS ============ -->
-<section class="section" id="areas">
-  <div class="wrap">
-    <p class="eyebrow reveal"><span class="n">03</span> / Research Areas</p>
-    <h2 class="reveal">Areas of inquiry</h2>
-    <p class="lead reveal">Six areas, each with a live visualization. Click any card for methods, tools, data, publications and future directions.</p>
-    <div class="areas" id="areas-grid">
-      <article class="area reveal" data-modal="area-ml" role="button" tabindex="0" aria-label="Explore area: Machine Learning"><div class="area-viz"><canvas data-viz="ml"></canvas></div><div class="area-bd"><div class="ic"><i class="ti ti-cpu"></i></div><h3>Machine Learning</h3><p>Supervised, unsupervised and representation learning that transfers across domains — from genomes to national-scale grid telemetry.</p><span class="more">Explore area <i class="ti ti-arrow-right"></i></span></div></article>
-      <article class="area reveal d1" data-modal="area-dl" role="button" tabindex="0" aria-label="Explore area: Deep Learning"><div class="area-viz"><canvas data-viz="dl"></canvas></div><div class="area-bd"><div class="ic"><i class="ti ti-binary-tree"></i></div><h3>Deep Learning</h3><p>Convolutional and tensor-based architectures that treat structured scientific signals as multi-channel images for inference.</p><span class="more">Explore area <i class="ti ti-arrow-right"></i></span></div></article>
-      <article class="area reveal d2" data-modal="area-ds" role="button" tabindex="0" aria-label="Explore area: Data Science"><div class="area-viz"><canvas data-viz="data"></canvas></div><div class="area-bd"><div class="ic"><i class="ti ti-chart-dots-3"></i></div><h3>Data Science</h3><p>Turning large, messy, real-world datasets — billing, sensor and genomic — into reproducible, decision-grade insight.</p><span class="more">Explore area <i class="ti ti-arrow-right"></i></span></div></article>
-      <article class="area reveal" data-modal="area-genomics" role="button" tabindex="0" aria-label="Explore area: Population Genomics"><div class="area-viz"><canvas data-viz="genomics"></canvas></div><div class="area-bd"><div class="ic"><i class="ti ti-dna-2"></i></div><h3>Population Genomics</h3><p>Detecting natural selection and reconstructing demographic history, with emphasis on underrepresented populations.</p><span class="more">Explore area <i class="ti ti-arrow-right"></i></span></div></article>
-      <article class="area reveal d1" data-modal="area-health" role="button" tabindex="0" aria-label="Explore area: AI for Healthcare"><div class="area-viz"><canvas data-viz="health"></canvas></div><div class="area-bd"><div class="ic"><i class="ti ti-heartbeat"></i></div><h3>AI for Healthcare</h3><p>Machine learning over noisy, temporally structured biomedical signals, including early disease detection from behavioural data.</p><span class="more">Explore area <i class="ti ti-arrow-right"></i></span></div></article>
-      <article class="area reveal d2" data-modal="area-xai" role="button" tabindex="0" aria-label="Explore area: Trustworthy and Explainable AI"><div class="area-viz"><canvas data-viz="xai"></canvas></div><div class="area-bd"><div class="ic"><i class="ti ti-bulb"></i></div><h3>Trustworthy &amp; Explainable AI</h3><p>Models and evaluations you can check: interpretable detectors, and sensitivity analysis that tests whether benchmark claims survive data contamination.</p><span class="more">Explore area <i class="ti ti-arrow-right"></i></span></div></article>
-    </div>
-  </div>
-</section>
-
-<!-- ============ RESEARCH GRAPH ============ -->
-<section class="section" id="graph">
-  <div class="wrap">
-    <p class="eyebrow reveal"><span class="n">04</span> / Research Graph</p>
-    <h2 class="reveal">A connected research program</h2>
-    <p class="lead reveal">The threads share methods. Drag to explore; hover a node to see its projects, papers, methods and tools.</p>
-    <div class="rmap reveal"><svg viewBox="0 0 1200 560" role="img" aria-label="Research map: machine learning at the centre, linked to population genomics, trustworthy AI, energy analytics and applied AI, each with three projects"><defs><radialGradient id="rm-bg" cx=".5" cy=".5" r=".6"><stop offset="0" stop-color="#1e293b" stop-opacity=".9"/><stop offset="1" stop-color="#0b1220" stop-opacity="0"/></radialGradient><linearGradient id="rm-hub" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#38BDF8"/><stop offset=".5" stop-color="#a78bfa"/><stop offset="1" stop-color="#f0b45a"/></linearGradient><filter id="rm-glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="8" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter><pattern id="rm-dots" width="24" height="24" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1" fill="#334155" fill-opacity=".55"/></pattern><linearGradient id="rm-c0" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#38BDF8"/><stop offset="1" stop-color="#818cf8"/></linearGradient><linearGradient id="rm-f0" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#38BDF8" stop-opacity=".28"/><stop offset="1" stop-color="#818cf8" stop-opacity=".14"/></linearGradient><linearGradient id="rm-c1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#a78bfa"/><stop offset="1" stop-color="#f472b6"/></linearGradient><linearGradient id="rm-f1" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#a78bfa" stop-opacity=".28"/><stop offset="1" stop-color="#f472b6" stop-opacity=".14"/></linearGradient><linearGradient id="rm-c2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#10B981"/><stop offset="1" stop-color="#22d3ee"/></linearGradient><linearGradient id="rm-f2" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#10B981" stop-opacity=".28"/><stop offset="1" stop-color="#22d3ee" stop-opacity=".14"/></linearGradient><linearGradient id="rm-c3" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f0b45a"/><stop offset="1" stop-color="#fb7185"/></linearGradient><linearGradient id="rm-f3" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#f0b45a" stop-opacity=".28"/><stop offset="1" stop-color="#fb7185" stop-opacity=".14"/></linearGradient></defs><rect width="1200" height="560" fill="#0b1220"/><rect width="1200" height="560" fill="url(#rm-dots)"/><rect width="1200" height="560" fill="url(#rm-bg)"/><text x="34" y="44" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="13" letter-spacing="2" fill="#94a3b8">RESEARCH MAP</text><text x="1166" y="44" text-anchor="end" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="13" fill="#94a3b8">hover a thread · click to explore</text><g class="rm-x"><path d="M495 135 L705 135" stroke="#94a3b8" stroke-opacity=".35" stroke-width="1.2" stroke-dasharray="3 6" fill="none"><animate attributeName="stroke-dashoffset" from="0" to="-36" dur="2.5s" repeatCount="indefinite"/></path><text x="600.0" y="125" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#94a3b8" fill-opacity=".85">interpretable deep learning</text><path d="M495 425 L705 425" stroke="#94a3b8" stroke-opacity=".35" stroke-width="1.2" stroke-dasharray="3 6" fill="none"><animate attributeName="stroke-dashoffset" from="0" to="-36" dur="2.5s" repeatCount="indefinite"/></path><text x="600.0" y="415" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#94a3b8" fill-opacity=".85">anomaly detection</text></g><a class="rm-c" href="#lab" aria-label="Population Genomics"><g><path d="M600 280 Q 500.0 280 400 135" stroke="url(#rm-c0)" stroke-opacity=".7" stroke-width="2.4" fill="none"/><circle r="4" fill="#38BDF8" filter="url(#rm-glow)"><animateMotion dur="3s" begin="0.00s" repeatCount="indefinite" path="M600 280 Q 500.0 280 400 135"/></circle><circle r="4" fill="#38BDF8" filter="url(#rm-glow)"><animateMotion dur="3s" begin="1.50s" repeatCount="indefinite" path="M600 280 Q 500.0 280 400 135"/></circle><path d="M305 135 C 282.5 135, 282.5 77, 260 77" stroke="#38BDF8" stroke-opacity=".55" stroke-width="1.5" stroke-dasharray="5 5" fill="none"><animate attributeName="stroke-dashoffset" from="0" to="20" dur="1.6s" repeatCount="indefinite"/></path><rect x="30" y="58" width="230" height="38" rx="19" fill="#111a2e" stroke="#38BDF8" stroke-opacity=".6"/><circle cx="49" cy="77" r="5" fill="#38BDF8"><animate attributeName="r" values="4;6;4" dur="2.4s" begin="0.0s" repeatCount="indefinite"/></circle><text x="63" y="82" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="13.5" fill="#e2e8f0">Selective-sweep detection</text><path d="M305 135 C 282.5 135, 282.5 135, 260 135" stroke="#38BDF8" stroke-opacity=".55" stroke-width="1.5" stroke-dasharray="5 5" fill="none"><animate attributeName="stroke-dashoffset" from="0" to="20" dur="1.6s" repeatCount="indefinite"/></path><rect x="30" y="116" width="230" height="38" rx="19" fill="#111a2e" stroke="#38BDF8" stroke-opacity=".6"/><circle cx="49" cy="135" r="5" fill="#38BDF8"><animate attributeName="r" values="4;6;4" dur="2.4s" begin="0.3s" repeatCount="indefinite"/></circle><text x="63" y="140" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="13.5" fill="#e2e8f0">Coalescent sims · discoal</text><path d="M305 135 C 282.5 135, 282.5 193, 260 193" stroke="#38BDF8" stroke-opacity=".55" stroke-width="1.5" stroke-dasharray="5 5" fill="none"><animate attributeName="stroke-dashoffset" from="0" to="20" dur="1.6s" repeatCount="indefinite"/></path><rect x="30" y="174" width="230" height="38" rx="19" fill="#111a2e" stroke="#38BDF8" stroke-opacity=".6"/><circle cx="49" cy="193" r="5" fill="#38BDF8"><animate attributeName="r" values="4;6;4" dur="2.4s" begin="0.6s" repeatCount="indefinite"/></circle><text x="63" y="198" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="13.5" fill="#e2e8f0">CNNs on Slurm HPC</text><rect class="rm-node" x="305" y="101" width="190" height="68" rx="16" fill="url(#rm-f0)" stroke="url(#rm-c0)" stroke-width="2"/><text x="400" y="131" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="17" font-weight="700" fill="#e2e8f0">Population Genomics</text><text x="400" y="154" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#38BDF8">DeGiorgio Lab · PhD</text></g></a><a class="rm-c" href="#featured" aria-label="Trustworthy AI"><g><path d="M600 280 Q 700.0 280 800 135" stroke="url(#rm-c1)" stroke-opacity=".7" stroke-width="2.4" fill="none"/><circle r="4" fill="#a78bfa" filter="url(#rm-glow)"><animateMotion dur="3s" begin="0.35s" repeatCount="indefinite" path="M600 280 Q 700.0 280 800 135"/></circle><circle r="4" fill="#a78bfa" filter="url(#rm-glow)"><animateMotion dur="3s" begin="1.85s" repeatCount="indefinite" path="M600 280 Q 700.0 280 800 135"/></circle><path d="M895 135 C 917.5 135, 917.5 77, 940 77" stroke="#a78bfa" stroke-opacity=".55" stroke-width="1.5" stroke-dasharray="5 5" fill="none"><animate attributeName="stroke-dashoffset" from="0" to="-20" dur="1.6s" repeatCount="indefinite"/></path><rect x="940" y="58" width="230" height="38" rx="19" fill="#111a2e" stroke="#a78bfa" stroke-opacity=".6"/><circle cx="959" cy="77" r="5" fill="#a78bfa"><animate attributeName="r" values="4;6;4" dur="2.4s" begin="0.9s" repeatCount="indefinite"/></circle><text x="973" y="82" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="13.5" fill="#e2e8f0">Robustness values (Γ*)</text><path d="M895 135 C 917.5 135, 917.5 135, 940 135" stroke="#a78bfa" stroke-opacity=".55" stroke-width="1.5" stroke-dasharray="5 5" fill="none"><animate attributeName="stroke-dashoffset" from="0" to="-20" dur="1.6s" repeatCount="indefinite"/></path><rect x="940" y="116" width="230" height="38" rx="19" fill="#111a2e" stroke="#a78bfa" stroke-opacity=".6"/><circle cx="959" cy="135" r="5" fill="#a78bfa"><animate attributeName="r" values="4;6;4" dur="2.4s" begin="1.2s" repeatCount="indefinite"/></circle><text x="973" y="140" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="13.5" fill="#e2e8f0">Pre-registered OLL audit</text><path d="M895 135 C 917.5 135, 917.5 193, 940 193" stroke="#a78bfa" stroke-opacity=".55" stroke-width="1.5" stroke-dasharray="5 5" fill="none"><animate attributeName="stroke-dashoffset" from="0" to="-20" dur="1.6s" repeatCount="indefinite"/></path><rect x="940" y="174" width="230" height="38" rx="19" fill="#111a2e" stroke="#a78bfa" stroke-opacity=".6"/><circle cx="959" cy="193" r="5" fill="#a78bfa"><animate attributeName="r" values="4;6;4" dur="2.4s" begin="1.5s" repeatCount="indefinite"/></circle><text x="973" y="198" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="13.5" fill="#e2e8f0">Sensitivity analysis</text><rect class="rm-node" x="705" y="101" width="190" height="68" rx="16" fill="url(#rm-f1)" stroke="url(#rm-c1)" stroke-width="2"/><text x="800" y="131" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="17" font-weight="700" fill="#e2e8f0">Trustworthy AI</text><text x="800" y="154" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#a78bfa">contamsens</text></g></a><a class="rm-c" href="#featured" aria-label="Energy Analytics"><g><path d="M600 280 Q 500.0 280 400 425" stroke="url(#rm-c2)" stroke-opacity=".7" stroke-width="2.4" fill="none"/><circle r="4" fill="#10B981" filter="url(#rm-glow)"><animateMotion dur="3s" begin="0.70s" repeatCount="indefinite" path="M600 280 Q 500.0 280 400 425"/></circle><circle r="4" fill="#10B981" filter="url(#rm-glow)"><animateMotion dur="3s" begin="2.20s" repeatCount="indefinite" path="M600 280 Q 500.0 280 400 425"/></circle><path d="M305 425 C 282.5 425, 282.5 367, 260 367" stroke="#10B981" stroke-opacity=".55" stroke-width="1.5" stroke-dasharray="5 5" fill="none"><animate attributeName="stroke-dashoffset" from="0" to="20" dur="1.6s" repeatCount="indefinite"/></path><rect x="30" y="348" width="230" height="38" rx="19" fill="#111a2e" stroke="#10B981" stroke-opacity=".6"/><circle cx="49" cy="367" r="5" fill="#10B981"><animate attributeName="r" values="4;6;4" dur="2.4s" begin="1.8s" repeatCount="indefinite"/></circle><text x="63" y="372" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="13.5" fill="#e2e8f0">Theft &amp; loss screening</text><path d="M305 425 C 282.5 425, 282.5 425, 260 425" stroke="#10B981" stroke-opacity=".55" stroke-width="1.5" stroke-dasharray="5 5" fill="none"><animate attributeName="stroke-dashoffset" from="0" to="20" dur="1.6s" repeatCount="indefinite"/></path><rect x="30" y="406" width="230" height="38" rx="19" fill="#111a2e" stroke="#10B981" stroke-opacity=".6"/><circle cx="49" cy="425" r="5" fill="#10B981"><animate attributeName="r" values="4;6;4" dur="2.4s" begin="2.1s" repeatCount="indefinite"/></circle><text x="63" y="430" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="13.5" fill="#e2e8f0">EV &amp; substation siting</text><path d="M305 425 C 282.5 425, 282.5 483, 260 483" stroke="#10B981" stroke-opacity=".55" stroke-width="1.5" stroke-dasharray="5 5" fill="none"><animate attributeName="stroke-dashoffset" from="0" to="20" dur="1.6s" repeatCount="indefinite"/></path><rect x="30" y="464" width="230" height="38" rx="19" fill="#111a2e" stroke="#10B981" stroke-opacity=".6"/><circle cx="49" cy="483" r="5" fill="#10B981"><animate attributeName="r" values="4;6;4" dur="2.4s" begin="2.4s" repeatCount="indefinite"/></circle><text x="63" y="488" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="13.5" fill="#e2e8f0">Distribution-network GIS</text><rect class="rm-node" x="305" y="391" width="190" height="68" rx="16" fill="url(#rm-f2)" stroke="url(#rm-c2)" stroke-width="2"/><text x="400" y="421" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="17" font-weight="700" fill="#e2e8f0">Energy Analytics</text><text x="400" y="444" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#10B981">BREB · 2022–2026</text></g></a><a class="rm-c" href="#projects" aria-label="Applied AI"><g><path d="M600 280 Q 700.0 280 800 425" stroke="url(#rm-c3)" stroke-opacity=".7" stroke-width="2.4" fill="none"/><circle r="4" fill="#f0b45a" filter="url(#rm-glow)"><animateMotion dur="3s" begin="1.05s" repeatCount="indefinite" path="M600 280 Q 700.0 280 800 425"/></circle><circle r="4" fill="#f0b45a" filter="url(#rm-glow)"><animateMotion dur="3s" begin="2.55s" repeatCount="indefinite" path="M600 280 Q 700.0 280 800 425"/></circle><path d="M895 425 C 917.5 425, 917.5 367, 940 367" stroke="#f0b45a" stroke-opacity=".55" stroke-width="1.5" stroke-dasharray="5 5" fill="none"><animate attributeName="stroke-dashoffset" from="0" to="-20" dur="1.6s" repeatCount="indefinite"/></path><rect x="940" y="348" width="230" height="38" rx="19" fill="#111a2e" stroke="#f0b45a" stroke-opacity=".6"/><circle cx="959" cy="367" r="5" fill="#f0b45a"><animate attributeName="r" values="4;6;4" dur="2.4s" begin="2.7s" repeatCount="indefinite"/></circle><text x="973" y="372" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="13.5" fill="#e2e8f0">OwlContinuity agents</text><path d="M895 425 C 917.5 425, 917.5 425, 940 425" stroke="#f0b45a" stroke-opacity=".55" stroke-width="1.5" stroke-dasharray="5 5" fill="none"><animate attributeName="stroke-dashoffset" from="0" to="-20" dur="1.6s" repeatCount="indefinite"/></path><rect x="940" y="406" width="230" height="38" rx="19" fill="#111a2e" stroke="#f0b45a" stroke-opacity=".6"/><circle cx="959" cy="425" r="5" fill="#f0b45a"><animate attributeName="r" values="4;6;4" dur="2.4s" begin="3.0s" repeatCount="indefinite"/></circle><text x="973" y="430" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="13.5" fill="#e2e8f0">Liver-cancer detection</text><path d="M895 425 C 917.5 425, 917.5 483, 940 483" stroke="#f0b45a" stroke-opacity=".55" stroke-width="1.5" stroke-dasharray="5 5" fill="none"><animate attributeName="stroke-dashoffset" from="0" to="-20" dur="1.6s" repeatCount="indefinite"/></path><rect x="940" y="464" width="230" height="38" rx="19" fill="#111a2e" stroke="#f0b45a" stroke-opacity=".6"/><circle cx="959" cy="483" r="5" fill="#f0b45a"><animate attributeName="r" values="4;6;4" dur="2.4s" begin="3.3s" repeatCount="indefinite"/></circle><text x="973" y="488" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="13.5" fill="#e2e8f0">Spotify network science</text><rect class="rm-node" x="705" y="391" width="190" height="68" rx="16" fill="url(#rm-f3)" stroke="url(#rm-c3)" stroke-width="2"/><text x="800" y="421" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="17" font-weight="700" fill="#e2e8f0">Applied AI</text><text x="800" y="444" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#f0b45a">agents · health · graphs</text></g></a><circle cx="600" cy="280" r="74" fill="none" stroke="url(#rm-hub)" stroke-width="1.5" stroke-opacity=".5"><animate attributeName="r" values="70;84;70" dur="4s" repeatCount="indefinite"/><animate attributeName="stroke-opacity" values=".55;0;.55" dur="4s" repeatCount="indefinite"/></circle><circle cx="600" cy="280" r="62" fill="#0f172a" stroke="url(#rm-hub)" stroke-width="3" filter="url(#rm-glow)"/><g><animateTransform attributeName="transform" type="rotate" from="0 600 280" to="360 600 280" dur="24s" repeatCount="indefinite"/><circle cx="600" cy="280" r="52" fill="none" stroke="url(#rm-hub)" stroke-width="1" stroke-dasharray="2 7" stroke-opacity=".8"/></g><text x="600" y="274" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="16" font-weight="700" fill="#e2e8f0">Machine</text><text x="600" y="294" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="16" font-weight="700" fill="#e2e8f0">Learning</text><text x="600" y="314" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="10.5" fill="#94a3b8">core methods</text></svg></div>
-    <div class="graph-wrap reveal" id="graph-wrap">
-      <canvas id="graph-canvas"></canvas>
-      <div class="graph-tip" id="graph-tip"></div>
-      <div class="graph-hint"><i class="ti ti-hand-finger"></i> hover · drag nodes</div>
-      <div class="graph-legend">
-        <span><i style="background:#38BDF8"></i>Methods</span>
-        <span><i style="background:#a78bfa"></i>Genomics</span>
-        <span><i style="background:#10B981"></i>Energy &amp; Infrastructure</span>
-        <span><i style="background:#f0b45a"></i>Applications</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ GENOMICS VISUALIZATION LAB ============ -->
-<section class="section" id="lab">
-  <div class="wrap">
-    <p class="eyebrow reveal"><span class="n">05</span> / Genomics Visualization Lab</p>
-    <h2 class="reveal">Genomics visualization lab</h2>
-    <p class="lead reveal">Live, code-driven scientific visualizations of the structures this research operates on — from the double helix to selective sweeps, population trees, and coalescent genealogies.</p>
-    <div class="lab reveal">
-      <div class="lab-tabs" role="tablist">
-        <button class="lab-tab" data-lab="helix" aria-pressed="true"><i class="ti ti-dna-2"></i>DNA Helix</button>
-        <button class="lab-tab" data-lab="sweep" aria-pressed="false"><i class="ti ti-chart-histogram"></i>Selective Sweep</button>
-        <button class="lab-tab" data-lab="tree" aria-pressed="false"><i class="ti ti-binary-tree-2"></i>Population Tree</button>
-        <button class="lab-tab" data-lab="coalescent" aria-pressed="false"><i class="ti ti-git-merge"></i>Coalescent</button>
-        <button class="lab-tab" data-lab="haplotype" aria-pressed="false"><i class="ti ti-grid-dots"></i>Haplotypes</button>
-      </div>
-      <div class="lab-stage">
-        <div class="lab-canvas-wrap"><canvas id="lab-canvas"></canvas></div>
-        <div class="lab-info">
-          <div class="sub" id="lab-sub">Structure</div>
-          <h3 id="lab-title">DNA Double Helix</h3>
-          <p id="lab-desc">Genetic information is encoded along two antiparallel strands. Variation in this sequence between individuals is the raw signal every method here learns from.</p>
-          <div class="facts" id="lab-facts"></div>
-          <div class="lab-ctrl">
-            <button class="btn btn-outline" id="lab-play"><i class="ti ti-player-pause"></i>Pause</button>
-            <button class="btn btn-ghost" id="lab-reseed"><i class="ti ti-refresh"></i>Reseed</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ INTERACTIVE EXPLAINERS ============ -->
-<section class="section" id="learn">
-  <div class="wrap">
-    <p class="eyebrow reveal"><span class="n">06</span> / Interactive Explainers</p>
-    <h2 class="reveal">Learn the ideas by playing with them</h2>
-    <p class="lead reveal">Two textbook ideas behind my work, small enough to run in your browser. Move a slider or switch the measure; the figure and the explanation update together.</p>
-    <div class="learn">
-      <article class="xp reveal" id="xp-sweep">
-        <div class="xp-hd">
-          <span class="badge"><i class="ti ti-dna-2"></i>Population genetics</span>
-          <h3>How wide is a selective sweep?</h3>
-          <p>When a beneficial mutation spreads, neutral variants close to it ride along with it (genetic hitchhiking), and diversity drops in a valley around the selected site. Recombination lets more distant variants escape, so the width of the valley comes from a race between selection and recombination.</p>
-        </div>
-        <div class="xp-canvas"><canvas id="sweep-canvas" role="img" aria-label="Expected diversity along the genome around a selective sweep"></canvas></div>
-        <div class="xp-ctrl">
-          <label for="sw-s"><span>Selection strength <i>s</i></span><output id="sw-s-out" for="sw-s">0.010</output></label>
-          <input type="range" id="sw-s" min="-3" max="-1" step="0.05" value="-2">
-          <label for="sw-r"><span>Recombination rate <i>r</i> (per bp, per generation)</span><output id="sw-r-out" for="sw-r">1e-8</output></label>
-          <input type="range" id="sw-r" min="-9" max="-7" step="0.05" value="-8">
-        </div>
-        <p class="xp-read" id="sw-read" aria-live="polite"></p>
-        <p class="xp-note">Curve: expected diversity just after a completed hard sweep, π/π₀ ≈ 1 − (2Ns)<sup>−2rd/s</sup> at distance <i>d</i> from the selected site, with population size N = 10,000. This is the classic hitchhiking approximation (Maynard Smith &amp; Haigh 1974; Kim &amp; Stephan 2002), a teaching sketch rather than a fitted model.</p>
-      </article>
-      <article class="xp reveal d1" id="xp-net">
-        <div class="xp-hd">
-          <span class="badge"><i class="ti ti-topology-star-3"></i>Network science</span>
-          <h3>Who is the most important node?</h3>
-          <p>It depends on what "important" means. Pick a centrality measure: node size shows each node's score, and the top node is ringed. Click a node to see all five of its scores.</p>
-        </div>
-        <div class="filters xp-tabs" id="net-tabs" role="group" aria-label="Centrality measure">
-          <button data-m="degree" aria-pressed="true">Degree</button>
-          <button data-m="betweenness" aria-pressed="false">Betweenness</button>
-          <button data-m="closeness" aria-pressed="false">Closeness</button>
-          <button data-m="eigenvector" aria-pressed="false">Eigenvector</button>
-          <button data-m="pagerank" aria-pressed="false">PageRank</button>
-        </div>
-        <div class="xp-canvas"><canvas id="net-canvas" role="img" aria-label="Small example network with nodes sized by centrality"></canvas></div>
-        <p class="xp-read" id="net-read" aria-live="polite"></p>
-        <p class="xp-note">Scores are computed in your browser with the definitions NetworkX uses. The same split showed up in my Spotify project: degree ranked Armin van Buuren first (513 collaborators), while betweenness and closeness ranked R3HAB first, a bridge between music scenes.</p>
-      </article>
-    </div>
-  </div>
-</section>
 <!-- ============ PUBLICATIONS ============ -->
 <section class="section" id="publications">
   <div class="wrap">
-    <p class="eyebrow reveal"><span class="n">07</span> / Publications</p>
+    <p class="eyebrow reveal"><span class="n">03</span> / Publications</p>
     <h2 class="reveal">Selected publications</h2>
     <p class="lead reveal">Author shown in bold. Search, filter and sort below — export a citation or BibTeX from any entry. For the complete, live list, visit Google Scholar.</p>
     <div class="metrics reveal">
-      <div class="metric"><b data-count="5">0</b><span>Publications</span></div>
-      <div class="metric"><b data-count="107">0</b><span>Citations</span></div>
-      <div class="metric"><b data-count="4">0</b><span>h-index</span></div>
-      <div class="metric"><b data-count="2">0</b><span>i10-index</span></div>
+      <div class="metric"><b data-count="5">5</b><span>Publications</span></div>
+      <div class="metric"><b data-count="107">107</b><span>Citations</span></div>
+      <div class="metric"><b data-count="4">4</b><span>h-index</span></div>
+      <div class="metric"><b data-count="2">2</b><span>i10-index</span></div>
     </div>
-    <p class="reveal" style="text-align:center;margin:-16px 0 26px;font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--muted);display:flex;align-items:center;justify-content:center;gap:8px"><span style="width:7px;height:7px;border-radius:50%;background:var(--success);display:inline-block;box-shadow:0 0 0 3px rgba(16,185,129,.16)"></span><span>Citation counts from Google Scholar · 18 October 2026</span></p>
+    <p class="reveal" style="text-align:center;margin:-16px 0 26px;font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--muted);display:flex;align-items:center;justify-content:center;gap:8px"><span style="width:7px;height:7px;border-radius:50%;background:var(--success);display:inline-block;box-shadow:0 0 0 3px rgba(16,185,129,.16)"></span><span>Citation counts from Google Scholar, updated automatically · <span class="scholar-date">18 October 2026</span></span></p>
     <div class="pubtools reveal">
       <div class="search"><i class="ti ti-search"></i><input id="pub-search" type="text" placeholder="Search title, author, venue…" aria-label="Search publications"></div>
       <div class="filters" role="group" aria-label="Filter by type">
@@ -1130,10 +1047,47 @@ footer{border-top:1px solid var(--line-soft);padding:56px 0 42px;position:relati
   </div>
 </section>
 
+<!-- ============ PROJECTS ============ -->
+<section class="section" id="projects">
+  <div class="wrap">
+    <p class="eyebrow reveal"><span class="n">04</span> / Current &amp; Past Projects</p>
+    <h2 class="reveal">Engineering &amp; research projects</h2>
+    <p class="lead reveal">Recent 2026 work comes first: OwlContinuity, SolarPath and the Spotify network study. Deployed tools and earlier research follow. Each card shows its status. Filter by type, or click any project for methods and outcomes.</p>
+    <div class="filters reveal" id="proj-filters" role="group" aria-label="Filter projects" style="margin-top:28px">
+      <button data-c="all" aria-pressed="true">All</button>
+      <button data-c="research" aria-pressed="false">Research</button>
+      <button data-c="course" aria-pressed="false">Coursework</button>
+      <button data-c="eng" aria-pressed="false">Engineering</button>
+      <button data-c="open" aria-pressed="false">Open source</button>
+    </div>
+    <div class="grid cols-3" id="proj-grid" style="margin-top:22px">
+      <p class="proj-group">Recent work · 2026</p>
+      <article class="proj reveal" data-c="research open" data-modal="proj-owl" role="button" tabindex="0" aria-label="Details: OwlContinuity AI agents for course disruptions"><div class="proj-viz"><canvas data-viz="domino"></canvas></div><div class="proj-bd"><div class="top"><span class="eyebrow">Hackathon</span><span class="rcode">2026</span></div><h3>OwlContinuity: AI Agents for Course Disruptions</h3><span class="pstat">Recent · agentic AI prototype</span><p>Three AI agents in FAU's owlONE platform (gpt-6-luna) that rebuild a disrupted course schedule, check every dependent deadline with code, and answer students only from professor-approved sources. Built at the AI Promptathon, FAU Hackathon 2026. Recorded tests (my own): 31 passed, 2 partial, 0 failed.</p><div class="tags"><span class="badge soft">owlone</span><span class="badge soft">ai-agents</span><span class="badge soft">javascript</span></div><div class="proj-links"><a class="plink" href="https://tanviranjumjoarder.github.io/OwlContinuity/" target="_blank" rel="noopener"><i class="ti ti-external-link"></i>Demo</a><a class="plink" href="https://github.com/tanviranjumjoarder/OwlContinuity" target="_blank" rel="noopener"><i class="ti ti-brand-github"></i>Code</a><a class="plink" href="https://github.com/tanviranjumjoarder/OwlContinuity#test-results" target="_blank" rel="noopener"><i class="ti ti-checklist"></i>Test report</a><span class="plink" data-modal="proj-owl"><i class="ti ti-layout-grid"></i>Details</span></div></div></article>
+
+      <article class="proj reveal d1" data-c="course eng" data-modal="proj-solar" role="button" tabindex="0" aria-label="Details: SolarPath solar interconnection readiness"><div class="proj-viz"><canvas data-viz="solar"></canvas></div><div class="proj-bd"><div class="top"><span class="eyebrow">Software Engineering</span><span class="rcode">2026</span></div><h3>SolarPath: Solar Interconnection Readiness</h3><span class="pstat">In progress · code coming soon</span><p>Requirements and design for a tool that checks a home-solar net-metering application against the utility's published rules before final submission. Traceable requirements, 20 UML models and a synthetic test pack, all generated from versioned registers.</p><div class="tags"><span class="badge soft">requirements</span><span class="badge soft">plantuml</span><span class="badge soft">pytest</span></div><div class="proj-links"><span class="plink" data-modal="proj-solar"><i class="ti ti-layout-grid"></i>Details</span><span class="plink lockd"><i class="ti ti-lock"></i>Code coming soon</span></div></div></article>
+
+      <article class="proj reveal" data-c="course research" data-modal="proj-sna" role="button" tabindex="0" aria-label="Details: Spotify Collaboration Network Analysis"><div class="proj-viz"><canvas data-viz="social"></canvas></div><div class="proj-bd"><div class="top"><span class="eyebrow">Coursework</span><span class="rcode">2026</span></div><h3>Spotify Collaboration Network Analysis</h3><span class="pstat">In progress · final research project</span><p>Network science on a 50,000-artist sample of Spotify's collaboration graph: a small world (diameter 8, average path 4.5), five centrality measures that disagree in useful ways, and 21 Louvain communities that follow genre. Run as batch jobs on an HPC cluster.</p><div class="tags"><span class="badge soft">networkx</span><span class="badge soft">louvain</span><span class="badge soft">slurm</span></div><div class="proj-links"><span class="plink" data-modal="proj-sna"><i class="ti ti-layout-grid"></i>Details</span><a class="plink" href="#xp-net"><i class="ti ti-topology-star-3"></i>Try centrality</a><span class="plink lockd"><i class="ti ti-lock"></i>Code after semester</span></div></div></article>
+
+      <p class="proj-group">Deployed tools and earlier work</p>
+      <article class="proj reveal d1" data-c="eng open" data-modal="proj-gis" role="button" tabindex="0" aria-label="Details: GIS Mapping of the Distribution Network"><div class="proj-viz"><canvas data-viz="grid"></canvas></div><div class="proj-bd"><div class="top"><span class="eyebrow">Engineering</span><span class="rcode">2022 – 2026</span></div><h3>GIS Mapping of the Distribution Network</h3><span class="pstat">Deployed · open source</span><p>Mapped the 33 kV and 11 kV network into ArcGIS for SCADA readiness, then released an open tool that rebuilds distribution lines from Excel pole sheets and exports point and line shapefiles for QGIS or ArcGIS.</p><div class="tags"><span class="badge soft">arcgis</span><span class="badge soft">python</span><span class="badge soft">shapefile</span></div><div class="proj-links"><a class="plink" href="https://github.com/tanviranjumjoarder/GIS-Distribution-Line-Drawing" target="_blank" rel="noopener"><i class="ti ti-brand-github"></i>Code</a><span class="plink" data-modal="proj-gis"><i class="ti ti-layout-grid"></i>Details</span></div></div></article>
+
+      <article class="proj reveal d2" data-c="eng open" data-modal="proj-tracker" role="button" tabindex="0" aria-label="Details: Low-usage Industrial Consumer Tracker"><div class="proj-viz"><canvas data-viz="theft"></canvas></div><div class="proj-bd"><div class="top"><span class="eyebrow">Tool</span><span class="rcode">2026</span></div><h3>Low-usage Industrial Consumer Tracker</h3><span class="pstat">Deployed · open source</span><p>Desktop app that merges monthly billing exports, splits consumers by office and lists industrial consumers at or below a usage threshold for field inspection. Bengali/English interface; packs into a single .exe.</p><div class="tags"><span class="badge soft">python</span><span class="badge soft">tkinter</span><span class="badge soft">pandas</span></div><div class="proj-links"><a class="plink" href="https://github.com/tanviranjumjoarder/Low-usage-Industrial-Consumer-Tracker-App" target="_blank" rel="noopener"><i class="ti ti-brand-github"></i>Code</a><span class="plink" data-modal="proj-tracker"><i class="ti ti-layout-grid"></i>Details</span></div></div></article>
+
+      <article class="proj reveal d2" data-c="research" data-modal="proj-liver" role="button" tabindex="0" aria-label="Details: Liver Cancer Detection from Search Logs"><div class="proj-viz"><canvas data-viz="health"></canvas></div><div class="proj-bd"><div class="top"><span class="eyebrow">Research</span><span class="rcode">2019</span></div><h3>Liver Cancer Detection from Search Logs</h3><span class="pstat">Published · IEEE EICT 2019</span><p>Supervised pipeline benchmarking six classifiers — Random Forest reached 97.5% — for early hepatocellular-carcinoma detection from longitudinal online search-query patterns. Published at IEEE EICT 2019.</p><div class="tags"><span class="badge soft">python</span><span class="badge soft">scikit-learn</span><span class="badge soft">random-forest</span></div><div class="proj-links"><a class="plink" href="https://ieeexplore.ieee.org/abstract/document/9068842/" target="_blank" rel="noopener"><i class="ti ti-file-text"></i>Paper</a><span class="plink" data-modal="proj-liver"><i class="ti ti-layout-grid"></i>Details</span></div></div></article>
+
+      <article class="proj reveal" data-c="eng" data-modal="proj-platform" role="button" tabindex="0" aria-label="Details: National Consumer Analytics Platform"><div class="proj-viz"><canvas data-viz="data"></canvas></div><div class="proj-bd"><div class="top"><span class="eyebrow">Engineering</span><span class="rcode">2022 – 2026</span></div><h3>National Consumer Analytics Platform</h3><span class="pstat">Deployed at BREB</span><p>Operational analytics over the national rural grid: a BERC-tariff billing engine across industrial, commercial, residential and charity categories; transformer-overload detection; and integrated complaint registration and call routing.</p><div class="tags"><span class="badge soft">oracle</span><span class="badge soft">mysql</span><span class="badge soft">python</span></div><div class="proj-links"><span class="plink" data-modal="proj-platform"><i class="ti ti-layout-grid"></i>Details</span></div></div></article>
+
+      <article class="proj reveal" data-c="open" data-modal="proj-showcase" role="button" tabindex="0" aria-label="Details: Researcher Portfolio Showcase"><div class="proj-viz"><canvas data-viz="spill"></canvas></div><div class="proj-bd"><div class="top"><span class="eyebrow">Open Source</span><span class="rcode">2026</span></div><h3>Researcher Portfolio Showcase</h3><span class="pstat">Completed · open source</span><p>Thirteen academic portfolio templates in plain HTML, CSS and JavaScript, each a different way of presenting research, with a live gallery that filters them by style.</p><div class="tags"><span class="badge soft">html</span><span class="badge soft">css</span><span class="badge soft">javascript</span></div><div class="proj-links"><a class="plink" href="https://tanviranjumjoarder.github.io/portfolio-showcase/" target="_blank" rel="noopener"><i class="ti ti-external-link"></i>Gallery</a><a class="plink" href="https://github.com/tanviranjumjoarder/portfolio-showcase" target="_blank" rel="noopener"><i class="ti ti-brand-github"></i>Code</a></div></div></article>
+
+      <article class="proj reveal d1" data-c="open" data-modal="proj-game" role="button" tabindex="0" aria-label="Details: Infinity Run Android Game"><div class="proj-viz"><canvas data-viz="dl"></canvas></div><div class="proj-bd"><div class="top"><span class="eyebrow">Side</span><span class="rcode">2019</span></div><h3>Infinity Run: Android Game</h3><span class="pstat">Completed · 2019</span><p>Endless-runner mobile game in Unity with C# and 2D/3D assets modelled in Blender. Built under the Government of Bangladesh's Capacity Building for Mobile Game Development Program.</p><div class="tags"><span class="badge soft">unity</span><span class="badge soft">c#</span><span class="badge soft">blender</span></div><div class="proj-links"><a class="plink" href="https://github.com/tanviranjumjoarder/Game-Infinity-Run-Unity-3D-Blender-C-" target="_blank" rel="noopener"><i class="ti ti-brand-github"></i>Code</a><span class="plink" data-modal="proj-game"><i class="ti ti-layout-grid"></i>Details</span></div></div></article>
+    </div>
+  </div>
+</section>
+
 <!-- ============ RESEARCH SOFTWARE ============ -->
 <section class="section" id="software">
   <div class="wrap">
-    <p class="eyebrow reveal"><span class="n">08</span> / Software</p>
+    <p class="eyebrow reveal"><span class="n">05</span> / Software</p>
     <h2 class="reveal">Research software</h2>
     <p class="lead reveal">Code from my research, coursework and engineering work. Public repositories link straight to GitHub. Lab code and this semester's coursework live in private repositories, available on request.</p>
     <article class="tool reveal" id="tool-discoal">
@@ -1154,44 +1108,11 @@ footer{border-top:1px solid var(--line-soft);padding:56px 0 42px;position:relati
     <div class="grid cols-3 reveal" id="repos" style="margin-top:22px"></div>
   </div>
 </section>
-<!-- ============ PROJECTS ============ -->
-<section class="section" id="projects">
-  <div class="wrap">
-    <p class="eyebrow reveal"><span class="n">09</span> / Current &amp; Past Projects</p>
-    <h2 class="reveal">Engineering &amp; research projects</h2>
-    <p class="lead reveal">Research pipelines, graduate coursework, and the systems I built for a national rural electricity utility. Filter by type, or click any project for methods and outcomes.</p>
-    <div class="filters reveal" id="proj-filters" role="group" aria-label="Filter projects" style="margin-top:28px">
-      <button data-c="all" aria-pressed="true">All</button>
-      <button data-c="research" aria-pressed="false">Research</button>
-      <button data-c="course" aria-pressed="false">Coursework</button>
-      <button data-c="eng" aria-pressed="false">Engineering</button>
-      <button data-c="open" aria-pressed="false">Open source</button>
-    </div>
-    <div class="grid cols-3" id="proj-grid" style="margin-top:22px">
-      <article class="proj reveal" data-c="research open" data-modal="proj-owl" role="button" tabindex="0" aria-label="Details: OwlContinuity AI agents for course disruptions"><div class="proj-viz"><canvas data-viz="domino"></canvas></div><div class="proj-bd"><div class="top"><span class="eyebrow">Hackathon</span><span class="rcode">2026</span></div><h3>OwlContinuity: AI Agents for Course Disruptions</h3><p>Three AI agents in FAU's owlONE platform (gpt-6-luna) that rebuild a disrupted course schedule, check every dependent deadline with code, and answer students only from professor-approved sources. Built at the AI Promptathon, FAU Hackathon 2026. Recorded tests: 31 passed, 2 partial, 0 failed.</p><div class="tags"><span class="badge soft">owlone</span><span class="badge soft">ai-agents</span><span class="badge soft">javascript</span></div><div class="proj-links"><a class="plink" href="https://tanviranjumjoarder.github.io/OwlContinuity/" target="_blank" rel="noopener"><i class="ti ti-external-link"></i>Demo</a><a class="plink" href="https://github.com/tanviranjumjoarder/OwlContinuity" target="_blank" rel="noopener"><i class="ti ti-brand-github"></i>Code</a><span class="plink" data-modal="proj-owl"><i class="ti ti-layout-grid"></i>Details</span></div></div></article>
 
-      <article class="proj reveal" data-c="course research" data-modal="proj-sna" role="button" tabindex="0" aria-label="Details: Spotify Collaboration Network Analysis"><div class="proj-viz"><canvas data-viz="social"></canvas></div><div class="proj-bd"><div class="top"><span class="eyebrow">Coursework</span><span class="rcode">2026</span></div><h3>Spotify Collaboration Network Analysis</h3><p>Network science on a 50,000-artist sample of Spotify's collaboration graph: a small world (diameter 8, average path 4.5), five centrality measures that disagree in useful ways, and 21 Louvain communities that follow genre. Run as batch jobs on an HPC cluster.</p><div class="tags"><span class="badge soft">networkx</span><span class="badge soft">louvain</span><span class="badge soft">slurm</span></div><div class="proj-links"><span class="plink" data-modal="proj-sna"><i class="ti ti-layout-grid"></i>Details</span><a class="plink" href="#xp-net"><i class="ti ti-topology-star-3"></i>Try centrality</a><span class="plink lockd"><i class="ti ti-lock"></i>Code after semester</span></div></div></article>
-
-      <article class="proj reveal d1" data-c="course eng" data-modal="proj-solar" role="button" tabindex="0" aria-label="Details: SolarPath solar interconnection readiness"><div class="proj-viz"><canvas data-viz="solar"></canvas></div><div class="proj-bd"><div class="top"><span class="eyebrow">Software Engineering</span><span class="rcode">2026</span></div><h3>SolarPath: Solar Interconnection Readiness</h3><p>Requirements and design for a tool that checks a home-solar net-metering application against the utility's published rules before final submission. Traceable requirements, 20 UML models and a synthetic test pack, all generated from versioned registers.</p><div class="tags"><span class="badge soft">requirements</span><span class="badge soft">plantuml</span><span class="badge soft">pytest</span></div><div class="proj-links"><span class="plink" data-modal="proj-solar"><i class="ti ti-layout-grid"></i>Details</span><span class="plink lockd"><i class="ti ti-lock"></i>Code after semester</span></div></div></article>
-
-      <article class="proj reveal d2" data-c="research" data-modal="proj-liver" role="button" tabindex="0" aria-label="Details: Liver Cancer Detection from Search Logs"><div class="proj-viz"><canvas data-viz="health"></canvas></div><div class="proj-bd"><div class="top"><span class="eyebrow">Research</span><span class="rcode">2019</span></div><h3>Liver Cancer Detection from Search Logs</h3><p>Supervised pipeline benchmarking six classifiers — Random Forest reached 97.5% — for early hepatocellular-carcinoma detection from longitudinal online search-query patterns. Published at IEEE EICT 2019.</p><div class="tags"><span class="badge soft">python</span><span class="badge soft">scikit-learn</span><span class="badge soft">random-forest</span></div><div class="proj-links"><a class="plink" href="https://ieeexplore.ieee.org/abstract/document/9068842/" target="_blank" rel="noopener"><i class="ti ti-file-text"></i>Paper</a><span class="plink" data-modal="proj-liver"><i class="ti ti-layout-grid"></i>Details</span></div></div></article>
-
-      <article class="proj reveal" data-c="eng" data-modal="proj-platform" role="button" tabindex="0" aria-label="Details: National Consumer Analytics Platform"><div class="proj-viz"><canvas data-viz="data"></canvas></div><div class="proj-bd"><div class="top"><span class="eyebrow">Engineering</span><span class="rcode">2022 – 2026</span></div><h3>National Consumer Analytics Platform</h3><p>Operational analytics over the national rural grid: a BERC-tariff billing engine across industrial, commercial, residential and charity categories; transformer-overload detection; and integrated complaint registration and call routing.</p><div class="tags"><span class="badge soft">oracle</span><span class="badge soft">mysql</span><span class="badge soft">python</span></div><div class="proj-links"><span class="plink" data-modal="proj-platform"><i class="ti ti-layout-grid"></i>Details</span></div></div></article>
-
-      <article class="proj reveal d1" data-c="eng open" data-modal="proj-gis" role="button" tabindex="0" aria-label="Details: GIS Mapping of the Distribution Network"><div class="proj-viz"><canvas data-viz="grid"></canvas></div><div class="proj-bd"><div class="top"><span class="eyebrow">Engineering</span><span class="rcode">2022 – 2026</span></div><h3>GIS Mapping of the Distribution Network</h3><p>Mapped the 33 kV and 11 kV network into ArcGIS for SCADA readiness, then released an open tool that rebuilds distribution lines from Excel pole sheets and exports point and line shapefiles for QGIS or ArcGIS.</p><div class="tags"><span class="badge soft">arcgis</span><span class="badge soft">python</span><span class="badge soft">shapefile</span></div><div class="proj-links"><a class="plink" href="https://github.com/tanviranjumjoarder/GIS-Distribution-Line-Drawing" target="_blank" rel="noopener"><i class="ti ti-brand-github"></i>Code</a><span class="plink" data-modal="proj-gis"><i class="ti ti-layout-grid"></i>Details</span></div></div></article>
-
-      <article class="proj reveal d2" data-c="eng open" data-modal="proj-tracker" role="button" tabindex="0" aria-label="Details: Low-usage Industrial Consumer Tracker"><div class="proj-viz"><canvas data-viz="theft"></canvas></div><div class="proj-bd"><div class="top"><span class="eyebrow">Tool</span><span class="rcode">2026</span></div><h3>Low-usage Industrial Consumer Tracker</h3><p>Desktop app that merges monthly billing exports, splits consumers by office and lists industrial consumers at or below a usage threshold for field inspection. Bengali/English interface; packs into a single .exe.</p><div class="tags"><span class="badge soft">python</span><span class="badge soft">tkinter</span><span class="badge soft">pandas</span></div><div class="proj-links"><a class="plink" href="https://github.com/tanviranjumjoarder/Low-usage-Industrial-Consumer-Tracker-App" target="_blank" rel="noopener"><i class="ti ti-brand-github"></i>Code</a><span class="plink" data-modal="proj-tracker"><i class="ti ti-layout-grid"></i>Details</span></div></div></article>
-
-      <article class="proj reveal" data-c="open" data-modal="proj-showcase" role="button" tabindex="0" aria-label="Details: Researcher Portfolio Showcase"><div class="proj-viz"><canvas data-viz="spill"></canvas></div><div class="proj-bd"><div class="top"><span class="eyebrow">Open Source</span><span class="rcode">2026</span></div><h3>Researcher Portfolio Showcase</h3><p>Thirteen academic portfolio templates in plain HTML, CSS and JavaScript, each a different way of presenting research, with a live gallery that filters them by style.</p><div class="tags"><span class="badge soft">html</span><span class="badge soft">css</span><span class="badge soft">javascript</span></div><div class="proj-links"><a class="plink" href="https://tanviranjumjoarder.github.io/portfolio-showcase/" target="_blank" rel="noopener"><i class="ti ti-external-link"></i>Gallery</a><a class="plink" href="https://github.com/tanviranjumjoarder/portfolio-showcase" target="_blank" rel="noopener"><i class="ti ti-brand-github"></i>Code</a></div></div></article>
-
-      <article class="proj reveal d1" data-c="open" data-modal="proj-game" role="button" tabindex="0" aria-label="Details: Infinity Run Android Game"><div class="proj-viz"><canvas data-viz="dl"></canvas></div><div class="proj-bd"><div class="top"><span class="eyebrow">Side</span><span class="rcode">2019</span></div><h3>Infinity Run: Android Game</h3><p>Endless-runner mobile game in Unity with C# and 2D/3D assets modelled in Blender. Built under the Government of Bangladesh's Capacity Building for Mobile Game Development Program.</p><div class="tags"><span class="badge soft">unity</span><span class="badge soft">c#</span><span class="badge soft">blender</span></div><div class="proj-links"><a class="plink" href="https://github.com/tanviranjumjoarder/Game-Infinity-Run-Unity-3D-Blender-C-" target="_blank" rel="noopener"><i class="ti ti-brand-github"></i>Code</a><span class="plink" data-modal="proj-game"><i class="ti ti-layout-grid"></i>Details</span></div></div></article>
-    </div>
-  </div>
-</section>
 <!-- ============ ACADEMIC & PROFESSIONAL TRAJECTORY (experience + education + journey) ============ -->
 <section class="section" id="experience">
   <div class="wrap">
-    <p class="eyebrow reveal"><span class="n">10</span> / Trajectory</p>
+    <p class="eyebrow reveal"><span class="n">06</span> / Trajectory</p>
     <h2 class="reveal">Academic &amp; professional trajectory</h2>
     <p class="lead reveal">From schooling in Chuadanga and a B.Sc. at RUET, through four years at a national electrification utility, to a PhD in computational genomics at Florida Atlantic University.</p>
 
@@ -1228,8 +1149,10 @@ footer{border-top:1px solid var(--line-soft);padding:56px 0 42px;position:relati
             <div class="tnode cur"><span class="tdot"></span><div class="tcard"><div class="tper">Aug 2026 – Present</div><h4>Graduate Research Assistant, DeGiorgio Lab</h4><div class="torg">Dept. of EECS, Florida Atlantic University · Boca Raton, FL</div><p>PhD in Computer Science, advised by Dr. Michael DeGiorgio. Simulation-based deep learning for detecting natural selection; builds reproducible coalescent-simulation pipelines with discoal on the university HPC cluster.</p></div></div>
             <div class="tnode"><span class="tdot"></span><div class="tcard"><div class="tper">Jan 2022 – Aug 2026</div><h4>Assistant General Manager, Information Technology</h4><div class="torg">Bangladesh Rural Electrification Board (BREB) · Dhaka</div><p>Led IT for electricity service to 80%+ of Bangladesh: ML for sales/loss forecasting; BERC-tariff billing &amp; anomaly detection; ArcGIS mapping of 33/11/6.35 kV lines for SCADA; transformer-load, complaint &amp; website systems. In-house trainer on ML, cybersecurity and GIS.</p></div></div>
             <div class="tnode"><span class="tdot"></span><div class="tcard"><div class="tper">Jan 2018 – Jun 2019</div><h4>Undergraduate Researcher</h4><div class="torg">Dept. of CSE, RUET · Supervisor: Prof. A. H. M. Sarowar Sattar</div><p>Bachelor's thesis on ML detection of liver cancer from longitudinal search-query patterns. Published at IEEE EICT 2019.</p></div></div>
+            <details class="more tmore"><summary>Earlier activities (2017–2018)</summary>
             <div class="tnode"><span class="tdot"></span><div class="tcard"><div class="tper">Oct 2018 – Nov 2018</div><h4>Intern, Microsoft Young Bangla Program</h4><div class="torg">Microsoft Bangladesh &amp; Centre for Research and Information</div><p>Inaugural Microsoft Young Bangla cohort on entrepreneurship, innovation and product development.</p></div></div>
             <div class="tnode"><span class="tdot"></span><div class="tcard"><div class="tper">Dec 2017 – May 2018</div><h4>Brand Ambassador, Samsung EDGE 2018</h4><div class="torg">Samsung Bangladesh</div><p>National brand-ambassador cohort for the Samsung Galaxy line.</p></div></div>
+            </details>
           </div>
         </div>
         <div class="traj-col reveal d1">
@@ -1237,8 +1160,10 @@ footer{border-top:1px solid var(--line-soft);padding:56px 0 42px;position:relati
           <div class="tline">
             <div class="tnode cur"><span class="tdot"></span><div class="tcard"><div class="tper">2026 – Present</div><h4>Ph.D. in Computer Science <span class="badge">In progress</span></h4><div class="torg">Florida Atlantic University · DeGiorgio Lab</div><p>Statistical and machine-learning methods for population genomic inference. Fall 2026 coursework: Social Networks and Big Data Analytics (CAP 6315), Software Engineering (CEN 5035), Computational Foundations of AI (CAP 5625).</p></div></div>
             <div class="tnode"><span class="tdot"></span><div class="tcard"><div class="tper">2015 – 2019</div><h4>B.Sc. in Computer Science &amp; Engineering</h4><div class="torg">Rajshahi University of Engineering &amp; Technology (RUET)</div><p>Coursework in machine learning, data mining, databases, algorithms, statistics and software engineering. Thesis published at IEEE EICT 2019.</p></div></div>
+            <details class="more tmore"><summary>Secondary education (2010–2014)</summary>
             <div class="tnode"><span class="tdot"></span><div class="tcard"><div class="tper">2012 – 2014</div><h4>Higher Secondary Certificate, Science</h4><div class="torg">Chuadanga Government College · BISE Jessore</div><p>HSC 2014. GPA 5.00 / 5.00, all subjects A+ (Bangla, English, Physics, Chemistry, Mathematics, Biology).</p></div></div>
             <div class="tnode"><span class="tdot"></span><div class="tcard"><div class="tper">2010 – 2012</div><h4>Secondary School Certificate, Science</h4><div class="torg">V. J. Government Secondary School, Chuadanga</div><p>SSC 2012. GPA 5.00 / 5.00.</p></div></div>
+            </details>
           </div>
         </div>
       </div>
@@ -1249,31 +1174,16 @@ footer{border-top:1px solid var(--line-soft);padding:56px 0 42px;position:relati
 <!-- ============ SKILLS ============ -->
 <section class="section" id="skills">
   <div class="wrap">
-    <p class="eyebrow reveal"><span class="n">11</span> / Technical Skills</p>
+    <p class="eyebrow reveal"><span class="n">07</span> / Technical Skills</p>
     <h2 class="reveal">Computational toolkit</h2>
+    <p class="lead reveal">Underlined items open the project or code that uses them.</p>
     <div class="grid cols-3" style="margin-top:34px">
       <div class="card skill reveal"><span class="spot"></span><h3>Programming Languages</h3><ul><li>Python</li><li>R</li><li>C / C++</li><li>SQL</li><li>Bash</li></ul></div>
-      <div class="card skill reveal d1"><span class="spot"></span><h3>Machine Learning</h3><ul><li>PyTorch</li><li>TensorFlow / Keras</li><li>scikit-learn</li><li>NumPy / pandas</li><li>CNN · Transfer Learning</li><li>LLM agents · prompt design (owlONE)</li></ul></div>
-      <div class="card skill reveal d2"><span class="spot"></span><h3>Genomics &amp; Statistics</h3><ul><li>Coalescent theory</li><li>discoal: seeded, quality-checked runs at scale</li><li>msprime · scikit-allel · VCF</li><li>Bayesian inference</li><li>Statistics &amp; R</li></ul></div>
-      <div class="card skill reveal"><span class="spot"></span><h3>Network Science</h3><ul><li>NetworkX</li><li>Centrality &amp; PageRank</li><li>Louvain community detection</li><li>BFS sampling of large graphs</li><li>Graph analysis at 50,000+ nodes</li></ul></div>
-      <div class="card skill reveal d1"><span class="spot"></span><h3>Software Engineering</h3><ul><li>Requirements engineering</li><li>UML (PlantUML), sequence diagrams</li><li>Test-first development (pytest)</li><li>Traceable, generated documentation</li><li>Git &amp; GitHub</li></ul></div>
-      <div class="card skill reveal d2"><span class="spot"></span><h3>Infrastructure</h3><ul><li>Slurm · HPC batch jobs</li><li>Docker · Singularity</li><li>Snakemake · Nextflow</li><li>Jupyter (headless runs)</li><li>Oracle · MySQL · ArcGIS / QGIS</li></ul></div>
-    </div>
-  </div>
-</section>
-<!-- ============ COLLABORATION ============ -->
-<section class="section" id="collaborate">
-  <div class="wrap">
-    <p class="eyebrow reveal"><span class="n">12</span> / Collaboration</p>
-    <h2 class="reveal">Let's work together</h2>
-    <p class="lead reveal">I am actively open to collaboration. Here is where I can contribute and what I am looking for — whether you are an academic lab, an industry team, or an open-source maintainer.</p>
-    <div class="grid cols-3" style="margin-top:34px">
-      <div class="collab reveal"><div class="ic"><i class="ti ti-microscope"></i></div><h3>Academic Collaborations</h3><p>Co-authored methods papers in computational genomics and trustworthy machine-learning evaluation.</p><ul><li>Selective-sweep detection &amp; selection inference</li><li>Simulation-based deep learning for population genetics</li><li>Sensitivity analysis for ML benchmarks</li></ul></div>
-      <div class="collab reveal d1"><div class="ic"><i class="ti ti-building-factory-2"></i></div><h3>Industry Collaborations</h3><p>Applied ML for utilities and energy — turning operational data into decisions engineers can act on.</p><ul><li>Theft &amp; system-loss detection</li><li>EV charging &amp; substation siting</li><li>Distribution-network GIS</li></ul></div>
-      <div class="collab reveal d2"><div class="ic"><i class="ti ti-brand-github"></i></div><h3>Open-Source Contributions</h3><p>Practical, documented tools that others can run.</p><ul><li>OwlContinuity — course-disruption agents</li><li>contamsens — benchmark robustness</li><li>GIS distribution line drawing</li><li>Low-usage consumer tracker</li></ul></div>
-      <div class="collab reveal"><div class="ic"><i class="ti ti-bulb"></i></div><h3>Interested Domains</h3><p>Where I most want to go deeper next.</p><ul><li>Interpretable deep learning</li><li>Simulation-based inference</li><li>Transfer &amp; domain adaptation</li></ul></div>
-      <div class="collab reveal d1"><div class="ic"><i class="ti ti-users-group"></i></div><h3>Students &amp; Mentees</h3><p>Happy to advise students entering computational biology and applied ML, and to share graduate-study guidance.</p><ul><li>Getting started in ML research</li><li>Reproducible-research practices</li><li>Grad-school application advice</li></ul></div>
-      <div class="collab reveal d2"><div class="ic"><i class="ti ti-mail-share"></i></div><h3>How to Reach Me</h3><p>The fastest path is email with a short note on the problem and dataset.</p><ul><li>tjoarder2026@fau.edu</li><li>Google Scholar · GitHub · LinkedIn</li><li>Open to remote &amp; visiting work</li></ul><div style="margin-top:16px"><a href="#contact" class="btn btn-accent magnetic"><i class="ti ti-send"></i>Start a conversation</a></div></div>
+      <div class="card skill reveal d1"><span class="spot"></span><h3>Machine Learning</h3><ul><li>PyTorch</li><li>TensorFlow / Keras</li><li>scikit-learn</li><li>NumPy / pandas</li><li><span class="proof" data-modal="sweep" role="button" tabindex="0">CNN · Transfer Learning</span></li><li><span class="proof" data-modal="proj-owl" role="button" tabindex="0">LLM agents · prompt design (owlONE)</span></li></ul></div>
+      <div class="card skill reveal d2"><span class="spot"></span><h3>Genomics &amp; Statistics</h3><ul><li>Coalescent theory</li><li><a class="proof" href="#tool-discoal">discoal: seeded, quality-checked runs at scale</a></li><li>msprime · scikit-allel · VCF</li><li>Bayesian inference</li><li>Statistics &amp; R</li></ul></div>
+      <div class="card skill reveal"><span class="spot"></span><h3>Network Science</h3><ul><li>NetworkX</li><li><a class="proof" href="#xp-net">Centrality &amp; PageRank</a></li><li><span class="proof" data-modal="proj-sna" role="button" tabindex="0">Louvain community detection</span></li><li>BFS sampling of large graphs</li><li><span class="proof" data-modal="proj-sna" role="button" tabindex="0">Graph analysis at 50,000+ nodes</span></li></ul></div>
+      <div class="card skill reveal d1"><span class="spot"></span><h3>Software Engineering</h3><ul><li><span class="proof" data-modal="proj-solar" role="button" tabindex="0">Requirements engineering</span></li><li><span class="proof" data-modal="proj-solar" role="button" tabindex="0">UML (PlantUML), sequence diagrams</span></li><li><span class="proof" data-modal="proj-solar" role="button" tabindex="0">Test-first development (pytest)</span></li><li>Traceable, generated documentation</li><li><a class="proof" href="https://github.com/tanviranjumjoarder" target="_blank" rel="noopener">Git &amp; GitHub</a></li></ul></div>
+      <div class="card skill reveal d2"><span class="spot"></span><h3>Infrastructure</h3><ul><li><a class="proof" href="#tool-discoal">Slurm · HPC batch jobs</a></li><li>Docker · Singularity</li><li>Snakemake · Nextflow</li><li>Jupyter (headless runs)</li><li><span class="proof" data-modal="proj-gis" role="button" tabindex="0">Oracle · MySQL · ArcGIS / QGIS</span></li></ul></div>
     </div>
   </div>
 </section>
@@ -1281,7 +1191,7 @@ footer{border-top:1px solid var(--line-soft);padding:56px 0 42px;position:relati
 <!-- ============ AWARDS ============ -->
 <section class="section" id="awards">
   <div class="wrap">
-    <p class="eyebrow reveal"><span class="n">13</span> / Honors &amp; Certifications</p>
+    <p class="eyebrow reveal"><span class="n">08</span> / Honors &amp; Certifications</p>
     <h2 class="reveal">Awards &amp; credentials</h2>
     <p class="lead reveal">A selection of academic honors, professional certifications, and competitive recognitions.</p>
     <div class="grid cols-2" style="margin-top:34px">
@@ -1290,13 +1200,17 @@ footer{border-top:1px solid var(--line-soft);padding:56px 0 42px;position:relati
       <div class="award reveal d1"><span class="yr">2019</span><div><h3>IEEE EICT 2019 Conference Paper Presentation</h3><p>4th Intl. Conf. on Electrical Information and Communication Technology, KUET · IEEE Bangladesh Section.</p></div></div>
       <div class="award reveal"><span class="yr">2018</span><div><h3>HarvardX PH525.1x — Statistics and R (Verified)</h3><p>Harvard T.H. Chan School of Public Health via edX. Credential 5560979de0664437b62064de3dd77aec.</p></div></div>
       <div class="award reveal d1"><span class="yr">2018</span><div><h3>Coursera — Introduction to Probability and Data</h3><p>Duke University via Coursera. Credential WS7P6HBRDHDS. Issued July 10, 2018.</p></div></div>
+      <div class="award reveal d1"><span class="yr">2022</span><div><h3>GIS Mapping of Distribution Network (ArcGIS)</h3><p>BREB internal training. 33 kV / 11 kV / 6.35 kV mapping for SCADA readiness.</p></div></div>
+    </div>
+    <details class="more more-awards"><summary>Earlier credentials (5)</summary>
+    <div class="grid cols-2">
       <div class="award reveal"><span class="yr">2018</span><div><h3>CCNA Routing &amp; Switching (4 courses)</h3><p>Cisco Networking Academy via RUET — Introduction to Networks, Routing &amp; Switching Essentials, Scaling Networks, Connecting Networks.</p></div></div>
       <div class="award reveal d1"><span class="yr">2017</span><div><h3>Champion — Poster Presentation, Inter-University Science Festival</h3><p>Rajshahi University of Engineering &amp; Technology. November 30, 2017.</p></div></div>
       <div class="award reveal"><span class="yr">2018</span><div><h3>Microsoft Young Bangla Internship Cohort</h3><p>Microsoft Bangladesh &amp; Centre for Research and Information (CRI). Inaugural cohort.</p></div></div>
       <div class="award reveal d1"><span class="yr">2018</span><div><h3>Samsung EDGE 2018 Brand Ambassador</h3><p>Samsung Bangladesh. May 12, 2018. Signed by Seung Won Youn, Country Head.</p></div></div>
       <div class="award reveal"><span class="yr">2019</span><div><h3>Mobile Game Development Capacity-Building Programs</h3><p>Ministry of Posts, Telecommunications &amp; IT, Bangladesh — advanced development &amp; graphic design (Unity, Blender).</p></div></div>
-      <div class="award reveal d1"><span class="yr">2022</span><div><h3>GIS Mapping of Distribution Network (ArcGIS)</h3><p>BREB internal training. 33 kV / 11 kV / 6.35 kV mapping for SCADA readiness.</p></div></div>
     </div>
+    </details>
   </div>
 </section>
 
@@ -1326,6 +1240,136 @@ footer{border-top:1px solid var(--line-soft);padding:56px 0 42px;position:relati
         <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;margin-bottom:14px"><p class="eyebrow"><i class="ti ti-brand-github"></i> GitHub activity</p><a class="plink" href="https://github.com/tanviranjumjoarder" target="_blank" rel="noopener">@tanviranjumjoarder <i class="ti ti-external-link"></i></a></div>
         <img src="https://ghchart.rshah.org/38BDF8/tanviranjumjoarder" alt="GitHub contribution graph for tanviranjumjoarder" loading="lazy" onerror="this.outerHTML='<a class=plink href=https://github.com/tanviranjumjoarder target=_blank rel=noopener>View contributions on GitHub →</a>'">
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ RESEARCH AREAS ============ -->
+<section class="section" id="areas">
+  <div class="wrap">
+    <p class="eyebrow reveal"><span class="n">09</span> / Research Areas</p>
+    <h2 class="reveal">Areas of inquiry</h2>
+    <p class="lead reveal">Six areas, each with a live visualization. Click any card for methods, tools, data, publications and future directions.</p>
+    <div class="areas" id="areas-grid">
+      <article class="area reveal" data-modal="area-genomics" role="button" tabindex="0" aria-label="Explore area: Population Genomics"><div class="area-viz"><canvas data-viz="genomics"></canvas></div><div class="area-bd"><div class="ic"><i class="ti ti-dna-2"></i></div><h3>Population Genomics</h3><p>Detecting natural selection and reconstructing demographic history, with emphasis on underrepresented populations.</p><span class="more">Explore area <i class="ti ti-arrow-right"></i></span></div></article>
+      <article class="area reveal d1" data-modal="area-dl" role="button" tabindex="0" aria-label="Explore area: Deep Learning"><div class="area-viz"><canvas data-viz="dl"></canvas></div><div class="area-bd"><div class="ic"><i class="ti ti-binary-tree"></i></div><h3>Deep Learning</h3><p>Convolutional and tensor-based architectures that treat structured scientific signals as multi-channel images for inference.</p><span class="more">Explore area <i class="ti ti-arrow-right"></i></span></div></article>
+      <article class="area reveal" data-modal="area-ml" role="button" tabindex="0" aria-label="Explore area: Machine Learning"><div class="area-viz"><canvas data-viz="ml"></canvas></div><div class="area-bd"><div class="ic"><i class="ti ti-cpu"></i></div><h3>Machine Learning</h3><p>Supervised, unsupervised and representation learning that transfers across domains — from genomes to national-scale grid telemetry.</p><span class="more">Explore area <i class="ti ti-arrow-right"></i></span></div></article>
+      <article class="area reveal d2" data-modal="area-xai" role="button" tabindex="0" aria-label="Explore area: Trustworthy and Explainable AI"><div class="area-viz"><canvas data-viz="xai"></canvas></div><div class="area-bd"><div class="ic"><i class="ti ti-bulb"></i></div><h3>Trustworthy &amp; Explainable AI</h3><p>Models and evaluations you can check: interpretable detectors, and sensitivity analysis that tests whether benchmark claims survive data contamination.</p><span class="more">Explore area <i class="ti ti-arrow-right"></i></span></div></article>
+      <article class="area reveal d2" data-modal="area-ds" role="button" tabindex="0" aria-label="Explore area: Data Science"><div class="area-viz"><canvas data-viz="data"></canvas></div><div class="area-bd"><div class="ic"><i class="ti ti-chart-dots-3"></i></div><h3>Data Science</h3><p>Turning large, messy, real-world datasets — billing, sensor and genomic — into reproducible, decision-grade insight.</p><span class="more">Explore area <i class="ti ti-arrow-right"></i></span></div></article>
+      <article class="area reveal d1" data-modal="area-health" role="button" tabindex="0" aria-label="Explore area: AI for Healthcare"><div class="area-viz"><canvas data-viz="health"></canvas></div><div class="area-bd"><div class="ic"><i class="ti ti-heartbeat"></i></div><h3>AI for Healthcare</h3><span class="prior">Prior work · 2019 undergraduate thesis</span><p>Machine learning over noisy, temporally structured biomedical signals, including early disease detection from behavioural data.</p><span class="more">Explore area <i class="ti ti-arrow-right"></i></span></div></article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ RESEARCH GRAPH ============ -->
+<section class="section" id="graph">
+  <div class="wrap">
+    <p class="eyebrow reveal"><span class="n">10</span> / Research Graph</p>
+    <h2 class="reveal">A connected research program</h2>
+    <p class="lead reveal">The threads share methods. Drag to explore; hover a node to see its projects, papers, methods and tools.</p>
+    <div class="rmap reveal"><svg viewBox="0 0 1200 560" role="img" aria-label="Research map: machine learning at the centre, linked to population genomics, trustworthy AI, energy analytics and applied AI, each with three projects"><defs><radialGradient id="rm-bg" cx=".5" cy=".5" r=".6"><stop offset="0" stop-color="#1e293b" stop-opacity=".9"/><stop offset="1" stop-color="#0b1220" stop-opacity="0"/></radialGradient><linearGradient id="rm-hub" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#38BDF8"/><stop offset=".5" stop-color="#a78bfa"/><stop offset="1" stop-color="#f0b45a"/></linearGradient><filter id="rm-glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="8" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter><pattern id="rm-dots" width="24" height="24" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1" fill="#334155" fill-opacity=".55"/></pattern><linearGradient id="rm-c0" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#38BDF8"/><stop offset="1" stop-color="#818cf8"/></linearGradient><linearGradient id="rm-f0" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#38BDF8" stop-opacity=".28"/><stop offset="1" stop-color="#818cf8" stop-opacity=".14"/></linearGradient><linearGradient id="rm-c1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#a78bfa"/><stop offset="1" stop-color="#f472b6"/></linearGradient><linearGradient id="rm-f1" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#a78bfa" stop-opacity=".28"/><stop offset="1" stop-color="#f472b6" stop-opacity=".14"/></linearGradient><linearGradient id="rm-c2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#10B981"/><stop offset="1" stop-color="#22d3ee"/></linearGradient><linearGradient id="rm-f2" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#10B981" stop-opacity=".28"/><stop offset="1" stop-color="#22d3ee" stop-opacity=".14"/></linearGradient><linearGradient id="rm-c3" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f0b45a"/><stop offset="1" stop-color="#fb7185"/></linearGradient><linearGradient id="rm-f3" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#f0b45a" stop-opacity=".28"/><stop offset="1" stop-color="#fb7185" stop-opacity=".14"/></linearGradient></defs><rect width="1200" height="560" fill="#0b1220"/><rect width="1200" height="560" fill="url(#rm-dots)"/><rect width="1200" height="560" fill="url(#rm-bg)"/><text x="34" y="44" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="13" letter-spacing="2" fill="#94a3b8">RESEARCH MAP</text><text x="1166" y="44" text-anchor="end" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="13" fill="#94a3b8">hover a thread · click to explore</text><g class="rm-x"><path d="M495 135 L705 135" stroke="#94a3b8" stroke-opacity=".35" stroke-width="1.2" stroke-dasharray="3 6" fill="none"><animate attributeName="stroke-dashoffset" from="0" to="-36" dur="2.5s" repeatCount="indefinite"/></path><text x="600.0" y="125" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#94a3b8" fill-opacity=".85">interpretable deep learning</text><path d="M495 425 L705 425" stroke="#94a3b8" stroke-opacity=".35" stroke-width="1.2" stroke-dasharray="3 6" fill="none"><animate attributeName="stroke-dashoffset" from="0" to="-36" dur="2.5s" repeatCount="indefinite"/></path><text x="600.0" y="415" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#94a3b8" fill-opacity=".85">anomaly detection</text></g><a class="rm-c" href="#lab" aria-label="Population Genomics"><g><path d="M600 280 Q 500.0 280 400 135" stroke="url(#rm-c0)" stroke-opacity=".7" stroke-width="2.4" fill="none"/><circle r="4" fill="#38BDF8" filter="url(#rm-glow)"><animateMotion dur="3s" begin="0.00s" repeatCount="indefinite" path="M600 280 Q 500.0 280 400 135"/></circle><circle r="4" fill="#38BDF8" filter="url(#rm-glow)"><animateMotion dur="3s" begin="1.50s" repeatCount="indefinite" path="M600 280 Q 500.0 280 400 135"/></circle><path d="M305 135 C 282.5 135, 282.5 77, 260 77" stroke="#38BDF8" stroke-opacity=".55" stroke-width="1.5" stroke-dasharray="5 5" fill="none"><animate attributeName="stroke-dashoffset" from="0" to="20" dur="1.6s" repeatCount="indefinite"/></path><rect x="30" y="58" width="230" height="38" rx="19" fill="#111a2e" stroke="#38BDF8" stroke-opacity=".6"/><circle cx="49" cy="77" r="5" fill="#38BDF8"><animate attributeName="r" values="4;6;4" dur="2.4s" begin="0.0s" repeatCount="indefinite"/></circle><text x="63" y="82" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="13.5" fill="#e2e8f0">Selective-sweep detection</text><path d="M305 135 C 282.5 135, 282.5 135, 260 135" stroke="#38BDF8" stroke-opacity=".55" stroke-width="1.5" stroke-dasharray="5 5" fill="none"><animate attributeName="stroke-dashoffset" from="0" to="20" dur="1.6s" repeatCount="indefinite"/></path><rect x="30" y="116" width="230" height="38" rx="19" fill="#111a2e" stroke="#38BDF8" stroke-opacity=".6"/><circle cx="49" cy="135" r="5" fill="#38BDF8"><animate attributeName="r" values="4;6;4" dur="2.4s" begin="0.3s" repeatCount="indefinite"/></circle><text x="63" y="140" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="13.5" fill="#e2e8f0">Coalescent sims · discoal</text><path d="M305 135 C 282.5 135, 282.5 193, 260 193" stroke="#38BDF8" stroke-opacity=".55" stroke-width="1.5" stroke-dasharray="5 5" fill="none"><animate attributeName="stroke-dashoffset" from="0" to="20" dur="1.6s" repeatCount="indefinite"/></path><rect x="30" y="174" width="230" height="38" rx="19" fill="#111a2e" stroke="#38BDF8" stroke-opacity=".6"/><circle cx="49" cy="193" r="5" fill="#38BDF8"><animate attributeName="r" values="4;6;4" dur="2.4s" begin="0.6s" repeatCount="indefinite"/></circle><text x="63" y="198" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="13.5" fill="#e2e8f0">CNNs on Slurm HPC</text><rect class="rm-node" x="305" y="101" width="190" height="68" rx="16" fill="url(#rm-f0)" stroke="url(#rm-c0)" stroke-width="2"/><text x="400" y="131" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="17" font-weight="700" fill="#e2e8f0">Population Genomics</text><text x="400" y="154" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#38BDF8">DeGiorgio Lab · PhD</text></g></a><a class="rm-c" href="#featured" aria-label="Trustworthy AI"><g><path d="M600 280 Q 700.0 280 800 135" stroke="url(#rm-c1)" stroke-opacity=".7" stroke-width="2.4" fill="none"/><circle r="4" fill="#a78bfa" filter="url(#rm-glow)"><animateMotion dur="3s" begin="0.35s" repeatCount="indefinite" path="M600 280 Q 700.0 280 800 135"/></circle><circle r="4" fill="#a78bfa" filter="url(#rm-glow)"><animateMotion dur="3s" begin="1.85s" repeatCount="indefinite" path="M600 280 Q 700.0 280 800 135"/></circle><path d="M895 135 C 917.5 135, 917.5 77, 940 77" stroke="#a78bfa" stroke-opacity=".55" stroke-width="1.5" stroke-dasharray="5 5" fill="none"><animate attributeName="stroke-dashoffset" from="0" to="-20" dur="1.6s" repeatCount="indefinite"/></path><rect x="940" y="58" width="230" height="38" rx="19" fill="#111a2e" stroke="#a78bfa" stroke-opacity=".6"/><circle cx="959" cy="77" r="5" fill="#a78bfa"><animate attributeName="r" values="4;6;4" dur="2.4s" begin="0.9s" repeatCount="indefinite"/></circle><text x="973" y="82" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="13.5" fill="#e2e8f0">Robustness values (Γ*)</text><path d="M895 135 C 917.5 135, 917.5 135, 940 135" stroke="#a78bfa" stroke-opacity=".55" stroke-width="1.5" stroke-dasharray="5 5" fill="none"><animate attributeName="stroke-dashoffset" from="0" to="-20" dur="1.6s" repeatCount="indefinite"/></path><rect x="940" y="116" width="230" height="38" rx="19" fill="#111a2e" stroke="#a78bfa" stroke-opacity=".6"/><circle cx="959" cy="135" r="5" fill="#a78bfa"><animate attributeName="r" values="4;6;4" dur="2.4s" begin="1.2s" repeatCount="indefinite"/></circle><text x="973" y="140" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="13.5" fill="#e2e8f0">Pre-registered OLL audit</text><path d="M895 135 C 917.5 135, 917.5 193, 940 193" stroke="#a78bfa" stroke-opacity=".55" stroke-width="1.5" stroke-dasharray="5 5" fill="none"><animate attributeName="stroke-dashoffset" from="0" to="-20" dur="1.6s" repeatCount="indefinite"/></path><rect x="940" y="174" width="230" height="38" rx="19" fill="#111a2e" stroke="#a78bfa" stroke-opacity=".6"/><circle cx="959" cy="193" r="5" fill="#a78bfa"><animate attributeName="r" values="4;6;4" dur="2.4s" begin="1.5s" repeatCount="indefinite"/></circle><text x="973" y="198" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="13.5" fill="#e2e8f0">Sensitivity analysis</text><rect class="rm-node" x="705" y="101" width="190" height="68" rx="16" fill="url(#rm-f1)" stroke="url(#rm-c1)" stroke-width="2"/><text x="800" y="131" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="17" font-weight="700" fill="#e2e8f0">Trustworthy AI</text><text x="800" y="154" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#a78bfa">contamsens</text></g></a><a class="rm-c" href="#featured" aria-label="Energy Analytics"><g><path d="M600 280 Q 500.0 280 400 425" stroke="url(#rm-c2)" stroke-opacity=".7" stroke-width="2.4" fill="none"/><circle r="4" fill="#10B981" filter="url(#rm-glow)"><animateMotion dur="3s" begin="0.70s" repeatCount="indefinite" path="M600 280 Q 500.0 280 400 425"/></circle><circle r="4" fill="#10B981" filter="url(#rm-glow)"><animateMotion dur="3s" begin="2.20s" repeatCount="indefinite" path="M600 280 Q 500.0 280 400 425"/></circle><path d="M305 425 C 282.5 425, 282.5 367, 260 367" stroke="#10B981" stroke-opacity=".55" stroke-width="1.5" stroke-dasharray="5 5" fill="none"><animate attributeName="stroke-dashoffset" from="0" to="20" dur="1.6s" repeatCount="indefinite"/></path><rect x="30" y="348" width="230" height="38" rx="19" fill="#111a2e" stroke="#10B981" stroke-opacity=".6"/><circle cx="49" cy="367" r="5" fill="#10B981"><animate attributeName="r" values="4;6;4" dur="2.4s" begin="1.8s" repeatCount="indefinite"/></circle><text x="63" y="372" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="13.5" fill="#e2e8f0">Theft &amp; loss screening</text><path d="M305 425 C 282.5 425, 282.5 425, 260 425" stroke="#10B981" stroke-opacity=".55" stroke-width="1.5" stroke-dasharray="5 5" fill="none"><animate attributeName="stroke-dashoffset" from="0" to="20" dur="1.6s" repeatCount="indefinite"/></path><rect x="30" y="406" width="230" height="38" rx="19" fill="#111a2e" stroke="#10B981" stroke-opacity=".6"/><circle cx="49" cy="425" r="5" fill="#10B981"><animate attributeName="r" values="4;6;4" dur="2.4s" begin="2.1s" repeatCount="indefinite"/></circle><text x="63" y="430" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="13.5" fill="#e2e8f0">EV &amp; substation siting</text><path d="M305 425 C 282.5 425, 282.5 483, 260 483" stroke="#10B981" stroke-opacity=".55" stroke-width="1.5" stroke-dasharray="5 5" fill="none"><animate attributeName="stroke-dashoffset" from="0" to="20" dur="1.6s" repeatCount="indefinite"/></path><rect x="30" y="464" width="230" height="38" rx="19" fill="#111a2e" stroke="#10B981" stroke-opacity=".6"/><circle cx="49" cy="483" r="5" fill="#10B981"><animate attributeName="r" values="4;6;4" dur="2.4s" begin="2.4s" repeatCount="indefinite"/></circle><text x="63" y="488" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="13.5" fill="#e2e8f0">Distribution-network GIS</text><rect class="rm-node" x="305" y="391" width="190" height="68" rx="16" fill="url(#rm-f2)" stroke="url(#rm-c2)" stroke-width="2"/><text x="400" y="421" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="17" font-weight="700" fill="#e2e8f0">Energy Analytics</text><text x="400" y="444" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#10B981">BREB · 2022–2026</text></g></a><a class="rm-c" href="#projects" aria-label="Applied AI"><g><path d="M600 280 Q 700.0 280 800 425" stroke="url(#rm-c3)" stroke-opacity=".7" stroke-width="2.4" fill="none"/><circle r="4" fill="#f0b45a" filter="url(#rm-glow)"><animateMotion dur="3s" begin="1.05s" repeatCount="indefinite" path="M600 280 Q 700.0 280 800 425"/></circle><circle r="4" fill="#f0b45a" filter="url(#rm-glow)"><animateMotion dur="3s" begin="2.55s" repeatCount="indefinite" path="M600 280 Q 700.0 280 800 425"/></circle><path d="M895 425 C 917.5 425, 917.5 367, 940 367" stroke="#f0b45a" stroke-opacity=".55" stroke-width="1.5" stroke-dasharray="5 5" fill="none"><animate attributeName="stroke-dashoffset" from="0" to="-20" dur="1.6s" repeatCount="indefinite"/></path><rect x="940" y="348" width="230" height="38" rx="19" fill="#111a2e" stroke="#f0b45a" stroke-opacity=".6"/><circle cx="959" cy="367" r="5" fill="#f0b45a"><animate attributeName="r" values="4;6;4" dur="2.4s" begin="2.7s" repeatCount="indefinite"/></circle><text x="973" y="372" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="13.5" fill="#e2e8f0">OwlContinuity agents</text><path d="M895 425 C 917.5 425, 917.5 425, 940 425" stroke="#f0b45a" stroke-opacity=".55" stroke-width="1.5" stroke-dasharray="5 5" fill="none"><animate attributeName="stroke-dashoffset" from="0" to="-20" dur="1.6s" repeatCount="indefinite"/></path><rect x="940" y="406" width="230" height="38" rx="19" fill="#111a2e" stroke="#f0b45a" stroke-opacity=".6"/><circle cx="959" cy="425" r="5" fill="#f0b45a"><animate attributeName="r" values="4;6;4" dur="2.4s" begin="3.0s" repeatCount="indefinite"/></circle><text x="973" y="430" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="13.5" fill="#e2e8f0">Liver-cancer detection</text><path d="M895 425 C 917.5 425, 917.5 483, 940 483" stroke="#f0b45a" stroke-opacity=".55" stroke-width="1.5" stroke-dasharray="5 5" fill="none"><animate attributeName="stroke-dashoffset" from="0" to="-20" dur="1.6s" repeatCount="indefinite"/></path><rect x="940" y="464" width="230" height="38" rx="19" fill="#111a2e" stroke="#f0b45a" stroke-opacity=".6"/><circle cx="959" cy="483" r="5" fill="#f0b45a"><animate attributeName="r" values="4;6;4" dur="2.4s" begin="3.3s" repeatCount="indefinite"/></circle><text x="973" y="488" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="13.5" fill="#e2e8f0">Spotify network science</text><rect class="rm-node" x="705" y="391" width="190" height="68" rx="16" fill="url(#rm-f3)" stroke="url(#rm-c3)" stroke-width="2"/><text x="800" y="421" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="17" font-weight="700" fill="#e2e8f0">Applied AI</text><text x="800" y="444" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#f0b45a">agents · health · graphs</text></g></a><circle cx="600" cy="280" r="74" fill="none" stroke="url(#rm-hub)" stroke-width="1.5" stroke-opacity=".5"><animate attributeName="r" values="70;84;70" dur="4s" repeatCount="indefinite"/><animate attributeName="stroke-opacity" values=".55;0;.55" dur="4s" repeatCount="indefinite"/></circle><circle cx="600" cy="280" r="62" fill="#0f172a" stroke="url(#rm-hub)" stroke-width="3" filter="url(#rm-glow)"/><g><animateTransform attributeName="transform" type="rotate" from="0 600 280" to="360 600 280" dur="24s" repeatCount="indefinite"/><circle cx="600" cy="280" r="52" fill="none" stroke="url(#rm-hub)" stroke-width="1" stroke-dasharray="2 7" stroke-opacity=".8"/></g><text x="600" y="274" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="16" font-weight="700" fill="#e2e8f0">Machine</text><text x="600" y="294" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="16" font-weight="700" fill="#e2e8f0">Learning</text><text x="600" y="314" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="10.5" fill="#94a3b8">core methods</text></svg></div>
+    <div class="graph-wrap reveal" id="graph-wrap">
+      <canvas id="graph-canvas"></canvas>
+      <div class="graph-tip" id="graph-tip"></div>
+      <div class="graph-hint"><i class="ti ti-hand-finger"></i> hover · drag nodes</div>
+      <div class="graph-legend">
+        <span><i style="background:#38BDF8"></i>Methods</span>
+        <span><i style="background:#a78bfa"></i>Genomics</span>
+        <span><i style="background:#10B981"></i>Energy &amp; Infrastructure</span>
+        <span><i style="background:#f0b45a"></i>Applications</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GENOMICS VISUALIZATION LAB ============ -->
+<section class="section" id="lab">
+  <div class="wrap">
+    <p class="eyebrow reveal"><span class="n">11</span> / Genomics Visualization Lab</p>
+    <h2 class="reveal">Genomics visualization lab</h2>
+    <p class="lead reveal">Live, code-driven scientific visualizations of the structures this research operates on — from the double helix to selective sweeps, population trees, and coalescent genealogies.</p>
+    <div class="lab reveal">
+      <div class="lab-tabs" role="tablist">
+        <button class="lab-tab" data-lab="helix" aria-pressed="true"><i class="ti ti-dna-2"></i>DNA Helix</button>
+        <button class="lab-tab" data-lab="sweep" aria-pressed="false"><i class="ti ti-chart-histogram"></i>Selective Sweep</button>
+        <button class="lab-tab" data-lab="tree" aria-pressed="false"><i class="ti ti-binary-tree-2"></i>Population Tree</button>
+        <button class="lab-tab" data-lab="coalescent" aria-pressed="false"><i class="ti ti-git-merge"></i>Coalescent</button>
+        <button class="lab-tab" data-lab="haplotype" aria-pressed="false"><i class="ti ti-grid-dots"></i>Haplotypes</button>
+      </div>
+      <div class="lab-stage">
+        <div class="lab-canvas-wrap"><canvas id="lab-canvas"></canvas></div>
+        <div class="lab-info">
+          <div class="sub" id="lab-sub">Structure</div>
+          <h3 id="lab-title">DNA Double Helix</h3>
+          <p id="lab-desc">Genetic information is encoded along two antiparallel strands. Variation in this sequence between individuals is the raw signal every method here learns from.</p>
+          <div class="facts" id="lab-facts"></div>
+          <div class="lab-ctrl">
+            <button class="btn btn-outline" id="lab-play"><i class="ti ti-player-pause"></i>Pause</button>
+            <button class="btn btn-ghost" id="lab-reseed"><i class="ti ti-refresh"></i>Reseed</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ INTERACTIVE EXPLAINERS ============ -->
+<section class="section" id="learn">
+  <div class="wrap">
+    <p class="eyebrow reveal"><span class="n">12</span> / Interactive Explainers</p>
+    <h2 class="reveal">Learn the ideas by playing with them</h2>
+    <p class="lead reveal">Two textbook ideas behind my work, small enough to run in your browser. Move a slider or switch the measure; the figure and the explanation update together.</p>
+    <div class="learn">
+      <article class="xp reveal" id="xp-sweep">
+        <div class="xp-hd">
+          <span class="badge"><i class="ti ti-dna-2"></i>Population genetics</span>
+          <h3>How wide is a selective sweep?</h3>
+          <p>When a beneficial mutation spreads, neutral variants close to it ride along with it (genetic hitchhiking), and diversity drops in a valley around the selected site. Recombination lets more distant variants escape, so the width of the valley comes from a race between selection and recombination.</p>
+        </div>
+        <div class="xp-canvas"><canvas id="sweep-canvas" role="img" aria-label="Expected diversity along the genome around a selective sweep"></canvas></div>
+        <div class="xp-ctrl">
+          <label for="sw-s"><span>Selection strength <i>s</i></span><output id="sw-s-out" for="sw-s">0.010</output></label>
+          <input type="range" id="sw-s" min="-3" max="-1" step="0.05" value="-2">
+          <label for="sw-r"><span>Recombination rate <i>r</i> (per bp, per generation)</span><output id="sw-r-out" for="sw-r">1e-8</output></label>
+          <input type="range" id="sw-r" min="-9" max="-7" step="0.05" value="-8">
+        </div>
+        <p class="xp-read" id="sw-read" aria-live="polite"></p>
+        <p class="xp-note">Curve: expected diversity just after a completed hard sweep, π/π₀ ≈ 1 − (2Ns)<sup>−2rd/s</sup> at distance <i>d</i> from the selected site, with population size N = 10,000. This is the classic hitchhiking approximation (Maynard Smith &amp; Haigh 1974; Kim &amp; Stephan 2002), a teaching sketch rather than a fitted model.</p>
+      </article>
+      <article class="xp reveal d1" id="xp-net">
+        <div class="xp-hd">
+          <span class="badge"><i class="ti ti-topology-star-3"></i>Network science</span>
+          <h3>Who is the most important node?</h3>
+          <p>It depends on what "important" means. Pick a centrality measure: node size shows each node's score, and the top node is ringed. Click a node to see all five of its scores.</p>
+        </div>
+        <div class="filters xp-tabs" id="net-tabs" role="group" aria-label="Centrality measure">
+          <button data-m="degree" aria-pressed="true">Degree</button>
+          <button data-m="betweenness" aria-pressed="false">Betweenness</button>
+          <button data-m="closeness" aria-pressed="false">Closeness</button>
+          <button data-m="eigenvector" aria-pressed="false">Eigenvector</button>
+          <button data-m="pagerank" aria-pressed="false">PageRank</button>
+        </div>
+        <div class="xp-canvas"><canvas id="net-canvas" role="img" aria-label="Small example network with nodes sized by centrality"></canvas></div>
+        <p class="xp-read" id="net-read" aria-live="polite"></p>
+        <p class="xp-note">Scores are computed in your browser with the definitions NetworkX uses. The same split showed up in my Spotify project: degree ranked Armin van Buuren first (513 collaborators), while betweenness and closeness ranked R3HAB first, a bridge between music scenes.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ COLLABORATION ============ -->
+<section class="section" id="collaborate">
+  <div class="wrap">
+    <p class="eyebrow reveal"><span class="n">13</span> / Collaboration</p>
+    <h2 class="reveal">Let's work together</h2>
+    <p class="lead reveal">I am actively open to collaboration. Here is where I can contribute and what I am looking for — whether you are an academic lab, an industry team, or an open-source maintainer.</p>
+    <div class="grid cols-3" style="margin-top:34px">
+      <div class="collab reveal"><div class="ic"><i class="ti ti-microscope"></i></div><h3>Academic Collaborations</h3><p>Co-authored methods papers in computational genomics and trustworthy machine-learning evaluation.</p><ul><li>Selective-sweep detection &amp; selection inference</li><li>Simulation-based deep learning for population genetics</li><li>Sensitivity analysis for ML benchmarks</li></ul></div>
+      <div class="collab reveal d1"><div class="ic"><i class="ti ti-building-factory-2"></i></div><h3>Industry Collaborations</h3><p>Applied ML for utilities and energy — turning operational data into decisions engineers can act on.</p><ul><li>Theft &amp; system-loss detection</li><li>EV charging &amp; substation siting</li><li>Distribution-network GIS</li></ul></div>
+      <div class="collab reveal d2"><div class="ic"><i class="ti ti-brand-github"></i></div><h3>Open-Source Contributions</h3><p>Practical, documented tools that others can run.</p><ul><li>OwlContinuity — course-disruption agents</li><li>contamsens — benchmark robustness</li><li>GIS distribution line drawing</li><li>Low-usage consumer tracker</li></ul></div>
+      <div class="collab reveal"><div class="ic"><i class="ti ti-bulb"></i></div><h3>Interested Domains</h3><p>Where I most want to go deeper next.</p><ul><li>Interpretable deep learning</li><li>Simulation-based inference</li><li>Transfer &amp; domain adaptation</li></ul></div>
+      <div class="collab reveal d1"><div class="ic"><i class="ti ti-users-group"></i></div><h3>Students &amp; Mentees</h3><p>Happy to advise students entering computational biology and applied ML, and to share graduate-study guidance.</p><ul><li>Getting started in ML research</li><li>Reproducible-research practices</li><li>Grad-school application advice</li></ul></div>
+      <div class="collab reveal d2"><div class="ic"><i class="ti ti-mail-share"></i></div><h3>How to Reach Me</h3><p>The fastest path is email with a short note on the problem and dataset.</p><ul><li>tjoarder2026@fau.edu</li><li>Google Scholar · GitHub · LinkedIn</li><li>Open to remote &amp; visiting work</li></ul><div style="margin-top:16px"><a href="#contact" class="btn btn-accent magnetic"><i class="ti ti-send"></i>Start a conversation</a></div></div>
     </div>
   </div>
 </section>
@@ -1511,7 +1555,7 @@ var DETAIL={
     ['Problem','A storm closes campus for three days and Friday\'s lab moves to next Thursday. The memo that depends on the lab is still due Friday, only a day later, although the professor\'s rule needs 48 hours. Moving one class makes the deadlines that depend on it fall too, and the same student questions fill the inbox. In South Florida this comes back every hurricane season.'],
     ['Agents','<ul><li><span><b>Instructor Desk (Domino Effect Agent):</b> reads the closure notice, syllabus and the professor\'s rules, proposes make-up dates from the available slots, follows dependent deadlines and checks every time gap with code. It drafts a Canvas announcement, and says NEEDS DECISION when the rules conflict. It also flags unclear assignment steps, contradictory limits and missing reading links before publication.</span></li><li><span><b>Student Helper:</b> answers only from professor-approved materials and an answer bank, and shows its source. For a new question it does not guess; it drafts a message to the professor, whose approved answer becomes the next bank entry for future students. It respects the course AI policy and does not do graded work.</span></li><li><span><b>Real-syllabus agent:</b> runs the same workflow on a real, public FAU graduate syllabus with simulated closures and test rules.</span></li></ul>'],
     ['Worked example','In the fictional DEMO-101 course an extended closure cancels the Friday lab, which can only move to Thu Oct 29. The memo would then be due 26 h 10 m later (FAIL, rule: 48 h). The agent proposes Tue Nov 3, 123 h 10 m later including the Nov 1 clock change (PASS), and keeps the final fixed. The professor approves both drafts; nothing changes or posts automatically.'],
-    ['Results','Main test report: 31 passed, 2 partial, 0 failed (33 checks). Real-syllabus checks: 17 of 17, two with noted differences. These are my own recorded tests, not an independent validation; every run is saved in the repository.'],
+    ['Results','Main test report: 31 passed, 2 partial, 0 failed (33 checks). Real-syllabus checks: 17 of 17, two with noted differences. These are my own recorded tests, not an independent validation; every run is saved in the repository. <a href="https://github.com/tanviranjumjoarder/OwlContinuity#test-results" target="_blank" rel="noopener">Read the test report</a>.'],
     ['Scope','The AI agents run inside owlONE, which only FAU accounts can reach. The public demo replays the same workflows in plain JavaScript without an AI model. Demo course data is fictional and the closures are simulated. A prototype, not an official FAU system.'],
     ['Technologies','owlONE (gpt-6-luna), Data &amp; File Tools for time math, prompt and instruction design, JavaScript, GitHub Pages.'],
     ['Links','<a href="https://tanviranjumjoarder.github.io/OwlContinuity/" target="_blank" rel="noopener">Live demo</a> · <a href="https://tanviranjumjoarder.github.io/OwlContinuity/how-it-works.html" target="_blank" rel="noopener">Interactive walkthrough</a> · <a href="https://tanviranjumjoarder.github.io/OwlContinuity/#video" target="_blank" rel="noopener">27-second video</a> · <a href="https://github.com/tanviranjumjoarder/OwlContinuity" target="_blank" rel="noopener">Code and test runs on GitHub</a>']
@@ -1585,7 +1629,7 @@ var DETAIL={
     rev.forEach(function(el){io.observe(el);});
   } else rev.forEach(function(el){el.classList.add('in');});
 })();
-$$('[data-dup]').forEach(function(t){t.innerHTML+=t.innerHTML;});
+$$('[data-dup]').forEach(function(t){Array.prototype.slice.call(t.children).forEach(function(c){var k=c.cloneNode(true);k.setAttribute('aria-hidden','true');t.appendChild(k);});});
 // add '+' suffix marker before animating
 $$('.hstat b').forEach(function(b){var lbl=b.parentElement?b.parentElement.textContent:'';if(/Years|Repos/.test(lbl)){if(!b.querySelector('.suf')){var s=document.createElement('span');s.className='suf';b.insertBefore(s,b.firstChild);}}});
 (function(){
@@ -1600,7 +1644,7 @@ $$('.hstat b').forEach(function(b){var lbl=b.parentElement?b.parentElement.textC
     if('IntersectionObserver' in window){var seen=new WeakSet();var o=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting&&!seen.has(e.target)){seen.add(e.target);animate(e.target);o.unobserve(e.target);}});},{threshold:.5});els.forEach(function(e){o.observe(e);});}
     else els.forEach(animate);
   }
-  watch('.hstat b');watch('.metric b');
+  /* counters are written as real numbers in the HTML, so no count-up animation */
 })();
 $$('.spot').forEach(function(sp){var el=sp.parentElement;el.addEventListener('pointermove',function(e){var r=el.getBoundingClientRect();el.style.setProperty('--mx',(e.clientX-r.left)+'px');el.style.setProperty('--my',(e.clientY-r.top)+'px');});});
 if(matchMedia('(pointer:fine)').matches && !reduce){
@@ -2016,6 +2060,30 @@ function helixDraw(c,w,h,t,s,mini){var tt=t/1000,turns=mini?2.2:3.4,amp=mini?h*.
   requestAnimationFrame(loop);
 })();
 
+/* ---- Google Scholar metrics: refreshed daily by .github/workflows/scholar.yml ---- */
+/* The numbers written in the HTML are the fallback; this only replaces them when fresh data loads. */
+(function(){
+  var urls=['https://raw.githubusercontent.com/tanviranjumjoarder/tanviranjumjoarder.github.io/main/assets/scholar.json','assets/scholar.json'];
+  var norm=function(t){return String(t).toLowerCase().replace(/[^a-z0-9]+/g,' ').trim();};
+  function apply(d){
+    if(!d||typeof d.citations!=='number')return;
+    var byLabel={'publications':d.publications,'citations':d.citations,'h-index':d.h_index,'i10-index':d.i10_index};
+    $$('.hstat,.metric').forEach(function(box){var lbl=$('span:last-child',box),b=$('b',box);if(!lbl||!b)return;
+      var v=byLabel[lbl.textContent.trim().toLowerCase()];if(typeof v!=='number')return;
+      b.setAttribute('data-count',v);b.textContent=v;});
+    (d.papers||[]).forEach(function(p){var key=norm(p.title).slice(0,40);
+      $$('.pub').forEach(function(el){var a=$('h3',el);if(!a||norm(a.textContent).slice(0,40)!==key)return;
+        el.setAttribute('data-cites',p.citations);
+        var c=$('.cites',el);if(c)c.lastChild.nodeValue=p.citations+(p.citations===1?' citation':' citations');
+        var rb=$('.rcites b',el);if(rb)rb.textContent=p.citations;});});
+    if(d.updated){var dt=new Date(d.updated+'T12:00:00Z');if(!isNaN(dt)){var txt=dt.toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric',timeZone:'UTC'});
+      $$('.scholar-date').forEach(function(e){e.textContent=txt;});}}
+  }
+  function tryAt(i){if(i>=urls.length||!window.fetch)return;
+    fetch(urls[i],{cache:'no-store'}).then(function(r){if(!r.ok)throw 0;return r.json();}).then(apply).catch(function(){tryAt(i+1);});}
+  tryAt(0);
+})();
+
 /* ---- project filter ---- */
 (function(){
   var bs=$$('#proj-filters button');
@@ -2023,6 +2091,7 @@ function helixDraw(c,w,h,t,s,mini){var tt=t/1000,turns=mini?2.2:3.4,amp=mini?h*.
     var c=b.getAttribute('data-c');
     bs.forEach(function(x){x.setAttribute('aria-pressed',String(x===b));});
     $$('#proj-grid .proj').forEach(function(p){p.style.display=(c==='all'||(' '+p.getAttribute('data-c')+' ').indexOf(' '+c+' ')>-1)?'':'none';});
+    $$('#proj-grid .proj-group').forEach(function(g){g.style.display=c==='all'?'':'none';});
   });});
 })();
 

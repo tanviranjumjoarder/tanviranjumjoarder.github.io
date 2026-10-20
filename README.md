@@ -110,7 +110,7 @@ flowchart LR
 
 ## Publications
 
-<sub>Google Scholar, 18 October 2026 · **5** papers · **107** citations · h-index **4** · i10-index **2**</sub>
+<sub>Google Scholar, 20 October 2026 · **5** papers · **107** citations · h-index **4** · i10-index **2**</sub>
 
 | Year | Paper | Venue | Citations |
 |:---:|---|---|:---:|
