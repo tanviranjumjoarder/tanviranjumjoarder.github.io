@@ -1,11 +1,13 @@
 """Fetch Google Scholar metrics for the profile and write assets/scholar.json.
 
-Run daily by .github/workflows/scholar.yml. Uses only the standard library.
+Run daily on the owner's Mac by ~/scholar-updater/run.sh (launchd);
+.github/workflows/scholar.yml can also run it by hand. Uses only the standard library.
 If Scholar blocks the request or the page layout changes, the script exits
 without touching any file, so the site keeps its last good numbers.
 It also refreshes the citation figures in README.md.
 """
 import datetime
+import os
 import html
 import json
 import pathlib
@@ -87,6 +89,8 @@ def main():
         data = parse(fetch())
     except Exception as e:  # keep last good numbers
         print(f"Skipped: {e}")
+        if os.environ.get("GITHUB_ACTIONS"):
+            print(f"::warning::Scholar fetch skipped: {e}")
         return 0
     old = json.loads(OUT.read_text()) if OUT.exists() else {}
     same = {k: v for k, v in old.items() if k != "updated"} == {k: v for k, v in data.items() if k != "updated"}
