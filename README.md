@@ -12,7 +12,7 @@
 
 <br>
 
-PhD student in Computer Science at **Florida Atlantic University**, working in the **DeGiorgio Lab** on simulation-based deep learning for detecting natural selection. Before the PhD I spent four years leading machine-learning and GIS work at the **Bangladesh Rural Electrification Board**, a utility serving more than 80% of Bangladesh. This repository is the source of my research website: a single-page site with live, code-driven scientific visualizations.
+PhD student in Computer Science at **Florida Atlantic University**, working in the **[DeGiorgio Lab](https://degiorgiogroup.fau.edu/)** on simulation-based deep learning for detecting natural selection. Before the PhD I spent four years leading machine-learning and GIS work at the **Bangladesh Rural Electrification Board**, a utility serving more than 80% of Bangladesh. This repository is the source of my research website: a single-page site with live, code-driven scientific visualizations.
 
 ## Research at a glance
 
@@ -24,7 +24,7 @@ PhD student in Computer Science at **Florida Atlantic University**, working in t
 
 | Thread | Focus | Status |
 |---|---|---|
-| **Selection Inference** | Convolutional networks trained on large coalescent-simulation datasets (discoal, Slurm HPC) to detect selective sweeps and estimate selection strength. | Doctoral research, DeGiorgio Lab |
+| **Selection Inference** | Convolutional networks trained on large coalescent-simulation datasets (discoal, Slurm HPC) to detect selective sweeps and estimate selection strength. | Doctoral research, [DeGiorgio Lab](https://degiorgiogroup.fau.edu/) |
 | **Trustworthy Evaluation** | [contamsens](https://github.com/tanviranjumjoarder/contamsens): partial identification and sensitivity analysis for ML benchmark claims under unmeasured contamination. A pre-registered audit of the Open LLM Leaderboard found 49 of 58 adjacent ranking claims (84.5%) were not contamination-robust. | Manuscript complete |
 | **Energy Analytics** | Electricity-theft and system-loss screening, EV-charging and substation siting, and distribution-network GIS. Open tools: [GIS line drawing](https://github.com/tanviranjumjoarder/GIS-Distribution-Line-Drawing) · [Low-usage consumer tracker](https://github.com/tanviranjumjoarder/Low-usage-Industrial-Consumer-Tracker-App) | In progress |
 | **Academic Continuity AI** | [OwlContinuity](https://github.com/tanviranjumjoarder/OwlContinuity): owlONE agents that reschedule disrupted courses and verify dependent deadlines. | Prototype, FAU Hackathon 2026 |
@@ -181,7 +181,7 @@ Then open <http://localhost:8000>. Opening `index.html` directly also works.
 
 <div align="center">
 
-**[tjoarder2026@fau.edu](mailto:tjoarder2026@fau.edu)** · [Website](https://tanviranjumjoarder.github.io/) · [Google Scholar](https://scholar.google.com/citations?user=fFcWmdwAAAAJ&hl=en) · [ORCID](https://orcid.org/0009-0005-3990-735X) · [LinkedIn](https://www.linkedin.com/in/tanvir-anjum-joarder)
+**[tjoarder2026@fau.edu](mailto:tjoarder2026@fau.edu)** · [Website](https://tanviranjumjoarder.github.io/) · [Google Scholar](https://scholar.google.com/citations?user=fFcWmdwAAAAJ&hl=en) · [ORCID](https://orcid.org/0009-0005-3990-735X) · [LinkedIn](https://www.linkedin.com/in/tanvir-anjum-joarder) · [DeGiorgio Lab](https://degiorgiogroup.fau.edu/)
 
 <sub>© 2026 Tanvir Anjum Joarder</sub>
 
