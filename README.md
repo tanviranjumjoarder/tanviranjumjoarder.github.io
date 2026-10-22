@@ -2,7 +2,7 @@
 
 <a href="https://tanviranjumjoarder.github.io/"><img src="assets/readme/banner.svg" alt="Tanvir Anjum Joarder: machine learning for population genomics" width="100%"></a>
 
-[![Website](https://img.shields.io/badge/website-tanviranjumjoarder.github.io-38BDF8?style=for-the-badge&logo=githubpages&logoColor=white)](https://tanviranjumjoarder.github.io/) [![Google Scholar](https://img.shields.io/badge/Scholar-107%20citations-4285F4?style=for-the-badge&logo=googlescholar&logoColor=white)](https://scholar.google.com/citations?user=fFcWmdwAAAAJ&hl=en) [![ORCID](https://img.shields.io/badge/ORCID-0009--0005--3990--735X-A6CE39?style=for-the-badge&logo=orcid&logoColor=white)](https://orcid.org/0009-0005-3990-735X) [![LinkedIn](https://img.shields.io/badge/LinkedIn-profile-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/tanvir-anjum-joarder)
+[![Website](https://img.shields.io/badge/website-tanviranjumjoarder.github.io-38BDF8?style=for-the-badge&logo=githubpages&logoColor=white)](https://tanviranjumjoarder.github.io/) [![Google Scholar](https://img.shields.io/badge/Scholar-108%20citations-4285F4?style=for-the-badge&logo=googlescholar&logoColor=white)](https://scholar.google.com/citations?user=fFcWmdwAAAAJ&hl=en) [![ORCID](https://img.shields.io/badge/ORCID-0009--0005--3990--735X-A6CE39?style=for-the-badge&logo=orcid&logoColor=white)](https://orcid.org/0009-0005-3990-735X) [![LinkedIn](https://img.shields.io/badge/LinkedIn-profile-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/tanvir-anjum-joarder)
 
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white) ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white) ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black) ![Canvas](https://img.shields.io/badge/Canvas%202D-live%20visualizations-a78bfa?style=flat-square) ![No build step](https://img.shields.io/badge/build-none-10B981?style=flat-square) ![GitHub Pages](https://img.shields.io/badge/hosted%20on-GitHub%20Pages-222?style=flat-square&logo=github)
 
@@ -110,11 +110,11 @@ flowchart LR
 
 ## Publications
 
-<sub>Google Scholar, 20 October 2026 · **5** papers · **107** citations · h-index **4** · i10-index **2**</sub>
+<sub>Google Scholar, 21 October 2026 · **5** papers · **108** citations · h-index **4** · i10-index **2**</sub>
 
 | Year | Paper | Venue | Citations |
 |:---:|---|---|:---:|
-| 2025 | [A comprehensive review of carbon dioxide capture, transportation, utilization, and storage: a source of future energy](https://doi.org/10.1007/s11356-025-36284-9) | *Environmental Science and Pollution Research* (Q1) | **77** |
+| 2025 | [A comprehensive review of carbon dioxide capture, transportation, utilization, and storage: a source of future energy](https://doi.org/10.1007/s11356-025-36284-9) | *Environmental Science and Pollution Research* (Q1) | **78** |
 | 2021 | [Electricity generation from the rotational speed of train wheel: an approach of future energy](https://www.researchgate.net/publication/359928987) | ICMERE 2021 | 8 |
 | 2019 | [Solution to air pollution for removing CO₂ and SO₂ from flue gases: a prospective approach](https://www.researchgate.net/publication/346687530) | ICMERE 2019 | 15 |
 | 2019 | [Safety at industrial working place by separating carbon dioxide gas](https://www.researchgate.net/publication/342752013) | ICMIME 2019 | 5 |
